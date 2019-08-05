@@ -3,12 +3,11 @@
 ![GitHub](https://img.shields.io/github/license/biotope/biotope-boilerplate.svg)
 ![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/y/biotope/biotope-boilerplate.svg)
 
-
 # Biotope is a framework which enables you to develop scalabale, platform-agnostic frontend component ecosystems
 
 ## Definition Ecosystem vs. Ecosystem Framework:
 
-- A component ecosystem is a pool of components which can be used in any combination to build your websites or web applications user interface. The same components can be used in 1-n projects.
+- A component ecosystem is a pool of components which can be used in any combination to build your websites or webaaplications user interface. The same components can be used in 1-n projects.
 
 - An ecosystem framework helps you building such an ecosystem and makes sure all components play well with each other, you get an overview over all components in the pooland information how to use them.
 
@@ -27,7 +26,7 @@
 - Versioning enables you to use all ui-components independently in different projects.
 - Ensure a consistent UI across all your projects.
 - Let multiple partners contribute to the ui library without compatiblity & quality issues. Bring their design system to live. Real usable code, no dummy html components in a seperate styleguide tool.
-- Doesnt matter how big the component library gets. Projects only use components they need. So performance stays high.
+-	Doesnt matter how big the component library gets. Projects only use components they need. So performance stays high.
 - Maintain and extend the ui library over years to avoid getting out-of-date and having to start from scratch again.
 
 
@@ -40,15 +39,3 @@
 - We keep focus on our vision.
 - Our goal is to ensure things are interoperable between Biotope instances, beside that Biotope should be as flexible as possible.
 - Instead of one monolythic framework we try to split up Biotope in lightweight services each with a dedicated goal.
-
-
-## Installation
-You can install the biotope boilerplate with it's cli using npx:
-`npx @biotope/cli init <your-project-name>` then change directories with to `./<your-project-name>`
-
-Or cloning this repo and run `npm install`
-
-## Documentation
-You can find the documentation [here](https://boilerplate.biotope.sh).
-
-In order to contribute to the documentation you have to start a local server in `./docs`, then start editing the files in docs.
