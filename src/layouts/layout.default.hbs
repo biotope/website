@@ -14,11 +14,12 @@
 	<!-- DEV-note: include page specific styles and scripts after this comment -->
 </head>
 <body role="document" class="{{bodyClass}}">
-    {{!-- {{bioInclude 'components/XHeader/scaffolding/demo' }} --}}
+
+    {{bioInclude 'components/BioHeader/scaffolding/BioHeader' }}
+
     {{bioInclude (lookup . 'contentMain') }}
 
-
-    {{!-- {{bioInclude 'components/XFooter/scaffolding/demo' }} --}}
+    {{bioInclude 'components/BioFooter/scaffolding/BioFooter' }}
 
 	{{bioInclude 'layouts/includes/scripts' }}
 
