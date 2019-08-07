@@ -1,8 +1,8 @@
 {
-  "name": "biotope",
-  "title": "Biotope - The Frontend Ecosystem Framework",
-  "version": "6.0.0",
-  "description": "Modern HTML5 UI Framework",
+  "name": "biotope-website",
+  "title": "Biotope - Website",
+  "version": "1.0.0",
+  "description": "Website for Biotope",
   "repository": {
     "type": "git",
     "url": "https://github.com/biotope/biotope.git"
@@ -17,16 +17,16 @@
     "lint": "echo \"Not implemented yet\""
   },
   "dependencies": {
-    "@biotope/element": "^3",
+    "@biotope/element": "^3.2.0",
     "@biotope/resource-loader": "2.1.1",
     "breakpoint-sass": "2.7.1",
     "handlebars": "4.1.2",
-    "sanitize.css": "^10.0.0",
+    "sanitize.css": "^11.0.0",
     "susy": "2.2.14",
     "vi-css-helper": "git+https://github.com/virtualidentityag/vi-css-helper.git#1.1.1"
   },
   "devDependencies": {
-    "@biotope/build": "7.1.0-2",
+    "@biotope/build": "^7.1.1",
     "@biotope/cli": "^1.1.5",
     "@types/modernizr": "^3.5.3",
     "@types/node": "^10.12.18",
@@ -37,7 +37,7 @@
     "mocha": "5.0.1"
   },
   "engines": {
-    "node": ">=8.9.0"
+    "node": ">=10.16.1"
   },
   "config": {
     "commitizen": {
