@@ -15,11 +15,7 @@
 </head>
 <body role="document" class="{{bodyClass}}">
 
-    {{bioInclude 'components/BioHeader/scaffolding/BioHeader' }}
-
-    {{bioInclude (lookup . 'contentMain') }}
-
-    {{bioInclude 'components/BioFooter/scaffolding/BioFooter' }}
+	{{bioInclude (lookup . 'contentMain') }}
 
 	{{bioInclude 'layouts/includes/scripts' }}
 
