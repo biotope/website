@@ -1,0 +1,40 @@
+@import 'settings/settings';
+
+.splash {
+    font-family: $font-family-header;
+    height: 100vh;
+    background-color: purple;
+    color: #F17C61;
+    
+    &__intro {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        width: 625px;
+        padding-top: 200px;
+    }
+
+    &__content {
+        position: relative;
+        margin-left: 20px;
+    }
+
+    &__biotope {
+        font-size: 100px;
+        font-weight: 400;
+    }
+
+    &__uitoolchain {
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    &__logo {
+        width: 325px;
+        margin-top: -175px;
+    }
+
+    &__claim {
+        color: $bio-white;
+    }
+}
