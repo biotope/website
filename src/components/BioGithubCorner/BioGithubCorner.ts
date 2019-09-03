@@ -17,7 +17,6 @@ class BioGithubCorner extends Component< BioGithubCornerProps, BioGithubCornerSt
     };
 
     connectedCallback() {
-        console.log('connected');
         this.registerEventListeners();
     }
 
