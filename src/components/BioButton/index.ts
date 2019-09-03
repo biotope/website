@@ -1,3 +1,3 @@
-import BioButton from './BioButton';
+import bioButton from './bioButton';
 
-BioButton.register();
+bioButton.register();
