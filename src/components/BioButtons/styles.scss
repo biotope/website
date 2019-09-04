@@ -1,0 +1,62 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/settings/settings";
+
+@include host("bio-buttons") {
+	button {
+		$border: 2px;
+
+		position: relative;
+		padding: 10px 50px;
+		background: $bio-white;
+		color: $black;
+		border: none;
+		border-radius: 50px;
+		font-family: $font-family-header;
+		font-size: 15px;
+		font-weight: $font-weight-bold;
+		text-transform: uppercase;
+		text-decoration: none;
+		text-align: center;
+		transition: 0.15s ease-out;
+
+		&:hover {
+			background: transparent;
+			color: $bio-white;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: -$border;
+			background: linear-gradient(to bottom, $light-orange, $main-orange);
+			border-radius: inherit;
+			border: 5px;
+			z-index: -1;
+		}
+        &.blue {
+            &:after {
+                background: linear-gradient(to bottom, $light-blue, $dark-blue);
+            }
+        }
+        &.full {
+            color: $bio-white;
+            background: transparent;
+    
+            &:before {
+                margin: 0;
+            }
+    
+            &:hover {
+                background: $bio-white;
+                color: $black;
+            }
+        }
+        &.long {
+            padding: 10px 20px;
+        }
+	}
+}
