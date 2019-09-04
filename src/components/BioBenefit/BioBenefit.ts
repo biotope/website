@@ -1,21 +1,22 @@
 import Component from '@biotope/element';
 import template from './template';
 
-import { BioBenefitsProps, BioBenefitsState, BioBenefitsMethods } from './defines';
+import { BioBenefitProps, BioBenefitState, BioBenefitMethods } from './defines';
 
 
 
-class BioBenefits extends Component< BioBenefitsProps, BioBenefitsState > {
-    static componentName = 'bio-benefits';
+class BioBenefit extends Component< BioBenefitProps, BioBenefitState > {
+    static componentName = 'bio-benefit';
 
     static attributes = [
-
+        'imgsrc',
+        'title'
     ];
 
-    public methods: BioBenefitsMethods = {
+    public methods: BioBenefitMethods = {
 
     };
-   
+
     get defaultState() {
         return {
 
@@ -24,7 +25,8 @@ class BioBenefits extends Component< BioBenefitsProps, BioBenefitsState > {
   
     get defaultProps() {
         return {
-
+            imgsrc: '',
+            title: ''
         }
     }
 
@@ -33,4 +35,4 @@ class BioBenefits extends Component< BioBenefitsProps, BioBenefitsState > {
     }
 }
 
-export default BioBenefits;
+export default BioBenefit;

@@ -1,0 +1,20 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import '../../resources/scss/defaultSassImports.scss';
+
+@include host('bio-benefit') {
+    font-family: $font-family-titles;
+    .wrapper {
+        img {
+            width: 100%;
+        }
+        h3 {
+            font-weight: $font-weight-normal;
+            text-align: center;
+        }
+        p {
+            @extend %benefit-text;
+            color: grey;
+            text-align: center;
+        }
+    }
+}
