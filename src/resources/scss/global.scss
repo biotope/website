@@ -37,4 +37,22 @@
     &__claim {
         color: $bio-white;
     }
+
+    &__button {
+        text-transform: uppercase;
+        padding: 10px 30px;
+        background: transparent;
+        border-radius: 20px;
+        margin-left: 15px;
+        cursor: pointer;
+        &--orange {
+            border: 1px solid orange;
+        }
+        &--blue {
+            border: 1px solid teal;
+        }
+        &:first-of-type {
+            margin-left: 0;
+        }
+    }
 }
