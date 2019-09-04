@@ -1,19 +1,19 @@
 import Component from '@biotope/element';
 import template from './template';
 
-import { BioButtonsProps, BioButtonsState, BioButtonsMethods } from './defines';
+import { BioButtonProps, BioButtonState, BioButtonMethods } from './defines';
 
 
 
-class BioButtons extends Component< BioButtonsProps, BioButtonsState > {
-    static componentName = 'bio-buttons';
+class BioButton extends Component< BioButtonProps, BioButtonState > {
+    static componentName = 'bio-button';
 
     static attributes = [
         'title',
         'modifier'
     ];
 
-    public methods: BioButtonsMethods = {
+    public methods: BioButtonMethods = {
 
     };
 
@@ -46,4 +46,4 @@ class BioButtons extends Component< BioButtonsProps, BioButtonsState > {
     }
 }
 
-export default BioButtons;
+export default BioButton;

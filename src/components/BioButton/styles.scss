@@ -1,7 +1,7 @@
 @import "node_modules/@biotope/element/lib/host.mixin";
 @import "../../resources/scss/settings/settings";
 
-@include host("bio-buttons") {
+@include host("bio-button") {
 	button {
 		$border: 2px;
 
