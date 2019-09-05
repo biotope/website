@@ -1,0 +1,58 @@
+@import 'settings/settings';
+
+.splash {
+    font-family: $font-family-header;
+    height: 100vh;
+    background-color: purple;
+    color: #F17C61;
+    
+    &__intro {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        width: 625px;
+        padding-top: 200px;
+    }
+
+    &__content {
+        position: relative;
+        margin-left: 20px;
+    }
+
+    &__biotope {
+        font-size: 100px;
+        font-weight: 400;
+    }
+
+    &__uitoolchain {
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    &__logo {
+        width: 325px;
+        margin-top: -175px;
+    }
+
+    &__claim {
+        color: $bio-white;
+    }
+
+    &__button {
+        text-transform: uppercase;
+        padding: 10px 30px;
+        background: transparent;
+        border-radius: 20px;
+        margin-left: 15px;
+        cursor: pointer;
+        &--orange {
+            border: 1px solid orange;
+        }
+        &--blue {
+            border: 1px solid teal;
+        }
+        &:first-of-type {
+            margin-left: 0;
+        }
+    }
+}
