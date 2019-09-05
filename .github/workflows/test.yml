@@ -1,15 +1,32 @@
-name: this is a test workflow
+name: Node CI
 
-on: push
+on: [push]
 
 jobs:
-  test-job:
-    name: Test Job
+  build:
+
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
     steps:
-    - name: Print a greeting
-      env: 
-        MY_VAR: Hi there!
-        FIRST_NAME: Lukas
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install, build, and test
       run: |
-        echo $MY_VAR $FIRST_NAME
+        npm install
+        npm build
+    - name: upload 
+      env: 
+        SSH_CONNECTION: vi-jenkins@preview.virtual-identity.com
+        DEPLOYMENT_ROOT: /var/www/sites/biotope
+      #  NORMALIZED_BRANCH_NAME: $GITHUB_REF
+      run: |
+        echo Branch name is ${GITHUB_REF}, SSH_CONNECTION is ${SSH_CONNECTION}, DEPLOYMENT_ROOT is ${DEPLOYMENT_ROOT}
+      #  ssh -o StrictHostKeyChecking=no $SSH_CONNECTION 'mkdir -p $DEPLOYMENT_PATH;'
+      #  rsync -rvtze \"ssh -o StrictHostKeyChecking=no\" dist/ $SSH_CONNECTION:$DEPLOYMENT_PATH
