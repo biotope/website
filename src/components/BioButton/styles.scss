@@ -37,11 +37,13 @@
 			border: 5px;
 			z-index: -1;
 		}
+
         &.blue {
             &:after {
                 background: linear-gradient(to bottom, $light-blue, $dark-blue);
             }
-        }
+		}
+		
         &.full {
             color: $bio-white;
             background: transparent;
@@ -54,7 +56,22 @@
                 background: $bio-white;
                 color: $black;
             }
-        }
+		}
+		
+        &.purpleFull {
+			color: $bio-white;
+			background: purple;
+	
+			&:before {
+				margin: 0;
+			}
+	
+			&:hover {
+				background: transparent;
+				color: $bio-white;
+			}
+		}
+		
         &.long {
             padding: 10px 20px;
         }
