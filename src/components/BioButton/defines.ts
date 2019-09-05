@@ -6,6 +6,9 @@
  * Props
  */
  interface BioButtonProps {
+	title: string,
+	modifier?: string,
+
 
  }
 

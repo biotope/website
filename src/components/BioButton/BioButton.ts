@@ -9,12 +9,24 @@ class BioButton extends Component< BioButtonProps, BioButtonState > {
     static componentName = 'bio-button';
 
     static attributes = [
-
+        'title',
+        'modifier'
     ];
 
     public methods: BioButtonMethods = {
 
     };
+
+    connectedCallback() {
+        this.registerEventListeners();
+    }
+
+    registerEventListeners() {
+        this.addEventListener('click', (e: Event) => {
+            e.preventDefault();
+            window.open(this.props.title);
+        })
+    }
    
     get defaultState() {
         return {
@@ -24,7 +36,8 @@ class BioButton extends Component< BioButtonProps, BioButtonState > {
   
     get defaultProps() {
         return {
-
+            title: '',
+            modifier: '',
         }
     }
 
