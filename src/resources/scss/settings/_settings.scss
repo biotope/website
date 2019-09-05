@@ -11,6 +11,7 @@ $font-weight-bold:       600;
 
 // COLORS
 $bio-white: #fff;
+$bio-gray: #F8FBFD;
 $black: #000;
 $main-orange: #F17C61;
 
@@ -51,3 +52,7 @@ $section_margin_top_small: 60px;
 $section_margin_top_medium: 60px;
 $section_margin_top_large: 60px;
 $section_margin_top_xlarge: 80px;
+
+//account for SwooshFold padding
+$swooshHeight: 150px;
+$includingSwooshPadding: $swooshHeight - 100px;
