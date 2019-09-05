@@ -6,7 +6,7 @@
  * Props
  */
  interface BioHeadlineProps {
-
+	power: number;
  }
 
 /**

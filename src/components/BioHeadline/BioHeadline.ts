@@ -1,36 +1,41 @@
 import Component from '@biotope/element';
 import template from './template';
 
-import { BioHeadlineProps, BioHeadlineState, BioHeadlineMethods } from './defines';
+import {
+	BioHeadlineProps,
+	BioHeadlineState,
+	BioHeadlineMethods
+} from './defines';
 
+class BioHeadline extends Component<BioHeadlineProps, BioHeadlineState> {
+	static componentName = 'bio-headline';
 
+	static attributes = [
+		{
+			name: 'power',
+			converter: value => parseInt(value)
+		}
+	];
 
-class BioHeadline extends Component< BioHeadlineProps, BioHeadlineState > {
-    static componentName = 'bio-headline';
+	public methods: BioHeadlineMethods = {};
 
-    static attributes = [
+	get defaultState() {
+		return {};
+	}
 
-    ];
+	get defaultProps() {
+		return {
+			power: 1
+		};
+	}
 
-    public methods: BioHeadlineMethods = {
-
-    };
-   
-    get defaultState() {
-        return {
-
-        }
-    }
-  
-    get defaultProps() {
-        return {
-
-        }
-    }
-
-    render() {
-        return template(this.html, { ...this.props, ...this.state, ...this.methods }, this.createStyle);
-    }
+	render() {
+		return template(
+			this.html,
+			{ ...this.props, ...this.state, ...this.methods },
+			this.createStyle
+		);
+	}
 }
 
 export default BioHeadline;
