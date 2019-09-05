@@ -4,12 +4,19 @@
 @include host('bio-benefit') {
     font-family: $font-family-titles;
     .wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        text-align: center;
+        > * {
+            flex: 1 100%;
+        }
         img {
             width: 100%;
+            max-width: 250px;
+            margin: 0 auto;
         }
         h3 {
             font-weight: $font-weight-normal;
-            text-align: center;
         }
         p {
             @extend %benefit-text;

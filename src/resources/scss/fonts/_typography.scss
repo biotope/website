@@ -1,6 +1,6 @@
 %benefit-text {
     font-family: $font-family-body;
-    font-weight: $font-weight-normal;
+    font-weight: $font-weight-light;
     line-height: 15px;
     font-size: 15px;
 
@@ -13,6 +13,11 @@
 %headlineH2 {
     font-family: $font-family-titles;
     font-weight: $font-weight-normal;
-    line-height: 20px;
-    font-size: 20px;
+    // line-height: 20px;
+    // font-size: 20px;
+}
+
+%paragraph {
+    font-family: $font-family-body;
+    font-weight: $font-weight-light;
 }
