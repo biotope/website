@@ -1,0 +1,15 @@
+name: this is a test workflow
+
+on: push
+
+jobs:
+  test-job:
+    name: Test Job
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print a greeting
+      env: 
+        MY_VAR: Hi there!
+        FIRST_NAME: Lukas
+      run: |
+        echo $MY_VAR $FIRST_NAME
