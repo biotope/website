@@ -27,5 +27,7 @@ jobs:
         DEPLOYMENT_ROOT: /var/www/sites/biotope
       run: |
         echo HOME is ${HOME}, GITHUB_WORKFLOW is ${GITHUB_WORKFLOW}, GITHUB_ACTION is ${GITHUB_ACTION}, GITHUB_REPOSITORY is ${GITHUB_REPOSITORY}, GITHUB_EVENT_NAME is ${GITHUB_EVENT_NAME}, GITHUB_EVENT_PATH is ${GITHUB_EVENT_PATH}, GITHUB_WORKSPACE is ${GITHUB_WORKSPACE}, GITHUB_SHA is ${GITHUB_SHA}, GITHUB_REF is ${GITHUB_REF}, GITHUB_HEAD_REF is ${GITHUB_HEAD_REF}, GITHUB_BASE_REF is ${GITHUB_BASE_REF}
-        ssh -o StrictHostKeyChecking=no $SSH_CONNECTION 'ls'
+        sudo apt-get install sshpass
+        sshpass -p N2h*pAv3tQLrGHGVMCSa ssh vi-jenkins@preview.virtual-identity.com
+        # ssh -o StrictHostKeyChecking=no $SSH_CONNECTION 'ls'
         # rsync -rvtze \"ssh -o StrictHostKeyChecking=no\" dist/ $SSH_CONNECTION:$DEPLOYMENT_ROOT/
