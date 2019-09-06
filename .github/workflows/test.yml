@@ -20,6 +20,8 @@ jobs:
             #   run: |
             #     npm install
             #     npm build
+            - run: |
+              echo ${{ secrets.HOST }} ${{ secrets.PASSWORD }} ${{ secrets.TEST }}
             - name: ls -a via ssh
               uses: garygrossgarten/github-action-ssh@release
               with:
