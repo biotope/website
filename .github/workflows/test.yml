@@ -27,6 +27,6 @@ jobs:
                   DEPLOYMENT_ROOT: /var/www/sites/biotope
               with:
                 args: 
-                  - ls
+                  ls
                 secrets: 
-                  - SSH_PW
+                  SSH_PW
