@@ -29,5 +29,5 @@ jobs:
                 args: 
                   ls
                 secrets: 
-                  HOST
-                  PASSWORD
+                  ${{ secrets.HOST }}
+                  ${{ secrets.PASSWORD }}
