@@ -5,11 +5,10 @@
 	button {
 		$border: 2px;
 
-		position: relative;
 		padding: 10px 50px;
 		background: $bio-white;
 		color: $black;
-		border: none;
+		border: $border solid $main-orange;
 		border-radius: 50px;
 		font-family: $font-family-header;
 		font-size: 15px;
@@ -20,41 +19,33 @@
 		transition: 0.15s ease-out;
 
 		&:hover {
-			background: transparent;
+			border: 2px solid transparent;
+			background: $main-orange;
 			color: $bio-white;
 		}
 
-		&:after {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			margin: -$border;
-			background: linear-gradient(to bottom, $light-orange, $main-orange);
-			border-radius: inherit;
-			border: 5px;
-			z-index: -1;
-		}
         &.blue {
-            &:after {
-                background: linear-gradient(to bottom, $light-blue, $dark-blue);
-            }
-        }
+			border: $border solid $dark-blue; 
+			&:hover{
+				background: $dark-blue;
+			}
+		}
+		
         &.full {
             color: $bio-white;
-            background: transparent;
+            background: $main-orange;
     
             &:before {
                 margin: 0;
             }
     
             &:hover {
-                background: $bio-white;
-                color: $black;
+                background: transparent;
+				color: $black;
+				border: $border solid $main-orange;
             }
-        }
+		}
+		
         &.long {
             padding: 10px 20px;
         }
