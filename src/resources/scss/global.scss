@@ -1,58 +1,73 @@
-@import 'settings/settings';
+@import 'defaultSassImports.scss';
+
+header,
+section {
+	height: 800px;
+}
 
 .splash {
-    font-family: $font-family-header;
-    height: 100vh;
-    background-color: purple;
-    color: #F17C61;
-    
-    &__intro {
-        display: flex;
-        align-items: center;
-        margin: 0 auto;
-        width: 625px;
-        padding-top: 200px;
-    }
+	font-family: $font-family-titles;
+	background-color: purple;
+	color: #f17c61;
 
-    &__content {
-        position: relative;
-        margin-left: 20px;
-    }
+	&__intro {
+		display: flex;
+		align-items: center;
+		margin: 0 auto;
+		width: 625px;
+		padding-top: 200px;
+	}
 
-    &__biotope {
-        font-size: 100px;
-        font-weight: 400;
-    }
+	&__content {
+		position: relative;
+		margin-left: 20px;
+	}
 
-    &__uitoolchain {
-        text-transform: uppercase;
-        font-weight: 400;
-    }
+	&__biotope {
+		font-size: 100px;
+		font-weight: 400;
+	}
 
-    &__logo {
-        width: 325px;
-        margin-top: -175px;
-    }
+	&__uitoolchain {
+		text-transform: uppercase;
+		font-weight: 400;
+	}
 
-    &__claim {
-        color: $bio-white;
-    }
+	&__logo {
+		width: 325px;
+		margin-top: -175px;
+	}
 
-    &__button {
-        text-transform: uppercase;
-        padding: 10px 30px;
-        background: transparent;
-        border-radius: 20px;
-        margin-left: 15px;
-        cursor: pointer;
-        &--orange {
-            border: 1px solid orange;
-        }
-        &--blue {
-            border: 1px solid teal;
-        }
-        &:first-of-type {
-            margin-left: 0;
-        }
-    }
+	&__claim {
+		color: $bio-white;
+	}
+}
+
+.benefits {
+    position: relative;
+	&__claim {
+		margin: 20px 0;
+		text-align: center;
+		@include breakpoint($medium) {
+            width: 40vw;
+            left: 50%;
+            position: absolute;
+			text-align: left;
+		}
+	}
+	&__container {
+		@include clearfix();
+		@include breakpoint($medium) {
+			position: absolute;
+			bottom: 20px;
+			@include span(10);
+			left: 50%;
+			transform: translate(-50%);
+		}
+		bio-benefit {
+			@include breakpoint($medium) {
+				@include span(4);
+			}
+		}
+	}
 }
