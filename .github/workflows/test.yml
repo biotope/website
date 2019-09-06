@@ -29,4 +29,5 @@ jobs:
                 args: 
                   ls
                 secrets: 
-                  SSH_PW
+                  HOST
+                  PASSWORD
