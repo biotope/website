@@ -17,10 +17,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm build
+    # - name: npm install, build, and test
+    #   run: |
+    #     npm install
+    #     npm build
     - name: upload 
       env: 
         SSH_CONNECTION: vi-jenkins@preview.virtual-identity.com
