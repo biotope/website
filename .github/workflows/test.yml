@@ -20,14 +20,16 @@ jobs:
             #   run: |
             #     npm install
             #     npm build
-            - name: ssh-test
-              uses: appleboy/ssh-action@v0.0.2
-              env:
-                  SSH_CONNECTION: vi-jenkins@preview.virtual-identity.com
-                  DEPLOYMENT_ROOT: /var/www/sites/biotope
-              with:
-                args: 
-                  ls
-                secrets: 
-                  ${{ secrets.HOST }}
-                  ${{ secrets.PASSWORD }}
+            - run: |
+                echo ${{ secrets }}
+            # - name: ssh-test
+            #   uses: appleboy/ssh-action@v0.0.2
+            #   env:
+            #       SSH_CONNECTION: vi-jenkins@preview.virtual-identity.com
+            #       DEPLOYMENT_ROOT: /var/www/sites/biotope
+            #   with:
+            #     args: 
+            #       ls
+            #     secrets: 
+            #       ${{ secrets.HOST }}
+            #       ${{ secrets.PASSWORD }}
