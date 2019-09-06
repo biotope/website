@@ -162,8 +162,9 @@
         border-bottom-left-radius: 41%;
         border-bottom-right-radius: 41%;
         box-shadow: 0 81px $bio-gray;
+        
         &--blue{
-            box-shadow: 0 81px darkblue;
+            box-shadow: 0 81px $darker-blue;
         }
     }
 }
