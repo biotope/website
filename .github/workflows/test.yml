@@ -3,29 +3,29 @@ name: Node CI
 on: [push]
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [10.x]
 
-    strategy:
-      matrix:
-        node-version: [10.x]
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    # - name: npm install, build, and test
-    #   run: |
-    #     npm install
-    #     npm build
-    - name: upload 
-      env: 
-        SSH_CONNECTION: vi-jenkins@preview.virtual-identity.com
-        DEPLOYMENT_ROOT: /var/www/sites/biotope
-      run: |
-        echo HOME is ${HOME}, GITHUB_WORKFLOW is ${GITHUB_WORKFLOW}, GITHUB_ACTION is ${GITHUB_ACTION}, GITHUB_REPOSITORY is ${GITHUB_REPOSITORY}, GITHUB_EVENT_NAME is ${GITHUB_EVENT_NAME}, GITHUB_EVENT_PATH is ${GITHUB_EVENT_PATH}, GITHUB_WORKSPACE is ${GITHUB_WORKSPACE}, GITHUB_SHA is ${GITHUB_SHA}, GITHUB_REF is ${GITHUB_REF}, GITHUB_HEAD_REF is ${GITHUB_HEAD_REF}, GITHUB_BASE_REF is ${GITHUB_BASE_REF}
-        ssh -o StrictHostKeyChecking=no ${SSH_CONNECTION} 'ls'
-        # rsync -rvtze \"ssh -o StrictHostKeyChecking=no\" dist/ $SSH_CONNECTION:$DEPLOYMENT_ROOT/
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+            # - name: npm install, build, and test
+            #   run: |
+            #     npm install
+            #     npm build
+            - name: ssh-test
+              uses: appleboy/ssh-action@v0.0.2
+              env:
+                  SSH_CONNECTION: vi-jenkins@preview.virtual-identity.com
+                  DEPLOYMENT_ROOT: /var/www/sites/biotope
+              args:
+                  ls
+              secrets:
+                  $SSH_PW
