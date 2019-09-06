@@ -25,7 +25,5 @@ jobs:
               env:
                   SSH_CONNECTION: vi-jenkins@preview.virtual-identity.com
                   DEPLOYMENT_ROOT: /var/www/sites/biotope
-              args:
-                  - ls
               secrets:
                   - $SSH_PW
