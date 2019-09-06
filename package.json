@@ -19,9 +19,15 @@
   "dependencies": {
     "@biotope/element": "^3.2.0",
     "@biotope/resource-loader": "2.1.1",
+    "@types/gsap": "^1.20.2",
+    "bodymovin": "^4.13.0",
     "breakpoint-sass": "2.7.1",
+    "gsap": "^2.1.3",
     "handlebars": "4.1.2",
+    "imports-loader": "^0.8.0",
     "sanitize.css": "^11.0.0",
+    "scrollmagic": "^2.0.7",
+    "scrollmagic-plugin-gsap": "^1.0.3",
     "susy": "2.2.14",
     "vi-css-helper": "git+https://github.com/virtualidentityag/vi-css-helper.git#1.1.1"
   },
