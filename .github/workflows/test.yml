@@ -25,8 +25,7 @@ jobs:
       env: 
         SSH_CONNECTION: vi-jenkins@preview.virtual-identity.com
         DEPLOYMENT_ROOT: /var/www/sites/biotope
-      #  NORMALIZED_BRANCH_NAME: $GITHUB_REF
       run: |
-        echo Branch name is ${GITHUB_REF}, SSH_CONNECTION is ${SSH_CONNECTION}, DEPLOYMENT_ROOT is ${DEPLOYMENT_ROOT}
-      #  ssh -o StrictHostKeyChecking=no $SSH_CONNECTION 'mkdir -p $DEPLOYMENT_PATH;'
-      #  rsync -rvtze \"ssh -o StrictHostKeyChecking=no\" dist/ $SSH_CONNECTION:$DEPLOYMENT_PATH
+        echo Branch name is ${GITHUB_REF}, SSH_CONNECTION is ${SSH_CONNECTION}, DEPLOYMENT_ROOT is ${DEPLOYMENT_ROOT + 'test'} 
+        # ssh -o StrictHostKeyChecking=no $SSH_CONNECTION 'mkdir -p $DEPLOYMENT_PATH;'
+        # rsync -rvtze \"ssh -o StrictHostKeyChecking=no\" dist/ $SSH_CONNECTION:$DEPLOYMENT_ROOT/$
