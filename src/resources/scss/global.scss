@@ -1,93 +1,135 @@
-@import 'settings/settings';
-@import "../../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import 'defaultSassImports.scss';
+
+header,
+section {
+    @include breakpoint($medium){
+        height: 800px;
+    }
+}
 
 .splash {
-    font-family: $font-family-header;
-    height: 100vh;
-    background-color: purple;
-    color: #F17C61;
-    
-    &__intro {
-        display: flex;
-        align-items: center;
-        margin: 0 auto;
-        max-width: 625px;
-        padding-top: 200px;
+	font-family: $font-family-titles;
+	background-color: purple;
+	color: #f17c61;
+
+	&__intro {
+		display: flex;
+		align-items: center;
+		margin: 0 auto;
+		width: 625px;
+		padding-top: 200px;
+	}
+
+	&__content {
+		position: relative;
+		margin-left: 20px;
+	}
+
+	&__biotope {
+		font-size: 100px;
+		font-weight: 400;
+	}
+
+	&__uitoolchain {
+		text-transform: uppercase;
+		font-weight: 400;
+	}
+
+	&__logo {
+		width: 325px;
+		margin-top: -175px;
+	}
+
+	&__claim {
+		color: $bio-white;
+	}
+}
+
+.benefits {
+    position: relative;
+	&__claim {
+		margin: 20px 0;
+		text-align: center;
+		@include breakpoint($medium) {
+            width: 40vw;
+            left: 50%;
+            position: absolute;
+			text-align: left;
+		}
+	}
+	&__container {
+		@include clearfix();
+		@include breakpoint($medium) {
+			position: absolute;
+			bottom: 20px;
+			@include span(10);
+			left: 50%;
+			transform: translate(-50%);
+		}
+		bio-benefit {
+			@include breakpoint($medium) {
+				@include span(4);
+			}
+		}
+	}
+}
+
+.swooshFoldWrapper {
+    position: absolute;
+    left: 0;
+    top: -130px;
+    width: 100%;
+    height: $swooshHeight;
+    overflow: hidden;
+
+    &--inverted {
+        top: 0px;
+        transform: rotate(180deg);
     }
 
-    &__content {
-        position: relative;
-        margin-left: 20px;
-    }
-
-    &__biotope {
-        font-size: 100px;
-        font-weight: 400;
-    }
-
-    &__uitoolchain {
-        text-transform: uppercase;
-        font-weight: 400;
-    }
-
-    &__logo {
-        width: 325px;
-        margin-top: -175px;
-    }
-
-    &__claim {
-        color: $bio-white;
-    }
-
-    &__button {
-        text-transform: uppercase;
-        padding: 10px 30px;
-        background: transparent;
-        border-radius: 20px;
-        margin-left: 15px;
-        cursor: pointer;
-        &--orange {
-            border: 1px solid orange;
-        }
+    &__swooshFold {
+        height: 130px;
+        width: 110vw;
+        border-bottom-left-radius: 41%;
+        border-bottom-right-radius: 41%;
+        box-shadow: 0 81px $bio-gray;
+        
         &--blue {
-            border: 1px solid teal;
-        }
-        &:first-of-type {
-            margin-left: 0;
+            box-shadow: 0 81px $darker-blue;
         }
     }
 }
 
-.footer{
+.footer {
     position: relative;
     padding: ($includingSwooshPadding + 50px) 20px 0 20px;
     background: $bio-gray;
     color: $black;
 
-    @include breakpoint ($medium) {
+    @include breakpoint($medium) {
         display: flex;
         justify-content: space-between;
         padding: $includingSwooshPadding 10vw 0 10vw;
     }
     
-    @include breakpoint ($large) {
+    @include breakpoint($large) {
         padding: $includingSwooshPadding 15vw 0 15vw;
     }
 
-    @include breakpoint ($xlarge) {
+    @include breakpoint($xlarge) {
         padding: $includingSwooshPadding 18vw 0 15vw;
     }
 
     
     
-    &__githubLogo{
+    &__githubLogo {
         position: absolute;
         top: 30px;
         left: 0;
         transform: rotate(90deg);
         width: 70px;
 
-        @include breakpoint ($large) {
+        @include breakpoint($large) {
             top: auto;
             left: auto;
             bottom: 0;
@@ -96,21 +138,21 @@
         }
     }
 
-    &__checkItOut{
+    &__checkItOut {
         padding-top: 25px;
         line-height: 1.3;
 
-        @include breakpoint ($medium) {
+        @include breakpoint($medium) {
             flex-grow: 1;
             padding: 0 3vw;
             font-size: 20px;
         }
-        @include breakpoint ($large) {
+        @include breakpoint($large) {
             padding-left: 17vw;
         }
     }
 
-    &__essentials{
+    &__essentials {
         display: flex;
         flex-flow: column;
         padding: 40px 0;
@@ -118,39 +160,13 @@
         a {
             margin-bottom: 10px;
             color: $black;
-            &:hover{
+            &:hover {
                 text-decoration: underline;
             }
 
-            @include breakpoint ($large) {
+            @include breakpoint($large) {
                 margin-bottom: 20px;
             }
-        }
-    }
-}
-
-.swooshFoldWrapper{
-    position: absolute;
-    left: 0;
-    top: -130px;
-    width: 100%;
-    height: $swooshHeight;
-    overflow: hidden;
-
-    &--inverted{
-        top: 0px;
-        transform: rotate(180deg);
-    }
-
-    &__swooshFold{
-        height: 130px;
-        width: 110vw;
-        border-bottom-left-radius: 41%;
-        border-bottom-right-radius: 41%;
-        box-shadow: 0 81px $bio-gray;
-        
-        &--blue{
-            box-shadow: 0 81px $darker-blue;
         }
     }
 }

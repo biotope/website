@@ -1,10 +1,11 @@
 // GLOBAL SASS SETTINGS
 
 // FONTS
-$font-family-sans-serif: 'Work Sans', sans-serif;
-$font-family-header: 'Monda', sans-serif;
-$font-weight-normal:     400;
-$font-weight-bold:       600;
+$font-family-body:    'Work Sans', sans-serif;
+$font-family-titles:        'Monda', sans-serif;
+$font-weight-light:         200;
+$font-weight-normal:        400;
+$font-weight-bold:          600;
 
 // Z-INDEXES
 //$z-index-component-xyz: 1;
@@ -22,7 +23,7 @@ $light-blue: #87FBE1;
 // BODY STYLES
 $body-bg: $bio-white;
 $body-font-color:   $black;
-$body-font-family:  $font-family-sans-serif;
+$body-font-family:  $font-family-body;
 $body-font-weight:  $font-weight-normal;
 $body-font-style:   normal;
 $body-font-size:    17px;

@@ -1,4 +1,5 @@
-<bio-github-corner href="https://github.com/biotope" data-resources="[{paths: ['components/BioGithubCorner/index.js']}]"></bio-github-corner>
+<bio-github-corner href="https://github.com/biotope"
+    data-resources="[{paths: ['components/BioGithubCorner/index.js']}]"></bio-github-corner>
 <header class="splash">
     <div class="splash__intro">
         <img src="_assets/biotope-logo.svg" alt="" class="splash__logo">
@@ -9,11 +10,44 @@
                 One web component library. As many worlds as you want. Decide what the future looks like.
             </p>
             <!-- placeholder buttons - will be replaced with bio components -->
-            <button class="splash__button splash__button--orange">Explore</button>
-            <button class="splash__button splash__button--blue">See Docs</button>
+            <bio-button title="Explore" data-resources="[{paths: ['components/BioButton/index.js']}]"></bio-button>
+            <bio-button title="See Docs" modifier="blue" data-resources="[{paths: ['components/BioButton/index.js']}]">
+            </bio-button>
         </div>
     </div>
 </header>
+
+<div class="row row--reducedWidth">
+    <div class="col">
+        <section class="benefits">
+            <div class="benefits__claim">
+                <bio-headline power="2" data-resources="[{paths: ['components/BioHeadline/index.js']}]">
+                    Add, change and reuse web components – on any device, anywhere.
+                </bio-headline>
+                <bio-paragraph data-resources="[{paths: ['components/BioParagraph/index.js']}]">
+                    Bioto.pe’s web-component-based frontend ecosystem conrols entire Design Systems via a single
+                    repository. Add, change and reuse web components as many times you want - anywhere
+                </bio-paragraph>
+                <bio-button title="Who's behind biotope" data-resources="[{paths: ['components/BioButton/index.js']}]">
+                </bio-button>
+            </div>
+            <div class="benefits__container">
+                <bio-benefit data-resources="[{paths: ['components/BioBenefit/index.js']}]"
+                    imgsrc="../../_assets/icon-agnostic.png" title="Framework agnostic">
+                    Biotope can be used in combination with any other framework of your choice: Angular, React, etc.
+                </bio-benefit>
+                <bio-benefit data-resources="[{paths: ['components/BioBenefit/index.js']}]"
+                    imgsrc="../../_assets/icon-futureproof.png" title="Futureproof">
+                    Emphasis on web components. Use all your UI-components indipendently in different projects
+                </bio-benefit>
+                <bio-benefit data-resources="[{paths: ['components/BioBenefit/index.js']}]"
+                    imgsrc="../../_assets/icon-free.png" title="Free">
+                    The full version of biotope is opensource and will stay free of charge forever. No strings attached.
+                </bio-benefit>
+            </div>
+        </section>
+    </div>
+</div>
 
 <footer class="footer">
     <div class="swooshFoldWrapper">
@@ -22,7 +56,7 @@
     <a href="#">
         <img class="footer__githubLogo" src="_assets/github-logo.svg" alt="github octo-cat">
     </a>
-<div class="footer__checkItOut">
+    <div class="footer__checkItOut">
     <p>Of course we also built<br><span class="footer__bigWords">this website</span> with biotope.</p>
             <!-- placeholder buttons - will be replaced with bio components -->
         <bio-button title="Check it out" modifier="blue" data-resources="[{paths: ['components/BioButton/index.js']}]"></bio-button>
