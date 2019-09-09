@@ -15,9 +15,16 @@ h2 {
 	line-height: (28/22);
 }
 
-h3 {
-	font-size: 20px;
+h3, .footer__bigWords {
+	font-family: $font-family-header;
+	font-weight: $font-weight-normal;
+	font-size: 30px;
 	line-height: (27/20);
+	text-transform: uppercase;
+
+	@include breakpoint ($medium) {
+		font-size: 35px;
+   }
 }
 
 h4 {
@@ -28,6 +35,9 @@ h4 {
 
 /* Global link styles */
 a {
+	font-weight: $font-weight-bold;
+	text-decoration: none;
+	letter-spacing: 0.2px;
 }
 
 /* Global sup element */
