@@ -47,6 +47,7 @@ section {
 
 .benefits {
     position: relative;
+
 	&__claim {
 		margin: 20px 0;
 		text-align: center;
@@ -56,7 +57,8 @@ section {
             position: absolute;
 			text-align: left;
 		}
-	}
+    }
+    
 	&__container {
 		@include clearfix();
 		@include breakpoint($medium) {
@@ -65,13 +67,18 @@ section {
 			@include span(10);
 			left: 50%;
 			transform: translate(-50%);
-		}
+        }
+        
 		bio-benefit {
 			@include breakpoint($medium) {
 				@include span(4);
 			}
 		}
-	}
+    }
+    
+    .row{
+        margin-top: 0;
+    }
 }
 
 .swooshFoldWrapper {
@@ -92,10 +99,14 @@ section {
         width: 110vw;
         border-bottom-left-radius: 41%;
         border-bottom-right-radius: 41%;
-        box-shadow: 0 81px $bio-gray;
+        box-shadow: 0 81px $bio-white;
         
         &--blue {
             box-shadow: 0 81px $darker-blue;
+        }
+
+        &--gray {
+            box-shadow: 0 81px $bio-gray;
         }
     }
 }

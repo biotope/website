@@ -17,9 +17,12 @@
     </div>
 </header>
 
-<div class="row row--reducedWidth">
-    <div class="col">
-        <section class="benefits">
+<section class="benefits">
+    <div class="swooshFoldWrapper">
+        <div class="swooshFoldWrapper__swooshFold"></div>
+    </div>
+    <div class="row row--reducedWidth">
+        <div class="col">
             <div class="benefits__claim">
                 <bio-headline power="2" data-resources="[{paths: ['components/BioHeadline/index.js']}]">
                     Add, change and reuse web components – on any device, anywhere.
@@ -28,8 +31,7 @@
                     Bioto.pe’s web-component-based frontend ecosystem conrols entire Design Systems via a single
                     repository. Add, change and reuse web components as many times you want - anywhere
                 </bio-paragraph>
-                <bio-button title="Who's behind biotope" data-resources="[{paths: ['components/BioButton/index.js']}]">
-                </bio-button>
+                <bio-button title="Who's behind biotope" modifier="long" data-resources="[{paths: ['components/BioButton/index.js']}]"></bio-button>
             </div>
             <div class="benefits__container">
                 <bio-benefit data-resources="[{paths: ['components/BioBenefit/index.js']}]"
@@ -45,13 +47,13 @@
                     The full version of biotope is opensource and will stay free of charge forever. No strings attached.
                 </bio-benefit>
             </div>
-        </section>
+        </div>
     </div>
-</div>
+</section>
 
 <footer class="footer">
     <div class="swooshFoldWrapper">
-        <div class="swooshFoldWrapper__swooshFold"></div>
+        <div class="swooshFoldWrapper__swooshFold swooshFoldWrapper__swooshFold--gray"></div>
     </div>
     <a href="#">
         <img class="footer__githubLogo" src="_assets/github-logo.svg" alt="github octo-cat">
