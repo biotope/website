@@ -2,7 +2,9 @@
 
 header,
 section {
-	height: 800px;
+    @include breakpoint($medium){
+        height: 800px;
+    }
 }
 
 .splash {
@@ -70,4 +72,101 @@ section {
 			}
 		}
 	}
+}
+
+.swooshFoldWrapper {
+    position: absolute;
+    left: 0;
+    top: -130px;
+    width: 100%;
+    height: $swooshHeight;
+    overflow: hidden;
+
+    &--inverted {
+        top: 0px;
+        transform: rotate(180deg);
+    }
+
+    &__swooshFold {
+        height: 130px;
+        width: 110vw;
+        border-bottom-left-radius: 41%;
+        border-bottom-right-radius: 41%;
+        box-shadow: 0 81px $bio-gray;
+        
+        &--blue {
+            box-shadow: 0 81px $darker-blue;
+        }
+    }
+}
+
+.footer {
+    position: relative;
+    padding: ($includingSwooshPadding + 50px) 20px 0 20px;
+    background: $bio-gray;
+    color: $black;
+
+    @include breakpoint($medium) {
+        display: flex;
+        justify-content: space-between;
+        padding: $includingSwooshPadding 10vw 0 10vw;
+    }
+    
+    @include breakpoint($large) {
+        padding: $includingSwooshPadding 15vw 0 15vw;
+    }
+
+    @include breakpoint($xlarge) {
+        padding: $includingSwooshPadding 18vw 0 15vw;
+    }
+
+    
+    
+    &__githubLogo {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        transform: rotate(90deg);
+        width: 70px;
+
+        @include breakpoint($large) {
+            top: auto;
+            left: auto;
+            bottom: 0;
+            transform: rotate(0);
+            width: auto;
+        }
+    }
+
+    &__checkItOut {
+        padding-top: 25px;
+        line-height: 1.3;
+
+        @include breakpoint($medium) {
+            flex-grow: 1;
+            padding: 0 3vw;
+            font-size: 20px;
+        }
+        @include breakpoint($large) {
+            padding-left: 17vw;
+        }
+    }
+
+    &__essentials {
+        display: flex;
+        flex-flow: column;
+        padding: 40px 0;
+
+        a {
+            margin-bottom: 10px;
+            color: $black;
+            &:hover {
+                text-decoration: underline;
+            }
+
+            @include breakpoint($large) {
+                margin-bottom: 20px;
+            }
+        }
+    }
 }
