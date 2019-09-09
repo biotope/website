@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Print branch name
         run: >
-          export BRANCH_NAME = $( basename $GITHUB_REF ) &&
+          export BRANCH_NAME=$(basename $GITHUB_REF) &&
           echo $BRANCH_NAME
       - name: Dump GitHub context
         env:
