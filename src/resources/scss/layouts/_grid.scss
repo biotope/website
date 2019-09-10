@@ -63,6 +63,7 @@ $susy: (
 }
 
 .col {
+	@include clearfix();
 	@include span(12);
 	margin-top: $section_margin_top_small;
 

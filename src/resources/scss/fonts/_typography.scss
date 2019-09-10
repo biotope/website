@@ -21,3 +21,14 @@
     font-family: $font-family-body;
     font-weight: $font-weight-light;
 }
+
+%sectionHeadline {
+    font-family: $font-family-body;
+    font-weight: $font-weight-light;
+    font-size: 40px;
+}
+
+%sectionHeadlineStrong {
+    font-size: 70px;
+    line-height: 60px;
+}
