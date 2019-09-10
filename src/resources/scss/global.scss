@@ -81,6 +81,11 @@ section {
     }
 }
 
+.extendedBenefits {
+    position: relative;
+    background-color: $even-darker-blue;
+}
+
 .swoosh {
     position: absolute;
     left: 0;
@@ -100,12 +105,12 @@ section {
         border-bottom-left-radius: 41%;
         border-bottom-right-radius: 41%;
         box-shadow: 0 81px $bio-white;
-        
-        &--blue {
-            box-shadow: 0 81px $darker-blue;
+
+        section.extendedBenefits & {
+            box-shadow: 0 81px $even-darker-blue;
         }
 
-        &--gray {
+        footer.footer & {
             box-shadow: 0 81px $bio-gray;
         }
     }
