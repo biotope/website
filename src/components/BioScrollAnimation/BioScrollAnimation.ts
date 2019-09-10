@@ -49,7 +49,7 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 	}
 
 	connectedCallback() {
-		this.loadAnimationData((animationData) => this.initAnimation(animationData) );
+		this.loadAnimationData((animationData) => this.loadAnimation(animationData) );
 	}
 
 	render() {
@@ -76,9 +76,9 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 		});
 	}
 
-    onAnimationLoaded(animation, animationContainer) {
+    initScrollController(animation, animationContainer) {
 
-		let scrollFactor = this.props.scrollFactor;
+		const scrollFactor = this.props.scrollFactor;
 		let timeline = new TimelineMax();
 
 		timeline.to({
@@ -104,24 +104,24 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 			duration: this.props.scrollDuration
 		})
 			.setTween(timeline)
-			.setPin(animationContainer)
+			.setPin(animationContainer, {pushFollowers: true})
 			.addTo(controller)
 			.addIndicators() // TODO: remove indicators for final version!
 	}
 
-	initAnimation(animationData) {
+	loadAnimation(animationData) {
 
-		let animationContainer: HTMLElement = this.shadowRoot.querySelector('.animation-container');
+		const animationContainer: HTMLElement = this.shadowRoot.querySelector('.animation-container');
 
-		let animationOptions = {
+		const animationOptions = {
 			animationData: animationData,
 			container: animationContainer,
 			...this.props
 		};
 
-		let animation = Bodymovin.loadAnimation(animationOptions);
+		const animation = Bodymovin.loadAnimation(animationOptions);
 		animation.addEventListener('DOMLoaded', () => {
-			this.onAnimationLoaded(animation, animationContainer);
+			this.initScrollController(animation, animationContainer);
 		});
 
 	}
