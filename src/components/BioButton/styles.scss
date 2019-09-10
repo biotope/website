@@ -6,7 +6,7 @@
 		$border: 2px;
 
 		padding: 10px 50px;
-		background: $bio-white;
+		background: transparent;
 		color: $black;
 		border: $border solid $main-orange;
 		border-radius: 50px;
@@ -17,6 +17,7 @@
 		text-decoration: none;
 		text-align: center;
 		transition: 0.15s ease-out;
+		cursor: pointer;
 
 		&:hover {
 			border: 2px solid transparent;
@@ -25,10 +26,15 @@
 		}
 
         &.blue {
-			border: $border solid $dark-blue; 
+			border: $border solid $dark-blue;
+
 			&:hover{
 				background: $dark-blue;
 			}
+		}
+
+		&.whiteText{
+			color: $bio-white;
 		}
 		
         &.full {
