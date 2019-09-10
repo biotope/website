@@ -81,7 +81,7 @@ section {
     }
 }
 
-.swooshFoldWrapper {
+.swoosh {
     position: absolute;
     left: 0;
     top: -130px;
@@ -94,7 +94,7 @@ section {
         transform: rotate(180deg);
     }
 
-    &__swooshFold {
+    &__fold {
         height: 130px;
         width: 110vw;
         border-bottom-left-radius: 41%;
