@@ -1,16 +1,11 @@
 @import 'defaultSassImports.scss';
 
-header,
-section {
-    @include breakpoint($medium){
-        height: 800px;
-    }
-}
-
 .splash {
 	font-family: $font-family-titles;
 	background-color: purple;
-	color: #f17c61;
+    color: #f17c61;
+    padding-bottom: 90px;
+    height: 800px;
 
 	&__intro {
 		display: flex;
@@ -47,26 +42,40 @@ section {
 
 .benefits {
     position: relative;
+    padding-bottom: 90px;
 
 	&__claim {
 		margin: 20px 0;
-		text-align: center;
+        text-align: center;
+        
+        > div {
+            @include breakpoint($medium) {
+                flex: 1;
+            }
+        }
+
+        img {
+            max-height: 400px;
+
+            @include breakpoint($medium) {
+                flex: 1;
+            }
+        }
+
 		@include breakpoint($medium) {
-            width: 40vw;
-            left: 50%;
-            position: absolute;
-			text-align: left;
+            text-align: left;
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
 		}
     }
     
 	&__container {
 		@include clearfix();
 		@include breakpoint($medium) {
-			position: absolute;
-			bottom: 20px;
-			@include span(10);
-			left: 50%;
-			transform: translate(-50%);
+            @include span(10);
+            float: none;
+            margin: 0 auto;
         }
         
 		bio-benefit {
@@ -75,10 +84,16 @@ section {
 			}
 		}
     }
-    
+
     .row{
         margin-top: 0;
     }
+}
+
+.extendedBenefits {
+    position: relative;
+    background-color: $even-darker-blue;
+    padding-bottom: 90px;
 }
 
 .swoosh {
@@ -100,12 +115,12 @@ section {
         border-bottom-left-radius: 41%;
         border-bottom-right-radius: 41%;
         box-shadow: 0 81px $bio-white;
-        
-        &--blue {
-            box-shadow: 0 81px $darker-blue;
+
+        section.extendedBenefits & {
+            box-shadow: 0 81px $even-darker-blue;
         }
 
-        &--gray {
+        footer.footer & {
             box-shadow: 0 81px $bio-gray;
         }
     }
