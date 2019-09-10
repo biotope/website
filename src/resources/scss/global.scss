@@ -43,27 +43,39 @@
 .benefits {
     position: relative;
     padding-bottom: 90px;
-    height: 800px;
 
 	&__claim {
 		margin: 20px 0;
-		text-align: center;
+        text-align: center;
+        
+        > div {
+            @include breakpoint($medium) {
+                flex: 1;
+            }
+        }
+
+        img {
+            max-height: 400px;
+
+            @include breakpoint($medium) {
+                flex: 1;
+            }
+        }
+
 		@include breakpoint($medium) {
-            width: 40vw;
-            left: 50%;
-            position: absolute;
-			text-align: left;
+            text-align: left;
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
 		}
     }
     
 	&__container {
 		@include clearfix();
 		@include breakpoint($medium) {
-			position: absolute;
-			bottom: 20px;
-			@include span(10);
-			left: 50%;
-			transform: translate(-50%);
+            @include span(10);
+            float: none;
+            margin: 0 auto;
         }
         
 		bio-benefit {
@@ -72,7 +84,7 @@
 			}
 		}
     }
-    
+
     .row{
         margin-top: 0;
     }

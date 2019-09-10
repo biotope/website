@@ -2,11 +2,10 @@
 @import '../../resources/scss/defaultSassImports.scss';
 
 @include host('bio-section-headline') {
-    display: inline-block;
     @extend %sectionHeadline;
     color: white;
     text-transform: uppercase;
-
+    
     ::slotted(strong) {
         @extend %sectionHeadlineStrong;
         color: $light-orange;
