@@ -4,7 +4,7 @@ jobs:
   one:
     runs-on: ubuntu-16.04
     steps:
-      - name: Print branch name
+      - name: Print branch name!
         run: >
           export BRANCH_NAME=$(basename $GITHUB_REF) &&
           echo $BRANCH_NAME
