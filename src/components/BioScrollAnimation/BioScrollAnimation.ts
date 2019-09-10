@@ -12,18 +12,8 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 // TODO: remove indicators for final version!
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min';
 
-
-interface BioScrollAnimationProps {
-	animationDataUrl: string
-	autoplay?: boolean,
-	loop?: boolean,
-	renderer?: string,
-	scrollDuration?: string
-	scrollFactor?: number
-}
-
-interface BioScrollAnimationState {
-}
+import { BioScrollAnimationProps, BioScrollAnimationState, BioScrollAnimationMethods } from './defines';
+import {TextComponent2Methods} from "../TextComponent2/defines";
 
 class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAnimationState > {
     static componentName = 'bio-scroll-animation';
@@ -37,7 +27,15 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 		{name: 'scroll-factor', converter: (value) => parseFloat(value) }
 	];
 
-	get defaultProps(): BioScrollAnimationProps {
+	public methods: BioScrollAnimationMethods = {};
+
+	get defaultState() {
+		return {
+
+		}
+	}
+
+	get defaultProps() {
 		return {
 			animationDataUrl: '',
 			autoplay: false,
@@ -48,13 +46,14 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 		};
 	}
 
+
 	connectedCallback() {
 		this.loadAnimationData((animationData) => this.loadAnimation(animationData) );
 	}
 
 	render() {
-		return template(this.html,{});
-    }
+		return template(this.html, { ...this.props, ...this.state, ...this.methods }, this.createStyle);
+	}
 
 	loadAnimationData(onDataLoaded) {
 		fetch(this.props.animationDataUrl, {
