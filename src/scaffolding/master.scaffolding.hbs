@@ -57,7 +57,7 @@
 <section class="extendedBenefits">
     <div class="row row--reducedWidth">
         <div class="col">
-            <bio-section-headline data-resources="[{paths: ['components/BioSectionHeadline/index.js']}]">
+            <bio-section-headline inverted data-resources="[{paths: ['components/BioSectionHeadline/index.js']}]">
                 You will </br> <strong>Benefit</strong>
             </bio-section-headline>
             <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
@@ -74,12 +74,35 @@
             </bio-benefit>
             <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
                 imgsrc="../../_assets/free.svg" title="Scalability">
-                No matter how big your library gets, your projects only use the ones they need, so performance stays high.
+                No matter how big your library gets, your projects only use the ones they need, so performance stays
+                high.
             </bio-benefit>
         </div>
     </div>
 </section>
-
+<section class="company">
+    <div class="row row--reducedWidth">
+        <div class="col">
+            <bio-section-headline data-resources="[{paths: ['components/BioSectionHeadline/index.js']}]">
+                You are in </br> <strong>good company</strong>
+            </bio-section-headline>
+            <div class="company__logos">
+                <img src="../_assets/logo-ui.svg" alt="">
+                <img src="../_assets/logo-roche.svg" alt="">
+                <img src="../_assets/logo-basf.svg" alt="">
+                <img src="../_assets/logo-siemens.svg" alt="">
+                <img src="../_assets/logo-man.svg" alt="">
+                <img src="../_assets/logo-munichre.svg" alt="">
+            </div>
+            <div class="company__leads">
+                <p>Need help setting up your frontend ecosystem? <br>
+                    We love to support you.</p>
+                <bio-button title="Contact VI"
+                    data-resources="[{paths: ['components/BioButton/index.js']}]"></bio-button>
+            </div>
+        </div>
+    </div>
+</section>
 <footer class="footer">
     <a href="#">
         <img class="footer__githubLogo" src="_assets/github-logo.svg" alt="github octo-cat">
