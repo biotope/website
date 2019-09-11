@@ -96,36 +96,6 @@
     padding-bottom: 90px;
 }
 
-.swoosh {
-    position: absolute;
-    left: 0;
-    top: -130px;
-    width: 100%;
-    height: $swooshHeight;
-    overflow: hidden;
-
-    &--inverted {
-        top: 0px;
-        transform: rotate(180deg);
-    }
-
-    &__fold {
-        height: 130px;
-        width: 110vw;
-        border-bottom-left-radius: 41%;
-        border-bottom-right-radius: 41%;
-        box-shadow: 0 81px $bio-white;
-
-        section.extendedBenefits & {
-            box-shadow: 0 81px $even-darker-blue;
-        }
-
-        footer.footer & {
-            box-shadow: 0 81px $bio-gray;
-        }
-    }
-}
-
 .footer {
     position: relative;
     padding: ($includingSwooshPadding + 50px) 20px 0 20px;
