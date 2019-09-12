@@ -1,0 +1,54 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/defaultSassImports.scss";
+
+@include host("bio-resource") {
+	.wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 52px 1fr;
+        padding-top: 20px;
+        border-bottom: 1px solid $dark-blue;
+        
+		&__imageWrapper {
+			background: $bio-white;
+			position: relative;
+			height: 48px;
+			width: 48px;
+			border-radius: 50%;
+			border: 2px solid $dark-blue;
+            overflow: hidden;
+            margin: auto;
+            
+			img {
+				position: absolute;
+				top: calc(50% - 20px);
+				left: calc(50% - 20px);
+				width: 40px;
+				height: 40px;
+			}
+        }
+        
+        ::slotted(p) {
+            grid-row: 2;
+            grid-column: 1 / span 3;
+            text-align: center;
+        }
+        ::slotted(.buttonWrapper) {
+            // margin: auto;
+            text-align: right;
+            grid-column: 2 / span 2;
+            
+        }
+    }
+    
+    &:host([logo-baseline]) {
+        .wrapper {
+            &__imageWrapper {
+                img {
+                    top: calc(50% - 15px);
+                    left: calc(50% - 21px);
+                }
+            }
+        }
+    }
+}
