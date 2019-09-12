@@ -25,9 +25,7 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 	public methods: BioScrollAnimationMethods = {};
 
 	get defaultState() {
-		return {
-
-		}
+		return {}
 	}
 
 	get defaultProps() {
