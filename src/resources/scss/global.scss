@@ -111,6 +111,7 @@
 
 		img {
 			margin-right: 10px;
+			display: none;
 
 			@include breakpoint($medium) {
 				margin-right: 0;
@@ -118,27 +119,26 @@
 
 			&:last-child {
 				margin-right: 0;
-            }
-            display: none;
+			}
 
-            &:nth-child(1),
-            &:nth-child(2) {
-                display: block;
-            }
+			&:nth-child(1),
+			&:nth-child(2) {
+				display: block;
+			}
 
-            @include breakpoint($medium) {
-                &:nth-child(3),
-                &:nth-child(4) {
-                    display: block;
-                } 
-            }
+			@include breakpoint($medium) {
+				&:nth-child(3),
+				&:nth-child(4) {
+					display: block;
+				}
+			}
 
-            @include breakpoint($large) {
-                &:nth-child(5),
-                &:nth-child(6) {
-                    display: block;
-                }
-            }
+			@include breakpoint($large) {
+				&:nth-child(5),
+				&:nth-child(6) {
+					display: block;
+				}
+			}
 		}
 	}
 
