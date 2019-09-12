@@ -19,16 +19,6 @@
 	}
 }
 
-@mixin swoosh2($color) {
-	content: '';
-	width: 100%;
-	position: absolute;
-	top: -140px;
-	height: 150px;
-	background: $color;
-	clip-path: circle(265% at 60% 1630%);
-}
-
 .splash {
 	font-family: $font-family-titles;
 	background-color: purple;
