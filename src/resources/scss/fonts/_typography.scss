@@ -25,10 +25,17 @@
 %sectionHeadline {
     font-family: $font-family-body;
     font-weight: $font-weight-light;
-    font-size: 40px;
+    font-size: 30px;
+    @include breakpoint($medium) {
+        font-size: 40px;
+    }
 }
 
 %sectionHeadlineStrong {
-    font-size: 70px;
-    line-height: 60px;
+    font-size: 50px;
+    line-height: 40px;
+    @include breakpoint($medium) {
+        font-size: 70px;
+        line-height: 60px;
+    }
 }
