@@ -39,7 +39,8 @@
 		
         &.full {
             color: $bio-white;
-            background: $main-orange;
+			background: linear-gradient(to top, $main-orange, $light-orange);
+			border: 2px solid transparent;
     
             &:before {
                 margin: 0;
@@ -48,7 +49,7 @@
             &:hover {
                 background: transparent;
 				color: $black;
-				border: $border solid $main-orange;
+				border: 2px solid $main-orange;
             }
 		}
 		
