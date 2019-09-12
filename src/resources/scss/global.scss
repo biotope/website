@@ -112,7 +112,7 @@
 .extendedBenefits {
 	position: relative;
 	background-color: $even-darker-blue;
-	padding-bottom: 170px;
+	padding-bottom: $swooshHeight;
 }
 
 .company {
@@ -177,32 +177,32 @@
 	}
 
 	&::before {
-		@include swoosh('top', 150px, 'up', white, 60%, 70%);
+		@include swoosh('top', $swooshHeight, 'up', white, 60%, 70%);
 	}
 	
 	&::after {
-		@include swoosh('bottom', 50px, 'down', white, 60%, 70%);
+		@include swoosh('bottom', $swooshHeight, 'down', white, 60%, 70%);
 	}
 }
 
 .footer {
 	position: relative;
-	padding: ($includingSwooshPadding + 50px) 20px 0 20px;
+	padding: $swooshHeight 20px 0 20px;
 	background: $bio-gray;
 	color: $black;
 
 	@include breakpoint($medium) {
 		display: flex;
 		justify-content: space-between;
-		padding: $includingSwooshPadding 10vw 0 10vw;
+		padding: $swooshHeight 10vw 0 10vw;
 	}
 
 	@include breakpoint($large) {
-		padding: $includingSwooshPadding 15vw 0 15vw;
+		padding: $swooshHeight 15vw 0 15vw;
 	}
 
 	@include breakpoint($xlarge) {
-		padding: $includingSwooshPadding 18vw 0 15vw;
+		padding: $swooshHeight 18vw 0 15vw;
 	}
 	&__githubLogo {
 		position: absolute;
