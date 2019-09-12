@@ -2,25 +2,29 @@
 
 @include host('bio-scroll-animation') {
 
-	position: relative;
+	.animation-wrapper {
+		position: relative;
 
-	.scroll-trigger {
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100vh;
-		width: 100vw;
-	}
+		.scroll-trigger {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100vh;
+			width: 100vw;
+		}
 
-	.animation-container {
-		margin: auto 0;
-		width: auto;
-		height: 100vh;
-	}
+		.animation-container {
+			height: 100vh;
+			width: 100vw;
 
-	/* svg custom styles */
-	/* TODO: remove #robotBG for final version! */
-	#robotBG path {
-		fill: #fff;
+			svg {
+				width: 100%;
+				height: 100%;
+
+				/* add custom styles for svg content here if required */
+			}
+		}
 	}
 }
+
+

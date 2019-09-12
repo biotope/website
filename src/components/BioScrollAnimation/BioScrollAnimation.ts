@@ -1,28 +1,23 @@
 import Component from '@biotope/element';
 import template from './template';
 
-import * as Bodymovin from 'bodymovin';
+import * as Lottie from 'lottie-web/build/player/lottie.min.js';
 
 import { TweenMax, TimelineMax, Linear } from "gsap";
-import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
-
 import * as ScrollMagic from "scrollmagic";
+import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
 // TODO: remove indicators for final version!
-import 'imports-loader?define=>false!scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min';
+//import 'imports-loader?define=>false!scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min';
 
 import { BioScrollAnimationProps, BioScrollAnimationState, BioScrollAnimationMethods } from './defines';
-import {TextComponent2Methods} from "../TextComponent2/defines";
 
 class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAnimationState > {
     static componentName = 'bio-scroll-animation';
 
     static attributes = [
-		'animation-data-url',
-		{name: 'autoplay', converter: (value) => true },
-		{name: 'loop', converter: (value) => true },
-		'renderer',
+		'animation-data-path',
 		{name: 'scroll-duration', converter: (value) => parseInt(value) },
 		{name: 'scroll-factor', converter: (value) => parseFloat(value) }
 	];
@@ -37,10 +32,7 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 
 	get defaultProps() {
 		return {
-			animationDataUrl: '',
-			autoplay: false,
-			loop: false,
-			renderer: 'svg',
+			animationDataPath: '',
 			scrollDuration: '1000',
 			scrollFactor: 1
 		};
@@ -48,31 +40,11 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 
 
 	connectedCallback() {
-		this.loadAnimationData((animationData) => this.loadAnimation(animationData) );
+		this.initAnimation();
 	}
 
 	render() {
 		return template(this.html, { ...this.props, ...this.state, ...this.methods }, this.createStyle);
-	}
-
-	loadAnimationData(onDataLoaded) {
-		fetch(this.props.animationDataUrl, {
-			method: 'GET',
-			headers: {
-				'Content-Type': 'application/json',
-				'Response-Type': 'json'
-			}
-		}).then((response) => {
-			if (response.ok) {
-				response.json().then((responseData) => {
-					onDataLoaded(responseData);
-				});
-			} else {
-				console.error(response.status + ': ' + response.statusText + '\n' + response.url);
-			}
-		}).catch((error) => {
-			console.error('Error :', error.message);
-		});
 	}
 
     initScrollController(animation, animationContainer) {
@@ -105,20 +77,25 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 			.setTween(timeline)
 			.setPin(animationContainer, {pushFollowers: true})
 			.addTo(controller)
-			.addIndicators() // TODO: remove indicators for final version!
+			//.addIndicators() // TODO: remove indicators for final version!
 	}
 
-	loadAnimation(animationData) {
+	initAnimation() {
 
 		const animationContainer: HTMLElement = this.shadowRoot.querySelector('.animation-container');
 
-		const animationOptions = {
-			animationData: animationData,
+		const animation = Lottie.loadAnimation({
 			container: animationContainer,
-			...this.props
-		};
-
-		const animation = Bodymovin.loadAnimation(animationOptions);
+			renderer: 'svg',
+			loop: false,
+			autoplay: false,
+			path: this.props.animationDataPath,
+			rendererSettings: {
+				preserveAspectRatio: 'xMidYMid slice', // Supports the same options as the svg element's preserveAspectRatio property
+				progressiveLoad: true, // Boolean, only svg renderer, loads dom elements when needed. Might speed up initialization for large number of elements.
+				viewBoxOnly: true
+			}
+		});
 		animation.addEventListener('DOMLoaded', () => {
 			this.initScrollController(animation, animationContainer);
 		});

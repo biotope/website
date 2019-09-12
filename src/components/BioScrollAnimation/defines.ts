@@ -6,10 +6,7 @@
  * Props
  */
  interface BioScrollAnimationProps {
-	animationDataUrl: string
-	autoplay?: boolean,
-	loop?: boolean,
-	renderer?: string,
+	animationDataPath: string
 	scrollDuration?: string
 	scrollFactor?: number
  }
