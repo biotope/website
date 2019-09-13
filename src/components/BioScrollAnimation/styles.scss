@@ -1,0 +1,30 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+
+@include host('bio-scroll-animation') {
+
+	.animation-wrapper {
+		position: relative;
+
+		.scroll-trigger {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100vh;
+			width: 100vw;
+		}
+
+		.animation-container {
+			height: 100vh;
+			width: 100vw;
+
+			svg {
+				width: 100%;
+				height: 100%;
+
+				/* add custom styles for svg content here if required */
+			}
+		}
+	}
+}
+
+
