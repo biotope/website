@@ -9,7 +9,9 @@ class BioResource extends Component< BioResourceProps, BioResourceState > {
     static componentName = 'bio-resource';
 
     static attributes = [
-        'imgsrc'
+        'imgsrc',
+        'image-border-color',
+        'border'
     ];
 
     public methods: BioResourceMethods = {
@@ -24,7 +26,9 @@ class BioResource extends Component< BioResourceProps, BioResourceState > {
   
     get defaultProps() {
         return {
-            imgsrc: ''
+            imgsrc: '',
+            imageBorderColor: '',
+            border: ''
         }
     }
 

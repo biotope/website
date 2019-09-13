@@ -7,6 +7,8 @@
  */
  interface BioResourceProps {
 	imgsrc: string;
+	imageBorderColor: string;
+	border: string;
  }
 
 /**

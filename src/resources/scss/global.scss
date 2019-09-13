@@ -59,11 +59,27 @@
 	}
 }
 
-.resources{
+.resources {
 	padding-bottom: 90px;
 	background: $bio-gray;
-	.col{
+
+	.col {
 		margin-top: 0;
+
+		@include breakpoint($large) {
+			width: span(6);
+		}
+	}
+
+	h3 {
+		padding-top: 40px;
+		color: $light-orange;
+		text-transform: none;
+		text-align: center;
+
+		&.resources__headline--blue {
+			color: $dark-blue;
+		}
 	}
 }
 
