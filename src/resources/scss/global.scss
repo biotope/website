@@ -21,16 +21,27 @@
 
 .splash {
 	font-family: $font-family-titles;
-	background-color: purple;
-	color: #f17c61;
-	padding-bottom: 90px;
 	height: 800px;
+	// padding-bottom: 66%;
+	// background: url(../../_assets/splashscreen.svg);
+	// background-size: cover;
+	// background-position: center 75%;
+	color: $main-orange;
+	overflow: hidden;
+
+	&__bg {
+		position: absolute;
+		top: -140px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 2060px;
+	}
 
 	&__intro {
 		display: flex;
 		align-items: center;
 		margin: 0 auto;
-		width: 625px;
+		width: 815px;
 		padding-top: 200px;
 	}
 
@@ -40,7 +51,7 @@
 	}
 
 	&__biotope {
-		font-size: 100px;
+		font-size: 120px;
 		font-weight: 400;
 	}
 
@@ -50,12 +61,15 @@
 	}
 
 	&__logo {
-		width: 325px;
-		margin-top: -175px;
+		width: 475px;
+		margin-top: -265px;
+		z-index: 2;
 	}
 
 	&__claim {
 		color: $bio-white;
+		line-height: 40px;
+		font-size: 24px;
 	}
 }
 
