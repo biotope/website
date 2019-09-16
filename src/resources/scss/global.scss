@@ -200,27 +200,22 @@
 }
 
 .footer {
+	$accountForSwoosh: $swooshHeight + 110px;
+
 	position: relative;
-	padding: $swooshHeight 20px 0 20px;
+	padding: $accountForSwoosh 0 40px 0;
 	background: $bio-gray;
 	color: $black;
 
-	@include breakpoint($medium) {
-		display: flex;
-		justify-content: space-between;
-		padding: $swooshHeight 10vw 0 10vw;
+	.col {
+		@include breakpoint($medium) {
+				display: flex;
+		}
 	}
-
-	@include breakpoint($large) {
-		padding: $swooshHeight 15vw 0 15vw;
-	}
-
-	@include breakpoint($xlarge) {
-		padding: $swooshHeight 18vw 0 15vw;
-	}
+	
 	&__githubLogo {
 		position: absolute;
-		top: 30px;
+		top: 70px;
 		left: 0;
 		transform: rotate(90deg);
 		width: 70px;
@@ -240,9 +235,10 @@
 
 		@include breakpoint($medium) {
 			flex-grow: 1;
-			padding: 0 3vw;
+			padding-top: 0;
 			font-size: 20px;
 		}
+
 		@include breakpoint($large) {
 			padding-left: 17vw;
 		}
@@ -251,7 +247,11 @@
 	&__essentials {
 		display: flex;
 		flex-flow: column;
-		padding: 40px 0;
+		padding: 80px 0 40px 0;
+		
+		@include breakpoint($medium) {
+			padding: 25px 0;
+		}
 
 		a {
 			margin-bottom: 10px;
