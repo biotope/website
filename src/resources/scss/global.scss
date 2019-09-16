@@ -73,6 +73,26 @@
 	}
 }
 
+.resources {
+	padding: 90px 0;
+	background: $bio-gray;
+
+	.col {
+		margin-top: 0;
+	}
+
+	h3 {
+		padding-top: 40px;
+		color: $light-orange;
+		text-transform: none;
+		text-align: center;
+
+		&.resources__headline--blue {
+			color: $dark-blue;
+		}
+	}
+}
+
 .benefits {
 	position: relative;
 	padding-bottom: 90px;
