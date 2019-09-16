@@ -1,9 +1,8 @@
 import Component from '@biotope/element';
 import template from './template';
+import BioButton from '../BioButton/BioButton';
 
 import { BioResourceProps, BioResourceState, BioResourceMethods } from './defines';
-
-
 
 class BioResource extends Component< BioResourceProps, BioResourceState > {
     static componentName = 'bio-resource';
@@ -13,6 +12,10 @@ class BioResource extends Component< BioResourceProps, BioResourceState > {
         'image-border-color',
         'border'
     ];
+
+    public static dependencies = [
+        BioButton as typeof Component,
+      ];
 
     public methods: BioResourceMethods = {
 

@@ -79,10 +79,6 @@
 
 	.col {
 		margin-top: 0;
-
-		@include breakpoint($large) {
-			width: span(6);
-		}
 	}
 
 	h3 {
