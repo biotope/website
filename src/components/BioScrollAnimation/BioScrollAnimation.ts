@@ -3,13 +3,10 @@ import template from './template';
 
 import * as Lottie from 'lottie-web/build/player/lottie.min.js';
 
-import { TweenMax, TimelineMax, Linear } from "gsap";
+import { TweenLite, TimelineLite, Linear } from "gsap";
 import * as ScrollMagic from "scrollmagic";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
-ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
-
-// TODO: remove indicators for final version!
-//import 'imports-loader?define=>false!scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min';
+ScrollMagicPluginGsap(ScrollMagic, TweenLite, TimelineLite);
 
 import { BioScrollAnimationProps, BioScrollAnimationState, BioScrollAnimationMethods } from './defines';
 
@@ -18,24 +15,30 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 
     static attributes = [
 		'animation-data-path',
-		{name: 'scroll-duration', converter: (value) => parseInt(value) },
+		{name: 'slides', converter: (value) => parseInt(value) },
+		{name: 'slide-duration', converter: (value) => parseInt(value) },
+		{name: 'scroll-length', converter: (value) => parseInt(value) },
 		{name: 'scroll-factor', converter: (value) => parseFloat(value) }
 	];
 
 	public methods: BioScrollAnimationMethods = {};
 
 	get defaultState() {
-		return {}
+		return {
+			currentSlide: 0,
+			scrolling: false
+		}
 	}
 
 	get defaultProps() {
 		return {
 			animationDataPath: '',
-			scrollDuration: '1000',
+			slides: 1,
+			slideDuration: 2000,
+			scrollLength: 10000,
 			scrollFactor: 1
 		};
 	}
-
 
 	connectedCallback() {
 		this.initAnimation();
@@ -48,7 +51,7 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
     initScrollController(animation, animationContainer) {
 
 		const scrollFactor = this.props.scrollFactor;
-		let timeline = new TimelineMax();
+		let timeline = new TimelineLite();
 
 		timeline.to({
 			frame: 0
@@ -66,20 +69,16 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 			}
 		});
 
-		let scrollTrigger: HTMLElement = this.shadowRoot.querySelector('.scroll-trigger');
-
 		let animationScene = new ScrollMagic.Scene({
-			triggerElement: scrollTrigger,
-			duration: this.props.scrollDuration
+			triggerElement: this.shadowRoot.querySelector('.scroll-trigger'),
+			duration: this.props.scrollLength
 		})
 			.setTween(timeline)
 			.setPin(animationContainer, {pushFollowers: true})
-			.addTo(controller)
-			//.addIndicators() // TODO: remove indicators for final version!
+			.addTo(controller);
 	}
 
 	initAnimation() {
-
 		const animationContainer: HTMLElement = this.shadowRoot.querySelector('.animation-container');
 
 		const animation = Lottie.loadAnimation({
@@ -96,8 +95,82 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 		});
 		animation.addEventListener('DOMLoaded', () => {
 			this.initScrollController(animation, animationContainer);
+			if (this.props.slides > 1) {
+				this.initSnapToSlides();
+			}
 		});
+	}
 
+	// snap to virtual slides within the animation if slides prop > 1 is given
+	initSnapToSlides() {
+		let slideOffsets = [];
+		if (this.props.slides > 1) {
+			for (let i = 0; i <= this.props.slides; i++) {
+				slideOffsets.push(Math.round(i * this.props.scrollLength / this.props.slides));
+			}
+		}
+
+		window.addEventListener('scroll', (event) => {
+			if (slideOffsets.length > 0 && !this.state.scrolling) {
+				event.preventDefault();
+				const scrollPosition = window.pageYOffset;
+				const startOffset = this.offsetTop;
+				const endOffset = startOffset + this.props.scrollLength;
+
+				if (scrollPosition > startOffset && scrollPosition < endOffset) {
+					if (scrollPosition > startOffset + slideOffsets[this.state.currentSlide]) {
+						const targetSlide = this.state.currentSlide + 1;
+						const targetOffset = startOffset + slideOffsets[targetSlide];
+
+						if (targetOffset <= endOffset) {
+							this.state.scrolling = true;
+							this.animateScrollTo(targetOffset, this.props.slideDuration, () => {
+								this.state.currentSlide = this.state.currentSlide + 1;
+								this.state.scrolling = false;
+							});
+						}
+					} else if (scrollPosition < startOffset + slideOffsets[this.state.currentSlide]) {
+						const targetSlide = this.state.currentSlide - 1;
+						const targetOffset = startOffset + slideOffsets[targetSlide];
+
+						this.state.scrolling = true;
+						this.animateScrollTo(targetOffset, this.props.slideDuration, () => {
+							this.state.currentSlide = this.state.currentSlide - 1;
+							this.state.scrolling = false;
+						});
+					}
+				}
+			}
+		})
+	}
+
+	animateScrollTo(scrollToOffset: number, duration: number, callback?: Function) {
+		const startOffset = window.pageYOffset;
+		const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+		if ('requestAnimationFrame' in window === false) {
+			window.scroll(0, scrollToOffset);
+			if (callback) {
+				callback();
+			}
+			return;
+		}
+
+		const animateScrolling = () => {
+			const now = 'now' in window.performance ? performance.now() : new Date().getTime();
+			const time = Math.min(1, ((now - startTime) / duration));
+			// using linear time function, animation is already easing.
+			window.scroll(0, Math.ceil((time * (scrollToOffset - startOffset)) + startOffset));
+
+			if (time === 1) {
+				if (callback) {
+					callback();
+				}
+				return;
+			}
+			requestAnimationFrame(animateScrolling);
+		};
+		animateScrolling();
 	}
 }
 
