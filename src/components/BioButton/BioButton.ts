@@ -22,10 +22,7 @@ class BioButton extends Component< BioButtonProps, BioButtonState > {
     }
 
     registerEventListeners() {
-        this.addEventListener('click', (e: Event) => {
-            e.preventDefault();
-            window.open(this.props.title);
-        })
+        
     }
    
     get defaultState() {

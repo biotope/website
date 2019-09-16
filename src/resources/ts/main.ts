@@ -7,6 +7,11 @@ import ResourceLoader from '@biotope/resource-loader/lib/index.esm';
             const initFunction = eval(element.dataset.init);
             initFunction(element);
         });
+
+        document.querySelector('.js-openModal').addEventListener('click', (e: Event) => {
+            e.preventDefault();
+            document.querySelector('bio-modal').dispatchEvent(new CustomEvent('modal.open'));
+        })
     }
 
     const setupResourceLoader = () => {
