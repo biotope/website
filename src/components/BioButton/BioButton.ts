@@ -6,11 +6,13 @@ import { BioButtonProps, BioButtonState, BioButtonMethods } from './defines';
 
 
 class BioButton extends Component< BioButtonProps, BioButtonState > {
+    
     static componentName = 'bio-button';
 
     static attributes = [
         'title',
-        'modifier'
+        'modifier',
+        'url'
     ];
 
     public methods: BioButtonMethods = {
@@ -24,7 +26,7 @@ class BioButton extends Component< BioButtonProps, BioButtonState > {
     registerEventListeners() {
         this.addEventListener('click', (e: Event) => {
             e.preventDefault();
-            window.open(this.props.title);
+            window.open(this.props.url);
         })
     }
    
@@ -38,6 +40,7 @@ class BioButton extends Component< BioButtonProps, BioButtonState > {
         return {
             title: '',
             modifier: '',
+            url: ''
         }
     }
 

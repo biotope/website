@@ -5,7 +5,8 @@
 	button {
 		$border: 2px;
 
-		padding: 10px 50px;
+		width: 160px;
+		padding: 10px 20px;
 		background: transparent;
 		color: $black;
 		border: $border solid $main-orange;
@@ -54,7 +55,8 @@
 		}
 		
         &.long {
-            padding: 10px 20px;
+			padding: 10px 10px;
+			width: 230px;
         }
 	}
 }

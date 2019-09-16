@@ -8,6 +8,7 @@
  interface BioButtonProps {
 	title: string,
 	modifier?: string,
+	url?: string
 
 
  }
