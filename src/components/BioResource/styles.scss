@@ -82,7 +82,7 @@
 			}
 		}
 
-		::slotted(.buttonWrapper) {
+		::slotted(bio-button) {
 			text-align: right;
 			grid-column: 2 / span 2;
 
