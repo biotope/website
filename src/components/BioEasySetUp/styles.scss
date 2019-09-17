@@ -10,6 +10,7 @@
         
 		@include breakpoint($large) {
             grid-template-columns: 1fr 60px 1fr;
+            padding-bottom: 110px;
 
 			&.left {
 				::slotted(*) {
