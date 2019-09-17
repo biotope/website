@@ -11,7 +11,9 @@ export default (render: Function, data: BioModalProps & BioModalState & BioModal
     return render`
         ${createStyle(styles)}
         <div class=${classes}>
-            <div class="content"></div>
+            <div class="content">
+                <slot></slot>
+            </div>
             <div class="backdrop"></div>
         </div>
     `;

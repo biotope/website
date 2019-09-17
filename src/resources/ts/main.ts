@@ -12,6 +12,12 @@ import ResourceLoader from '@biotope/resource-loader/lib/index.esm';
             e.preventDefault();
             document.querySelector('bio-modal').dispatchEvent(new CustomEvent('modal.open'));
         })
+        
+        document.addEventListener('keydown', (e: KeyboardEvent) => {
+            if (e.keyCode === 27) {
+                document.querySelector('bio-modal').dispatchEvent(new CustomEvent('modal.close'));
+            }
+        })
     }
 
     const setupResourceLoader = () => {

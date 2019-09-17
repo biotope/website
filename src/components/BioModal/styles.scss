@@ -1,20 +1,41 @@
-@import "node_modules/@biotope/element/lib/host.mixin";
+@import 'node_modules/@biotope/element/lib/host.mixin';
 
 @include host('bio-modal') {
-    .modal {
-        .backdrop {
-            position: fixed;
-            display: none;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: #000;
-            opacity: 0.5;
-        }
+	.modal {
+		.content {
+			display: none;
+			z-index: 20;
+			position: fixed;
+			padding: 5%;
+			top: 5%;
+			left: 5%;
+			bottom: 5%;
+			right: 5%;
+			box-sizing: border-box;
+            background-color: white;
 
-        &.open .backdrop {
-            display: block;
-        }
-    }
+			::slotted(div) {
+                height: 100%;
+			}
+		}
+		.backdrop {
+			position: fixed;
+			display: none;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: #000;
+			opacity: 0.5;
+		}
+
+		&.open {
+			.content {
+				display: block;
+			}
+			.backdrop {
+				display: block;
+			}
+		}
+	}
 }
