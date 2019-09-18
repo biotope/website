@@ -107,7 +107,6 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 		});
 	}
 
-	// snap to virtual slides within the animation if multiple slides are given
 	initSlides() {
 
 		const slidesSections = this.querySelectorAll('.animation-slide');
@@ -115,7 +114,7 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 		if (slidesSections.length > 1) {
 			slidesSections.forEach((slideSection, index) => {
 				this.state.slides.push({
-					title: slideSection.querySelector('h2').innerText,
+					title: slideSection.querySelector('h2') ? slideSection.querySelector('h2').innerText : '',
 					offset: Math.round((index + 1) * this.props.scrollLength / slidesSections.length)
 				});
 			});
