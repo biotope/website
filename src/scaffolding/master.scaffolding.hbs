@@ -2,7 +2,6 @@
     data-resources="[{paths: ['components/BioGithubCorner/index.js']}]"></bio-github-corner>
 
 <header class="splash">
-    <img class="splash__bg" src="../_assets/splashscreen.svg" alt="">
     <div class="splash__intro">
         <img src="_assets/biotope-logo.svg" alt="" class="splash__logo">
         <div class="splash__content">
@@ -57,6 +56,45 @@
 
 <section class="scrollAnimation">
 	{{bioInclude 'components/BioScrollAnimation/scaffolding/BioScrollAnimation' }}
+</section>
+
+<section class="resources">
+        <div class="row row--reducedWidth">
+            <div class="col col--large-6">
+                <h3 class="resources__headline--blue">Code & Resources</h3>
+                <bio-resource logo-baseline image-border-color="blue" data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/github-logo.svg">
+                    <p>See the Bioto.pe code on GitHub</p>
+                    <bio-button title="Github" modifier="blue"></bio-button>
+                </bio-resource>
+                <bio-resource image-border-color="blue" data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/npm.svg">
+                    <p>Get the latest version of the Biotope CLI tool from npm</p>
+                    <bio-button title="NPM" modifier="blue"></bio-button>
+                </bio-resource>
+                <bio-resource image-border-color="blue" data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/documentation.svg">
+                    <p>Read the Bioto.pe documentation</p>
+                    <bio-button title="Read docs" modifier="blue"></bio-button>
+                </bio-resource>
+            </div>
+            <div class="col col--large-6">
+                <h3>Tutorials</h3>
+                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial.svg">
+                    <p>Create Web Components with Biotope-Element</p>
+                    <bio-button title="Watch"></bio-button>
+                </bio-resource>
+                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial.svg">
+                    <p>Asynchronously load components with Biotope-Resource-Loader</p>
+                    <bio-button title="Watch"></bio-button>
+                </bio-resource>
+                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial.svg">
+                    <p>Automate your Build process with Biotope-Build</p>
+                    <bio-button title="Watch"></bio-button>
+                </bio-resource>
+                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/expert.svg" border="noBorder">
+                    <p>You want to learn more? Ask an expert.</p>
+                    <bio-button modifier="full" title="Contact"></bio-button>
+                </bio-resource>
+            </div>
+        </div>
 </section>
 
 <section class="extendedBenefits">
