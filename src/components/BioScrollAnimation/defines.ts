@@ -7,16 +7,23 @@
  */
  interface BioScrollAnimationProps {
 	animationDataPath: string
-	scrollDuration?: string
-	scrollFactor?: number
+	slideDuration?: number
+	scrollLength: number
+ }
+
+ interface BioScrollAnimationSlide {
+ 	title: string
+	offset: number
  }
 
 /**
  * State
  */
  interface BioScrollAnimationState {
-
- }
+	currentSlide: number
+	slides: BioScrollAnimationSlide[]
+	scrolling: boolean
+}
 
 /**
  * Methods
