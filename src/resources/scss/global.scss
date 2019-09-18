@@ -10,7 +10,7 @@
 	clip-path: inset(0 0 0 0 round 0 0 $left $right);
 	@if $position == 'top' {
 		top: - $height;
-	} 
+	}
 	@if $position == 'bottom' {
 		bottom: - $height;
 	}
@@ -66,6 +66,34 @@
 		color: $bio-white;
 		line-height: 40px;
 		font-size: 24px;
+	}
+}
+
+.soEasy {
+	position: relative;
+	padding: 90px 0;
+	background-image: url("../../_assets/BioEasySetUp/background.svg");
+	background-size: cover;
+
+	&__intro {
+		position: relative;
+		z-index: 1;
+		background: rgba(248, 251, 253, 0.5);
+
+		@include breakpoint($large) {
+			width: 45%;
+		}
+	}
+
+	&__line {
+		position: absolute;
+		top: -25px;
+		left: 35px;
+		height: 100%;
+
+		@include breakpoint($large) {
+			left: calc(50% - 20px);
+		}
 	}
 }
 
@@ -213,7 +241,7 @@
 	&::before {
 		@include swoosh('top', $swooshHeight, 'up', white, 60%, 70%);
 	}
-	
+
 	&::after {
 		@include swoosh('bottom', $swooshHeight, 'down', white, 60%, 70%);
 	}
@@ -229,10 +257,10 @@
 
 	.col {
 		@include breakpoint($medium) {
-				display: flex;
+			display: flex;
 		}
 	}
-	
+
 	&__githubLogo {
 		position: absolute;
 		top: 70px;
@@ -268,7 +296,7 @@
 		display: flex;
 		flex-flow: column;
 		padding: 80px 0 40px 0;
-		
+
 		@include breakpoint($medium) {
 			padding: 25px 0;
 		}
