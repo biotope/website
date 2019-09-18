@@ -10,6 +10,11 @@ ScrollMagicPluginGsap(ScrollMagic, TweenLite, TimelineLite);
 
 import { BioScrollAnimationProps, BioScrollAnimationState, BioScrollAnimationMethods } from './defines';
 
+/**
+ * a scroll triggered animation component
+ * based on:
+ * @see https://uxplanet.org/the-ultimate-workflow-of-creating-scroll-based-animations-7366b670630
+ */
 class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAnimationState > {
     static componentName = 'bio-scroll-animation';
 
@@ -26,17 +31,21 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 	get defaultState() {
 		return {
 			currentSlide: 0,
-			scrolling: false
+			scrolling: false,
+			slides: [
+				{
+					title: 'start',
+					offset: 0
+				}
+			]
 		}
 	}
 
 	get defaultProps() {
 		return {
 			animationDataPath: '',
-			slides: 1,
 			slideDuration: 2000,
-			scrollLength: 10000,
-			scrollFactor: 1
+			scrollLength: 10000
 		};
 	}
 
@@ -49,8 +58,6 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 	}
 
     initScrollController(animation, animationContainer) {
-
-		const scrollFactor = this.props.scrollFactor;
 		let timeline = new TimelineLite();
 
 		timeline.to({
@@ -58,7 +65,7 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 		}, 3, {
 			frame: animation.totalFrames - 1,
 			onUpdate: function () {
-				animation.goToAndStop(Math.round(this.target.frame * scrollFactor), true);
+				animation.goToAndStop(Math.round(this.target.frame), true);
 			},
 			ease: Linear.easeNone
 		});
@@ -93,55 +100,99 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 				viewBoxOnly: true
 			}
 		});
+
 		animation.addEventListener('DOMLoaded', () => {
 			this.initScrollController(animation, animationContainer);
-			if (this.props.slides > 1) {
-				this.initSnapToSlides();
-			}
+			this.initSlides();
 		});
 	}
 
-	// snap to virtual slides within the animation if slides prop > 1 is given
-	initSnapToSlides() {
-		let slideOffsets = [];
-		if (this.props.slides > 1) {
-			for (let i = 0; i <= this.props.slides; i++) {
-				slideOffsets.push(Math.round(i * this.props.scrollLength / this.props.slides));
-			}
-		}
+	// snap to virtual slides within the animation if multiple slides are given
+	initSlides() {
 
-		window.addEventListener('scroll', (event) => {
-			if (slideOffsets.length > 0 && !this.state.scrolling) {
-				event.preventDefault();
-				const scrollPosition = window.pageYOffset;
-				const startOffset = this.offsetTop;
-				const endOffset = startOffset + this.props.scrollLength;
+		const slidesSections = this.querySelectorAll('.animation-slide');
 
-				if (scrollPosition > startOffset && scrollPosition < endOffset) {
-					if (scrollPosition > startOffset + slideOffsets[this.state.currentSlide]) {
-						const targetSlide = this.state.currentSlide + 1;
-						const targetOffset = startOffset + slideOffsets[targetSlide];
+		if (slidesSections.length > 1) {
+			slidesSections.forEach((slideSection, index) => {
+				this.state.slides.push({
+					title: slideSection.querySelector('h2').innerText,
+					offset: Math.round((index + 1) * this.props.scrollLength / slidesSections.length)
+				});
+			});
 
-						if (targetOffset <= endOffset) {
-							this.state.scrolling = true;
-							this.animateScrollTo(targetOffset, this.props.slideDuration, () => {
-								this.state.currentSlide = this.state.currentSlide + 1;
-								this.state.scrolling = false;
-							});
+			this.state.slides.forEach((slide, index) => {
+				this.addSlideControl(index);
+			});
+
+			window.addEventListener('scroll', (event) => {
+				if (this.state.slides.length > 0 && !this.state.scrolling) {
+					//event.preventDefault();
+					const scrollPosition = window.pageYOffset;
+					const startOffset = this.offsetTop;
+					const endOffset = startOffset + this.props.scrollLength;
+
+					if (scrollPosition > startOffset && scrollPosition <= endOffset) {
+						this.showSlideControls();
+						if (scrollPosition > startOffset + this.state.slides[this.state.currentSlide].offset) {
+							const slideIndex = this.state.currentSlide + 1;
+							const targetOffset = startOffset + this.state.slides[slideIndex].offset;
+
+							if (targetOffset <= endOffset) {
+								this.scrollToSlide(slideIndex, this.props.slideDuration);
+							}
+						} else if (scrollPosition < startOffset + this.state.slides[this.state.currentSlide].offset) {
+							const slideIndex = this.state.currentSlide - 1;
+							this.scrollToSlide(slideIndex, this.props.slideDuration);
 						}
-					} else if (scrollPosition < startOffset + slideOffsets[this.state.currentSlide]) {
-						const targetSlide = this.state.currentSlide - 1;
-						const targetOffset = startOffset + slideOffsets[targetSlide];
-
-						this.state.scrolling = true;
-						this.animateScrollTo(targetOffset, this.props.slideDuration, () => {
-							this.state.currentSlide = this.state.currentSlide - 1;
-							this.state.scrolling = false;
-						});
+					} else {
+						this.hideSlideControls();
 					}
 				}
-			}
-		})
+			});
+
+			let resizeTimeout;
+
+			// prevent automatic scrolling when resizing
+			// TODO: there's still an issue with scrolling after resize
+			window.addEventListener('resize', (event) => {
+				this.state.scrolling = true;
+				resizeTimeout = window.setTimeout(() => {
+					this.state.scrolling = false;
+					window.clearTimeout(resizeTimeout);
+				}, 500);
+			});
+		}
+	}
+
+	scrollToSlide(slideIndex, slideDuration) {
+		if (this.state.slides.length > 0 && !this.state.scrolling) {
+			const startOffset = this.offsetTop;
+			const targetOffset = startOffset + this.state.slides[slideIndex].offset;
+			const slideTitle = this.state.slides[slideIndex].title;
+
+			this.state.scrolling = true;
+			this.activateSlideControl(slideIndex);
+			this.dispatchShowSlideEvent(slideTitle);
+
+			this.animateScrollTo(targetOffset, slideDuration, () => {
+				this.state.currentSlide = slideIndex;
+				this.state.scrolling = false;
+			});
+		}
+	}
+
+	dispatchShowSlideEvent(slideTitle) {
+		const showSlideEvent = new CustomEvent (
+			'bioScrollAnimation.showSlide',
+			{
+				detail: {
+					title: slideTitle
+				},
+				bubbles: true,
+				cancelable: true
+			});
+
+		this.dispatchEvent(showSlideEvent);
 	}
 
 	animateScrollTo(scrollToOffset: number, duration: number, callback?: Function) {
@@ -171,6 +222,32 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 			requestAnimationFrame(animateScrolling);
 		};
 		animateScrolling();
+	}
+
+	addSlideControl(slideIndex) {
+		let slideControls = this.shadowRoot.querySelector('.slide-controls');
+		let slideControlElement = Component.wire()`<li>slide ${slideIndex}</li>`;
+
+		slideControlElement.addEventListener('click', (event)=> {
+			this.scrollToSlide(slideIndex, 0);
+		});
+		
+		slideControls.appendChild(slideControlElement);
+	}
+
+	showSlideControls() {
+		let slideControls : HTMLElement= this.shadowRoot.querySelector('.slide-controls');
+		slideControls.classList.add('visible');
+	}
+
+	hideSlideControls() {
+		let slideControls : HTMLElement= this.shadowRoot.querySelector('.slide-controls');
+		slideControls.classList.remove('visible');
+	}
+	activateSlideControl(slideIndex) {
+		let slideControls = this.shadowRoot.querySelector('.slide-controls');
+		slideControls.querySelectorAll('li').forEach((control)=> control.classList.remove('active'));
+		slideControls.querySelectorAll('li')[slideIndex].classList.add('active');
 	}
 }
 
