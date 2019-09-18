@@ -15,7 +15,7 @@ dataLayer = dataLayer || [];
     });
         
         window.addEventListener('bioScrollAnimation.showSlide', (event: CustomEvent)=> {
-            trackCallToAction('cta-extern', event.detail.title);
+            trackCallToAction('cta', event.detail.title);
     });
 
     const trackAnchor = (eventType, anchorTitle: string) => {
