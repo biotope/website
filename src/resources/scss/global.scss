@@ -21,21 +21,12 @@
 
 .splash {
 	font-family: $font-family-titles;
-	height: 800px;
-	// padding-bottom: 66%;
-	// background: url(../../_assets/splashscreen.svg);
-	// background-size: cover;
-	// background-position: center 75%;
+	height: 110vh;
+	background-image: url(../../_assets/splashscreen.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
 	color: $main-orange;
-	overflow: hidden;
 
-	&__bg {
-		position: absolute;
-		top: -140px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 2060px;
-	}
 
 	&__intro {
 		display: flex;
@@ -43,6 +34,10 @@
 		margin: 0 auto;
 		width: 815px;
 		padding-top: 200px;
+
+		@include breakpoint($large) {
+			padding-top: 300px;
+		}
 	}
 
 	&__content {
@@ -70,6 +65,26 @@
 		color: $bio-white;
 		line-height: 40px;
 		font-size: 24px;
+	}
+}
+
+.resources {
+	padding: 90px 0;
+	background: $bio-gray;
+
+	.col {
+		margin-top: 0;
+	}
+
+	h3 {
+		padding-top: 40px;
+		color: $light-orange;
+		text-transform: none;
+		text-align: center;
+
+		&.resources__headline--blue {
+			color: $dark-blue;
+		}
 	}
 }
 
@@ -119,6 +134,10 @@
 	}
 
 	.row {
+		margin-top: 0;
+	}
+
+	.col {
 		margin-top: 0;
 	}
 }
@@ -200,27 +219,22 @@
 }
 
 .footer {
+	$accountForSwoosh: $swooshHeight + 110px;
+
 	position: relative;
-	padding: $swooshHeight 20px 0 20px;
+	padding: $accountForSwoosh 0 40px 0;
 	background: $bio-gray;
 	color: $black;
 
-	@include breakpoint($medium) {
-		display: flex;
-		justify-content: space-between;
-		padding: $swooshHeight 10vw 0 10vw;
+	.col {
+		@include breakpoint($medium) {
+				display: flex;
+		}
 	}
-
-	@include breakpoint($large) {
-		padding: $swooshHeight 15vw 0 15vw;
-	}
-
-	@include breakpoint($xlarge) {
-		padding: $swooshHeight 18vw 0 15vw;
-	}
+	
 	&__githubLogo {
 		position: absolute;
-		top: 30px;
+		top: 70px;
 		left: 0;
 		transform: rotate(90deg);
 		width: 70px;
@@ -240,9 +254,10 @@
 
 		@include breakpoint($medium) {
 			flex-grow: 1;
-			padding: 0 3vw;
+			padding-top: 0;
 			font-size: 20px;
 		}
+
 		@include breakpoint($large) {
 			padding-left: 17vw;
 		}
@@ -251,7 +266,11 @@
 	&__essentials {
 		display: flex;
 		flex-flow: column;
-		padding: 40px 0;
+		padding: 80px 0 40px 0;
+		
+		@include breakpoint($medium) {
+			padding: 25px 0;
+		}
 
 		a {
 			margin-bottom: 10px;
