@@ -12,7 +12,14 @@
 			bottom: 5%;
 			right: 5%;
 			box-sizing: border-box;
-            background-color: white;
+			background-color: white;
+			overflow-y: scroll;
+
+			.modal-close {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+			}
 
 			::slotted(div) {
                 height: 100%;
@@ -27,6 +34,7 @@
 			width: 100%;
 			background: #000;
 			opacity: 0.5;
+			z-index: 19;
 		}
 
 		&.open {

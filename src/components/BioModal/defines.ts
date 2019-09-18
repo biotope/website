@@ -6,6 +6,7 @@
  * Props
  */
  interface BioModalProps {
+	 openonpageload: Boolean;
 }
 
 /**

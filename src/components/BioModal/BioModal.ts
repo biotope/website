@@ -3,10 +3,21 @@ import template from './template';
 
 import { BioModalProps, BioModalState, BioModalMethods } from './defines';
 
+import BioCollaboratorList from '../BioCollaboratorList/BioCollaboratorList';
+
 class BioModal extends Component<BioModalProps, BioModalState> {
 	static componentName = 'bio-modal';
 
-    static attributes = [];
+    static attributes = [
+		{
+			name: 'openonpageload',
+			converter: value => {
+				if (value == '' || value == 'true') return true;
+			}
+		}
+	];
+
+    static dependencies = [ BioCollaboratorList as typeof Component ];
 
 	public methods: BioModalMethods = {};
 
@@ -28,10 +39,19 @@ class BioModal extends Component<BioModalProps, BioModalState> {
 			this.setState({
                 open: false
 			});
-        });
-        this.shadowRoot.querySelector('.backdrop').addEventListener('click', (e: CustomEvent) => {
-            this.dispatchEvent(new CustomEvent('modal.close'));
-        })
+		});
+
+		['.backdrop', '.modal-close'].forEach((className: string) => {
+			this.shadowRoot.querySelector(className).addEventListener('click', (e: CustomEvent) => {
+				this.dispatchEvent(new CustomEvent('modal.close'));
+			})
+		})
+
+		if (this.props.openonpageload) {
+			this.setState({
+				open: true
+			})
+		}
 	}
     
 	get defaultState() {
@@ -41,7 +61,9 @@ class BioModal extends Component<BioModalProps, BioModalState> {
     }
     
     get defaultProps() {
-        return {}
+        return {
+			openonpageload: false
+		}
     }
 
 	render() {

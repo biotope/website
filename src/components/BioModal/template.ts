@@ -12,6 +12,7 @@ export default (render: Function, data: BioModalProps & BioModalState & BioModal
         ${createStyle(styles)}
         <div class=${classes}>
             <div class="content">
+                <button class="modal-close">X</button>
                 <slot></slot>
             </div>
             <div class="backdrop"></div>
