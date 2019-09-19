@@ -125,8 +125,7 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 
 			window.addEventListener('scroll', (event) => {
 				if (this.state.slides.length > 0 && !this.state.scrolling) {
-					//event.preventDefault();
-					const scrollPosition = window.pageYOffset;
+					const scrollPosition = Math.round(window.pageYOffset);
 					const startOffset = this.offsetTop;
 					const endOffset = startOffset + this.props.scrollLength;
 
@@ -152,13 +151,12 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 			let resizeTimeout;
 
 			// prevent automatic scrolling when resizing
-			// TODO: there's still an issue with scrolling after resize
 			window.addEventListener('resize', (event) => {
 				this.state.scrolling = true;
 				resizeTimeout = window.setTimeout(() => {
 					this.state.scrolling = false;
 					window.clearTimeout(resizeTimeout);
-				}, 500);
+				}, 250);
 			});
 		}
 	}
