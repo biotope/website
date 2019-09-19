@@ -10,6 +10,7 @@ export default (render: Function, data: BioScrollAnimationProps & BioScrollAnima
         <div class="animation-wrapper">
 			<div class="animation-container"></div>
 			<div class="scroll-trigger"></div>
+			<ul class="slide-controls"></ul>
 		</div>
     `;
 }

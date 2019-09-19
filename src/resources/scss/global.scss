@@ -10,7 +10,7 @@
 	clip-path: inset(0 0 0 0 round 0 0 $left $right);
 	@if $position == 'top' {
 		top: - $height;
-	} 
+	}
 	@if $position == 'bottom' {
 		bottom: - $height;
 	}
@@ -25,6 +25,7 @@
 	background-image: url(../../_assets/splashscreen.svg);
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center; 
 	color: $main-orange;
 
 
@@ -65,6 +66,61 @@
 		color: $bio-white;
 		line-height: 40px;
 		font-size: 24px;
+	}
+}
+
+.knowMore {
+	background: linear-gradient(90deg, $bg-light-blue-gray 0%, $bg-blue-gray 100%);
+	color: $dark-blue-gray;
+	padding: 50px 0 75px;
+	text-align: center;
+	p {
+		font-size: 20px;
+		margin-bottom: 40px;
+	}
+
+	@include breakpoint($large) {
+		padding: 75px 0 112px;
+		p {
+			font-size: 25px;
+			margin-bottom: 50px;
+		}
+	}
+
+	@include breakpoint($xlarge) {
+		padding: 80px 0 120px;
+		p {
+			font-size: 30px;
+			margin-bottom: 70px;
+		}
+	}
+}
+
+.soEasy {
+	position: relative;
+	padding: 90px 0;
+	background-image: url("../../_assets/BioEasySetUp/background.svg");
+	background-size: cover;
+
+	&__intro {
+		position: relative;
+		z-index: 1;
+		background: rgba(248, 251, 253, 0.5);
+
+		@include breakpoint($large) {
+			width: 45%;
+		}
+	}
+
+	&__line {
+		position: absolute;
+		top: -25px;
+		left: 35px;
+		height: 100%;
+
+		@include breakpoint($large) {
+			left: calc(50% - 20px);
+		}
 	}
 }
 
@@ -146,6 +202,23 @@
 	position: relative;
 	background-color: $even-darker-blue;
 	padding-bottom: $swooshHeight;
+
+	&__container {
+		padding: 100px 0;
+
+		@include clearfix();
+		@include breakpoint($medium) {
+			@include span(10);
+			float: none;
+			margin: 0 auto;
+		}
+
+		bio-benefit {
+			@include breakpoint($medium) {
+				@include span(4);
+			}
+		}
+	}
 }
 
 .company {
@@ -212,7 +285,7 @@
 	&::before {
 		@include swoosh('top', $swooshHeight, 'up', white, 60%, 70%);
 	}
-	
+
 	&::after {
 		@include swoosh('bottom', $swooshHeight, 'down', white, 60%, 70%);
 	}
@@ -228,10 +301,10 @@
 
 	.col {
 		@include breakpoint($medium) {
-				display: flex;
+			display: flex;
 		}
 	}
-	
+
 	&__githubLogo {
 		position: absolute;
 		top: 70px;
@@ -267,7 +340,7 @@
 		display: flex;
 		flex-flow: column;
 		padding: 80px 0 40px 0;
-		
+
 		@include breakpoint($medium) {
 			padding: 25px 0;
 		}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1906px" height="3283px" viewBox="0 0 1906 3283" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>background</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFDD88" offset="0%"></stop>
+            <stop stop-color="#FF775B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#5D7DD3" offset="0%"></stop>
+            <stop stop-color="#87FBE1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="biotope-prototype-copy-4" transform="translate(0.000000, -3196.000000)">
+            <g id="04_its-so-easy" transform="translate(0.000000, 3196.000000)">
+                <g id="background">
+                    <rect fill="#F8FBFD" x="0" y="0" width="1906" height="3283"></rect>
+                    <g id="schmuck" transform="translate(67.000000, 297.000000)">
+                        <circle id="Oval-Copy-21" fill="url(#linearGradient-1)" opacity="0.074172247" transform="translate(128.000000, 660.000000) scale(-1, 1) translate(-128.000000, -660.000000) " cx="128" cy="660" r="43"></circle>
+                        <circle id="Oval-Copy-44" fill="url(#linearGradient-2)" opacity="0.0951683408" transform="translate(1621.500000, 1209.500000) scale(-1, 1) translate(-1621.500000, -1209.500000) " cx="1621.5" cy="1209.5" r="20.5"></circle>
+                        <circle id="Oval-Copy-45" fill="url(#linearGradient-2)" opacity="0.246768043" transform="translate(828.000000, 1808.000000) scale(-1, 1) translate(-828.000000, -1808.000000) " cx="828" cy="1808" r="10"></circle>
+                        <circle id="Oval-Copy-36" fill="url(#linearGradient-1)" opacity="0.347121466" transform="translate(1092.500000, 945.500000) scale(-1, 1) translate(-1092.500000, -945.500000) " cx="1092.5" cy="945.5" r="10.5"></circle>
+                        <circle id="Oval-Copy-52" fill="url(#linearGradient-1)" opacity="0.248604911" transform="translate(1480.500000, 2132.500000) scale(-1, 1) translate(-1480.500000, -2132.500000) " cx="1480.5" cy="2132.5" r="10.5"></circle>
+                        <circle id="Oval-Copy-48" fill="url(#linearGradient-1)" opacity="0.347121466" transform="translate(1272.500000, 675.500000) scale(-1, 1) translate(-1272.500000, -675.500000) " cx="1272.5" cy="675.5" r="15.5"></circle>
+                        <circle id="Oval-Copy-37" fill="url(#linearGradient-1)" opacity="0.500418527" transform="translate(1496.500000, 85.500000) scale(-1, 1) translate(-1496.500000, -85.500000) " cx="1496.5" cy="85.5" r="15.5"></circle>
+                        <circle id="Oval-Copy-51" fill="url(#linearGradient-1)" opacity="0.0978422619" transform="translate(1191.500000, 267.500000) scale(-1, 1) translate(-1191.500000, -267.500000) " cx="1191.5" cy="267.5" r="10.5"></circle>
+                        <circle id="Oval-Copy-38" fill="url(#linearGradient-2)" opacity="0.347121466" transform="translate(1741.500000, 545.500000) scale(-1, 1) translate(-1741.500000, -545.500000) " cx="1741.5" cy="545.5" r="15.5"></circle>
+                        <circle id="Oval-Copy-53" fill="url(#linearGradient-2)" opacity="0.347121466" transform="translate(15.500000, 971.500000) scale(-1, 1) translate(-15.500000, -971.500000) " cx="15.5" cy="971.5" r="15.5"></circle>
+                        <circle id="Oval-Copy-47" fill="url(#linearGradient-2)" opacity="0.29968843" transform="translate(1039.500000, 20.500000) scale(-1, 1) translate(-1039.500000, -20.500000) " cx="1039.5" cy="20.5" r="20.5"></circle>
+                        <circle id="Oval-Copy-39" fill="url(#linearGradient-2)" opacity="0.247279576" transform="translate(555.500000, 1080.500000) scale(-1, 1) translate(-555.500000, -1080.500000) " cx="555.5" cy="1080.5" r="33.5"></circle>
+                        <circle id="Oval-Copy-40" fill="url(#linearGradient-2)" opacity="0.0998186384" transform="translate(211.500000, 1853.500000) scale(1, -1) translate(-211.500000, -1853.500000) " cx="211.5" cy="1853.5" r="33.5"></circle>
+                        <circle id="Oval-Copy-18" stroke="url(#linearGradient-2)" stroke-width="7" fill="#F5F7F9" opacity="0.354282924" cx="461.5" cy="361.5" r="19.5"></circle>
+                        <circle id="Oval-Copy-34" stroke="url(#linearGradient-2)" stroke-width="5" fill="#F5F7F9" opacity="0.105119978" transform="translate(670.500000, 1313.500000) scale(1, -1) translate(-670.500000, -1313.500000) " cx="670.5" cy="1313.5" r="19.5"></circle>
+                        <circle id="Oval-Copy-49" stroke="url(#linearGradient-1)" stroke-width="5" fill="#F5F7F9" opacity="0.250069754" transform="translate(1398.500000, 915.500000) scale(1, -1) translate(-1398.500000, -915.500000) " cx="1398.5" cy="915.5" r="19.5"></circle>
+                        <circle id="Oval-Copy-50" stroke="url(#linearGradient-1)" stroke-width="5" fill="#F5F7F9" opacity="0.103655134" transform="translate(569.500000, 710.500000) scale(1, -1) translate(-569.500000, -710.500000) " cx="569.5" cy="710.5" r="19.5"></circle>
+                        <circle id="Oval-Copy-35" stroke="url(#linearGradient-2)" stroke-width="5" fill="#F5F7F9" opacity="0.0991675967" transform="translate(570.000000, 1692.000000) scale(1, -1) translate(-570.000000, -1692.000000) " cx="570" cy="1692" r="26"></circle>
+                        <circle id="Oval-Copy-33" fill="url(#linearGradient-1)" opacity="0.146042597" transform="translate(1490.000000, 1748.000000) scale(-1, 1) translate(-1490.000000, -1748.000000) " cx="1490" cy="1748" r="30"></circle>
+                        <circle id="Oval-Copy-46" fill="url(#linearGradient-2)" opacity="0.098702567" transform="translate(1287.500000, 1981.500000) scale(-1, 1) translate(-1287.500000, -1981.500000) " cx="1287.5" cy="1981.5" r="15.5"></circle>
+                        <circle id="Oval-Copy-41" stroke="url(#linearGradient-1)" stroke-width="5" opacity="0.347121466" transform="translate(1158.000000, 1531.500000) scale(-1, 1) translate(-1158.000000, -1531.500000) " cx="1158" cy="1531.5" r="19.5"></circle>
+                        <circle id="Oval-Copy-42" stroke="url(#linearGradient-1)" stroke-width="5" opacity="0.601957775" transform="translate(610.500000, 2092.500000) scale(-1, 1) translate(-610.500000, -2092.500000) " cx="610.5" cy="2092.5" r="19.5"></circle>
+                        <circle id="Oval-Copy-43" stroke="url(#linearGradient-1)" stroke-width="5" opacity="0.347121466" transform="translate(85.500000, 1294.500000) scale(-1, 1) translate(-85.500000, -1294.500000) " cx="85.5" cy="1294.5" r="10.5"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

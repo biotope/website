@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="numbers" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 74 74" style="enable-background:new 0 0 74 74;" xml:space="preserve">
+<style type="text/css">
+	.st0{filter:url(#filter-3);}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#F5F7F9;stroke:url(#circle_1_);stroke-width:6;}
+	.st3{enable-background:new    ;}
+	.st4{fill:#5E81D3;}
+</style>
+<filter  filterUnits="objectBoundingBox" height="135.0%" id="filter-3" width="135.0%" x="-17.5%" y="-12.5%">
+	<feMorphology  in="SourceAlpha" operator="dilate" radius="3" result="shadowSpreadOuter1"></feMorphology>
+	<feOffset  dx="0" dy="3" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+	<feGaussianBlur  in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"></feGaussianBlur>
+	<feComposite  in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+	<feColorMatrix  in="shadowBlurOuter1" type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.203070367 0">
+		</feColorMatrix>
+</filter>
+<title>2 copy</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1">
+	<g id="biotope-prototype-copy-4" transform="translate(-919.000000, -3841.000000)">
+		<g transform="translate(0.000000, 3215.000000)">
+			<g transform="translate(926.000000, 592.000000)">
+				<g id="shadow" class="st0">
+					<circle id="path-2_1_" class="st1" cx="30" cy="68" r="30"/>
+				</g>
+				
+					<linearGradient id="circle_1_" gradientUnits="userSpaceOnUse" x1="-214.9667" y1="318.4667" x2="-214.9667" y2="317.4667" gradientTransform="matrix(60 0 0 -60 12928 19146)">
+					<stop  offset="0" style="stop-color:#FFDD88"/>
+					<stop  offset="1" style="stop-color:#FF775B"/>
+				</linearGradient>
+				<circle id="circle" class="st2" cx="30" cy="68" r="30"/>
+				<g id="number" class="st3">
+					<path class="st4" d="M33.3,81.9v-6.9H20.8V72l10.3-18.3h4.1L25.2,72h8.1v-6.5h3.3V72h4.1v3h-4.1v6.9H33.3z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
