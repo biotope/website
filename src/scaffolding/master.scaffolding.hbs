@@ -11,9 +11,9 @@
                 One web component library. As many worlds as you want. Decide what the future looks like.
             </p>
             <bio-button title="Explore" modifier="whiteText"
-                data-resources="[{paths: ['components/BioButton/index.js']}]"></bio-button>
+                data-resources="[{paths: ['components/BioButton/index.js']}]" url="#resources"></bio-button>
             <bio-button title="See Docs" modifier="blue whiteText"
-                data-resources="[{paths: ['components/BioButton/index.js']}]">
+                data-resources="[{paths: ['components/BioButton/index.js']}]" url="https://build.biotope.sh">
             </bio-button>
         </div>
     </div>
@@ -58,21 +58,53 @@
 	{{bioInclude 'components/BioScrollAnimation/scaffolding/BioScrollAnimation' }}
 </section>
 
-<section class="resources">
+<section class="soEasy">
+        <div class="row row--reducedWidth">
+            <div class="col">
+                <img class="soEasy__line" src="../_assets/BioEasySetUp/line.svg">
+                <div class="soEasy__intro">
+                    <bio-section-headline data-resources="[{paths: ['components/BioSectionHeadline/index.js']}]"> It's so </br> <strong>easy</strong></bio-section-headline>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                </div>
+                <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/1.svg" alt="step one">
+                    <p>Get started by installing biotope with npm. It's all open-source!</p>
+                    <code>npm install biotope -g</code>
+                </bio-easy-set-up>
+                <bio-easy-set-up position="left" data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/2.svg" alt="step two">
+                    <p>Just one command and a few simple questions to generate all you need for your project</p>
+                    <code>biotope create myEcosystem</code>
+                </bio-easy-set-up>
+                <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/3.svg" alt="step three">
+                    <p>Install the included build-ststem that helps you to automatically build product-ready resources</p>
+                    <code>npm install</code>
+                </bio-easy-set-up>
+                <bio-easy-set-up position="left" data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/4.svg" alt="step four">
+                    <p>Install the included build-ststem that helps you to automatically build product-ready resources</p>
+                    <code>npm start</code>
+                </bio-easy-set-up>
+                <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/5.svg" alt="step five">
+                    <p>Install the included build-ststem that helps you to automatically build product-ready resources</p>
+                    <code>biotope generate</code>
+                </bio-easy-set-up>
+            </div>
+        </div>
+</section>
+
+<section class="resources" id="resources">
         <div class="row row--reducedWidth">
             <div class="col col--large-6">
                 <h3 class="resources__headline--blue">Code & Resources</h3>
                 <bio-resource logo-baseline image-border-color="blue" data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/github-logo.svg">
                     <p>See the Bioto.pe code on GitHub</p>
-                    <bio-button title="Github" modifier="blue"></bio-button>
+                    <bio-button title="Github" modifier="blue" url="https://github.com/biotope"></bio-button>
                 </bio-resource>
                 <bio-resource image-border-color="blue" data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/npm.svg">
                     <p>Get the latest version of the Biotope CLI tool from npm</p>
-                    <bio-button title="NPM" modifier="blue"></bio-button>
+                    <bio-button title="NPM" modifier="blue" url="https://www.npmjs.com/package/biotope"></bio-button>
                 </bio-resource>
                 <bio-resource image-border-color="blue" data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/documentation.svg">
                     <p>Read the Bioto.pe documentation</p>
-                    <bio-button title="Read docs" modifier="blue"></bio-button>
+                    <bio-button title="Read docs" modifier="blue" url="https://build.biotope.sh"></bio-button>
                 </bio-resource>
             </div>
             <div class="col col--large-6">
@@ -154,7 +186,7 @@
             </a>
             <div class="footer__checkItOut">
                 <p>Of course we also built<br><span class="footer__bigWords">this website</span> with biotope.</p>
-                <bio-button title="Check it out" modifier="blue" data-resources="[{paths: ['components/BioButton/index.js']}]">
+                <bio-button title="Check it out" modifier="blue" data-resources="[{paths: ['components/BioButton/index.js']}]" url="https://github.com/biotope/website">
                 </bio-button>
             </div>
             <div class="footer__essentials">
