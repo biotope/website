@@ -32,7 +32,7 @@
                         Bioto.pe’s web-component-based frontend ecosystem conrols entire Design Systems via a single
                         repository. Add, change and reuse web components as many times you want - anywhere
                     </bio-paragraph>
-                    <bio-button title="Who's behind biotope" modifier="long"
+                    <bio-button class="js-openModal" title="Who's behind biotope" modifier="long"
                         data-resources="[{paths: ['components/BioButton/index.js']}]"></bio-button>
                 </div>
             </div>
@@ -205,3 +205,19 @@
         </div>
     </div>
 </footer>
+
+<bio-modal data-resources="[{paths: ['components/BioModal/index.js']}]">
+    <h3>
+        Who's behind Biotope
+    </h3>
+    <bio-collaborator-list>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Marc Emmanuel</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Tiago Marques</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Timo Mayer</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Danny Stey</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Dominikus Weiger</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Lukas Müller</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Benny Konopka</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Chris Hummel</bio-collaborator-tile>
+    </bio-collaborator-list>
+</bio-modal>
