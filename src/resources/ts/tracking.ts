@@ -1,34 +1,41 @@
-declare var dataLayer : any[];
+declare var dataLayer: any[];
 dataLayer = dataLayer || [];
 
 {
-    document.querySelectorAll('bio-button[url^="#"]').forEach(button => {
-            button.addEventListener('click', () => {
-                trackAnchor('anchor', button.getAttribute('title'));
-            });
-    });
+	function trackAnchor(anchorTitle: string) {
+		dataLayer.push({
+			'event': 'anchor',
+			'anchor': anchorTitle
+		});
+	}
 
-    document.querySelectorAll('bio-button[url^="http"]').forEach(button => {
-            button.addEventListener('click', () => {
-                trackCallToAction('cta-extern', button.getAttribute('title'));
-            });
-    });
-        
-        window.addEventListener('bioScrollAnimation.showSlide', (event: CustomEvent)=> {
-            trackCallToAction('cta', event.detail.title);
-    });
+	function trackCallToAction(eventType, ctaTitle: string) {
+		dataLayer.push({
+			'event': eventType,
+			'cta': ctaTitle
+		});
+	}
 
-    const trackAnchor = (eventType, anchorTitle: string) => {
-        dataLayer.push({
-            'event': eventType,
-            'anchor': anchorTitle
-        });
-    }
+	function trackAnimationShowSlide(slideHeader: string) {
+		dataLayer.push({
+			'event': 'scroll-animation',
+			'header': slideHeader
+		});
+	}
 
-    const trackCallToAction = (eventType, ctaTitle: string) => {
-        dataLayer.push({
-            'event': eventType,
-            'cta': ctaTitle
-        });
-    }
+	document.querySelectorAll('bio-button[url^="#"]').forEach(button => {
+		button.addEventListener('click', () => {
+			trackAnchor(button.getAttribute('title'));
+		});
+	});
+
+	document.querySelectorAll('bio-button[url^="http"]').forEach(button => {
+		button.addEventListener('click', () => {
+			trackCallToAction('cta-extern', button.getAttribute('title'));
+		});
+	});
+
+	window.addEventListener('bioScrollAnimation.showSlide', (event: CustomEvent) => {
+		trackAnimationShowSlide(event.detail.title);
+	});
 }
