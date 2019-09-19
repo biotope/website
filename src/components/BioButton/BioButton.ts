@@ -17,11 +17,14 @@ class BioButton extends Component<BioButtonProps, BioButtonState> {
 	registerEventListeners() {
 		this.addEventListener('click', (e: Event) => {
 			e.preventDefault();
-			if (this.props.url[0] === '#') {
-				window.scrollTo(0, document.querySelector(this.props.url).getBoundingClientRect().top);
-			} else {
-				window.open(this.props.url);
-			}
+				if (this.props.url[0] === '#') {
+					const targetElement: HTMLElement = document.querySelector(this.props.url)
+					if (!!targetElement) {
+						window.scrollTo(0, targetElement.offsetTop);
+					}
+				} else {
+					window.open(this.props.url);
+				}
 		});
 	}
 
