@@ -1,7 +1,7 @@
 import Component from '@biotope/element';
 import template from './template';
 
-import { BioButtonProps, BioButtonState, BioButtonMethods } from './defines';
+import {BioButtonProps, BioButtonState, BioButtonMethods} from './defines';
 
 class BioButton extends Component<BioButtonProps, BioButtonState> {
 	static componentName = 'bio-button';
@@ -15,17 +15,19 @@ class BioButton extends Component<BioButtonProps, BioButtonState> {
 	}
 
 	registerEventListeners() {
-		this.addEventListener('click', (e: Event) => {
-			e.preventDefault();
+		if (this.props.url) {
+			this.addEventListener('click', (e: Event) => {
+				e.preventDefault();
 				if (this.props.url[0] === '#') {
-					const targetElement: HTMLElement = document.querySelector(this.props.url)
+					const targetElement: HTMLElement = document.querySelector(this.props.url);
 					if (!!targetElement) {
 						window.scrollTo(0, targetElement.offsetTop);
 					}
 				} else {
 					window.open(this.props.url);
 				}
-		});
+			});
+		}
 	}
 
 	get defaultState() {
@@ -41,7 +43,7 @@ class BioButton extends Component<BioButtonProps, BioButtonState> {
 	}
 
 	render() {
-		return template(this.html, { ...this.props, ...this.state, ...this.methods }, this.createStyle);
+		return template(this.html, {...this.props, ...this.state, ...this.methods}, this.createStyle);
 	}
 }
 
