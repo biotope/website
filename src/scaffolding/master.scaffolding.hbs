@@ -2,7 +2,6 @@
     data-resources="[{paths: ['components/BioGithubCorner/index.js']}]"></bio-github-corner>
 
 <header class="splash">
-    <img class="splash__bg" src="../_assets/splashscreen.svg" alt="">
     <div class="splash__intro">
         <img src="_assets/biotope-logo.svg" alt="" class="splash__logo">
         <div class="splash__content">
@@ -57,6 +56,38 @@
 
 <section class="scrollAnimation">
 	{{bioInclude 'components/BioScrollAnimation/scaffolding/BioScrollAnimation' }}
+</section>
+
+<section class="soEasy">
+        <div class="row row--reducedWidth">
+            <div class="col">
+                <img class="soEasy__line" src="../_assets/BioEasySetUp/line.svg">
+                <div class="soEasy__intro">
+                    <bio-section-headline data-resources="[{paths: ['components/BioSectionHeadline/index.js']}]"> It's so </br> <strong>easy</strong></bio-section-headline>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                </div>
+                <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/1.svg" alt="step one">
+                    <p>Get started by installing biotope with npm. It's all open-source!</p>
+                    <code>npm install biotope -g</code>
+                </bio-easy-set-up>
+                <bio-easy-set-up position="left" data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/2.svg" alt="step two">
+                    <p>Just one command and a few simple questions to generate all you need for your project</p>
+                    <code>biotope create myEcosystem</code>
+                </bio-easy-set-up>
+                <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/3.svg" alt="step three">
+                    <p>Install the included build-ststem that helps you to automatically build product-ready resources</p>
+                    <code>npm install</code>
+                </bio-easy-set-up>
+                <bio-easy-set-up position="left" data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/4.svg" alt="step four">
+                    <p>Install the included build-ststem that helps you to automatically build product-ready resources</p>
+                    <code>npm start</code>
+                </bio-easy-set-up>
+                <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/5.svg" alt="step five">
+                    <p>Install the included build-ststem that helps you to automatically build product-ready resources</p>
+                    <code>biotope generate</code>
+                </bio-easy-set-up>
+            </div>
+        </div>
 </section>
 
 <section class="resources">
