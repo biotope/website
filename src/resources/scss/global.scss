@@ -69,6 +69,33 @@
 	}
 }
 
+.knowMore {
+	background: linear-gradient(90deg, $bg-light-blue-gray 0%, $bg-blue-gray 100%);
+	color: $dark-blue-grey;
+	padding: 50px 0 75px;
+	text-align: center;
+	p {
+		font-size: 20px;
+		margin-bottom: 40px;
+	}
+
+	@include breakpoint($large) {
+		padding: 75px 0 112px;
+		p {
+			font-size: 25px;
+			margin-bottom: 50px;
+		}
+	}
+
+	@include breakpoint($xlarge) {
+		padding: 80px 0 120px;
+		p {
+			font-size: 30px;
+			margin-bottom: 70px;
+		}
+	}
+}
+
 .soEasy {
 	position: relative;
 	padding: 90px 0;
