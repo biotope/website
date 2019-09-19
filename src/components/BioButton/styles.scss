@@ -1,5 +1,5 @@
 @import "node_modules/@biotope/element/lib/host.mixin";
-@import "../../resources/scss/settings/settings";
+@import '../../resources/scss/defaultSassImports.scss';
 
 @include host("bio-button") {
 	button {
@@ -58,5 +58,21 @@
 			padding: 10px 10px;
 			width: 230px;
         }
+
+		&.large {
+			@include breakpoint($large) {
+				padding: 12px 36px;
+				font-size: 20px;
+				border-width: 3px;
+				width: auto;
+			}
+
+			@include breakpoint($xlarge) {
+				padding: 15px 48px;
+				font-size: 25px;
+				border-width: 4px;
+				width: auto;
+			}
+		}
 	}
 }
