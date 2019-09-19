@@ -19,7 +19,6 @@
   "dependencies": {
     "@biotope/element": "^3.2.0",
     "@biotope/resource-loader": "2.1.1",
-    "@types/google.analytics": "0.0.40",
     "@types/gsap": "^1.20.2",
     "breakpoint-sass": "2.7.1",
     "classnames": "^2.2.6",
