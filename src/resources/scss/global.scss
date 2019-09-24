@@ -198,6 +198,19 @@
 	}
 }
 
+.whosBehind {
+	&__headline {
+		margin: 50px 0;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
 .extendedBenefits {
 	position: relative;
 	background-color: $even-darker-blue;
