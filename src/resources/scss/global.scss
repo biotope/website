@@ -21,51 +21,98 @@
 
 .splash {
 	font-family: $font-family-titles;
-	height: 110vh;
+	height: 800px;
 	background-image: url(../../_assets/splashscreen.svg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center; 
 	color: $main-orange;
 
-
+	@include breakpoint($large) {
+		height: 110vh;
+	}	
+	
 	&__intro {
 		display: flex;
-		align-items: center;
-		margin: 0 auto;
-		width: 815px;
-		padding-top: 200px;
+		flex-flow: column;
+		padding-top: 50px;
 
 		@include breakpoint($large) {
-			padding-top: 300px;
+			flex-flow: row;
+			justify-content: center;
+			padding-top: 200px;
+		}
+	}
+	
+	&__logo {
+		width: 120px;
+		margin: 0 auto;
+
+		@include breakpoint($large) {
+			width: 200px;
+			height: 280px;
+			margin: 0 0 auto 0;
+		}
+	}
+	
+	&__biotope {
+		padding: 10px 0;
+		letter-spacing: 2px;
+		font-weight: 400;
+
+		@include breakpoint($large) {
+			margin-left: -6px;
 		}
 	}
 
 	&__content {
 		position: relative;
-		margin-left: 20px;
+		padding: 0 35px;
+		text-align: center;
+
+		@include breakpoint($large) {
+			padding: 100px 0 0 25px;
+			text-align: left;
+		}
 	}
 
-	&__biotope {
-		font-size: 120px;
-		font-weight: 400;
-	}
 
 	&__uitoolchain {
-		text-transform: uppercase;
+		width: 200px;
+		margin: 0 auto;
+		font-size: 15px;
 		font-weight: 400;
-	}
+		line-height: 23px;
 
-	&__logo {
-		width: 475px;
-		margin-top: -265px;
-		z-index: 2;
+		@include breakpoint($large) {
+			width: auto;
+			margin: 0;
+			font-size: 24px;
+		}
 	}
 
 	&__claim {
 		color: $bio-white;
-		line-height: 40px;
-		font-size: 24px;
+		max-width: 400px;
+		margin: 0 auto;
+		padding: 20px 0;
+		font-size: 14px;
+
+		@include breakpoint($large) {
+			margin: 0;
+			font-size: 18px;
+			max-width: 515px;
+		}
+	}
+
+	bio-button {
+		display: block;
+		margin-bottom: 10px;
+
+		@include breakpoint($large) {
+			display: inline;
+			margin-right: 15px;
+		}
 	}
 }
 
