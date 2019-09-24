@@ -32,7 +32,7 @@
                         Bioto.pe’s web-component-based frontend ecosystem conrols entire Design Systems via a single
                         repository. Add, change and reuse web components as many times you want - anywhere
                     </bio-paragraph>
-                    <bio-button title="Who's behind biotope" modifier="long"
+                    <bio-button class="js-openModal" title="Who's behind biotope" modifier="long"
                         data-resources="[{paths: ['components/BioButton/index.js']}]"></bio-button>
                 </div>
             </div>
@@ -142,26 +142,24 @@
 <section class="extendedBenefits">
     <div class="row row--reducedWidth">
         <div class="col">
-            <bio-section-headline inverted data-resources="[{paths: ['components/BioSectionHeadline/index.js']}]">
-                You will </br> <strong>Benefit</strong>
-            </bio-section-headline>
-            <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
-                imgsrc="../../_assets/free.svg" title="Keep focus">
-                You develop high quality components, biotope takes care of architecture and dev environment for you
-            </bio-benefit>
-            <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
-                imgsrc="../../_assets/free.svg" title="Open source">
-                Keep all your design systems in one central place for multiple projects.
-            </bio-benefit>
-            <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
-                imgsrc="../../_assets/free.svg" title="Collaborate">
-                Bioto.pe makes it easy for a team of many developers to work in your component library.
-            </bio-benefit>
-            <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
-                imgsrc="../../_assets/free.svg" title="Scalability">
-                No matter how big your library gets, your projects only use the ones they need, so performance stays
-                high.
-            </bio-benefit>
+                <bio-section-headline inverted data-resources="[{paths: ['components/BioSectionHeadline/index.js']}]">
+                    You will </br> <strong>Benefit</strong>
+                </bio-section-headline>
+            <div class="extendedBenefits__container">
+                <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
+                    imgsrc="../../_assets/free.svg" title="Keep focus">
+                    You develop high quality components, biotope takes care of architecture and dev environment for you
+                </bio-benefit>
+                <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
+                    imgsrc="../../_assets/free.svg" title="Open source">
+                    Keep all your design systems in one central place for multiple projects.
+                </bio-benefit>
+                <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
+                    imgsrc="../../_assets/free.svg" title="Scalability">
+                    No matter how big your library gets, your projects only use the ones they need, so performance stays
+                    high.
+                </bio-benefit>
+            </div>
         </div>
     </div>
 </section>
@@ -207,3 +205,19 @@
         </div>
     </div>
 </footer>
+
+<bio-modal data-resources="[{paths: ['components/BioModal/index.js']}]">
+    <h3>
+        Who's behind Biotope
+    </h3>
+    <bio-collaborator-list>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Marc Emmanuel</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Tiago Marques</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Timo Mayer</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Danny Stey</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Dominikus Weiger</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Lukas Müller</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Benny Konopka</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Chris Hummel</bio-collaborator-tile>
+    </bio-collaborator-list>
+</bio-modal>

@@ -9,8 +9,6 @@
 	title: string,
 	modifier?: string,
 	url?: string
-
-
  }
 
 /**
