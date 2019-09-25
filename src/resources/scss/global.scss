@@ -21,21 +21,13 @@
 
 .splash {
 	font-family: $font-family-titles;
-	height: 800px;
-	// padding-bottom: 66%;
-	// background: url(../../_assets/splashscreen.svg);
-	// background-size: cover;
-	// background-position: center 75%;
+	height: 110vh;
+	background-image: url(../../_assets/splashscreen.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center; 
 	color: $main-orange;
-	overflow: hidden;
 
-	&__bg {
-		position: absolute;
-		top: -140px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 2060px;
-	}
 
 	&__intro {
 		display: flex;
@@ -43,6 +35,10 @@
 		margin: 0 auto;
 		width: 815px;
 		padding-top: 200px;
+
+		@include breakpoint($large) {
+			padding-top: 300px;
+		}
 	}
 
 	&__content {
@@ -73,6 +69,33 @@
 	}
 }
 
+.knowMore {
+	background: linear-gradient(90deg, $bg-light-blue-gray 0%, $bg-blue-gray 100%);
+	color: $dark-blue-gray;
+	padding: 50px 0 75px;
+	text-align: center;
+	p {
+		font-size: 20px;
+		margin-bottom: 40px;
+	}
+
+	@include breakpoint($large) {
+		padding: 75px 0 112px;
+		p {
+			font-size: 25px;
+			margin-bottom: 50px;
+		}
+	}
+
+	@include breakpoint($xlarge) {
+		padding: 80px 0 120px;
+		p {
+			font-size: 30px;
+			margin-bottom: 70px;
+		}
+	}
+}
+
 .soEasy {
 	position: relative;
 	padding: 90px 0;
@@ -85,18 +108,26 @@
 		background: rgba(248, 251, 253, 0.5);
 
 		@include breakpoint($large) {
-			width: 45%;
+			min-height: 350px;
+
+			p {
+				width: 45%;
+			}
 		}
 	}
 
 	&__line {
-		position: absolute;
-		top: -25px;
-		left: 35px;
-		height: 100%;
+		display: none;
 
 		@include breakpoint($large) {
-			left: calc(50% - 20px);
+			display: block;
+			position: absolute;
+			top: -25px;
+			left: calc(50% - 38px - 1.2%);
+		}
+
+		@include breakpoint($xxlarge) {
+			left: calc(50% - 38px)
 		}
 	}
 }
@@ -169,12 +200,33 @@
 	.row {
 		margin-top: 0;
 	}
+
+	.col {
+		margin-top: 0;
+	}
 }
 
 .extendedBenefits {
 	position: relative;
 	background-color: $even-darker-blue;
 	padding-bottom: $swooshHeight;
+
+	&__container {
+		padding: 100px 0;
+
+		@include clearfix();
+		@include breakpoint($medium) {
+			@include span(10);
+			float: none;
+			margin: 0 auto;
+		}
+
+		bio-benefit {
+			@include breakpoint($medium) {
+				@include span(4);
+			}
+		}
+	}
 }
 
 .company {

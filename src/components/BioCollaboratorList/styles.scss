@@ -1,0 +1,50 @@
+@import 'node_modules/@biotope/element/lib/host.mixin';
+
+@mixin showSlottedTiles($types...) {
+    @each $type in $types {
+        &.#{$type} {
+            ::slotted(bio-collaborator-tile[type="#{$type}"]) {
+                display: block;
+            }
+        }
+    }
+}
+
+@include host('bio-collaborator-list') {
+	.wrapper {
+		.switch {
+			margin: 20px 0;
+			ul {
+				list-style-type: none;
+				margin: 0 auto;
+				width: 500px;
+				padding: 0;
+				display: flex;
+				justify-content: space-around;
+
+				li {
+					display: inline-block;
+					padding: 5px 10px;
+					border-radius: 5px;
+					cursor: pointer;
+
+					&.active {
+						background-color: rgb(93, 93, 184);
+					}
+				}
+			}
+		}
+		.lists {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+            justify-content: center;
+
+            ::slotted(bio-collaborator-tile) {
+                display: none;
+            }
+
+            @include showSlottedTiles(core, collab, vi);
+        }
+	}
+}

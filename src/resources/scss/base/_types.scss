@@ -1,3 +1,5 @@
+@import '../defaultSassImports.scss';
+
 /* Global heading styles */
 h1, h2, h3, h4 ,h5 {
 	font-weight: $font-weight-bold;
@@ -11,8 +13,7 @@ h1 {
 }
 
 h2 {
-	font-size: 22px;
-	line-height: (28/22);
+	@extend %headlineH2;
 }
 
 h3, .footer__bigWords {
@@ -29,6 +30,7 @@ h3, .footer__bigWords {
 
 h4 {
 	font-size: 17px;
+	font-weight: 500;
 	line-height: (25/17);
 }
 
