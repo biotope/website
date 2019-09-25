@@ -1,0 +1,50 @@
+@import 'node_modules/@biotope/element/lib/host.mixin';
+@import '../../resources/scss/defaultSassImports.scss';
+
+@include host('bio-modal') {
+	.modal {
+		.content {
+			display: none;
+			z-index: 11;
+			position: fixed;
+			padding: 5%;
+			top: 5%;
+			left: 5%;
+			bottom: 5%;
+			right: 5%;
+			box-sizing: border-box;
+			background-color: $bio-white;
+			overflow-y: scroll;
+
+			.modal-close {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+			}
+
+			::slotted(div) {
+                height: 100%;
+			}
+		}
+		.backdrop {
+			position: fixed;
+			display: none;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: #000;
+			opacity: 0.5;
+			z-index: 10;
+		}
+
+		&.open {
+			.content {
+				display: block;
+			}
+			.backdrop {
+				display: block;
+			}
+		}
+	}
+}

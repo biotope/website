@@ -1,0 +1,54 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/defaultSassImports.scss";
+
+@include host("bio-easy-set-up") {
+	.wrapper {
+		display: grid;
+		grid-template-columns: 60px 1fr;
+		column-gap: 10px;
+		padding-bottom: 40px;
+        
+		@include breakpoint($large) {
+            grid-template-columns: 1fr 60px 1fr;
+            padding-bottom: 110px;
+
+			&.left {
+				::slotted(*) {
+					grid-column-start: 1;
+				}
+
+				::slotted(p) {
+					grid-row-start: 1;
+				}
+
+				::slotted(code) {
+					grid-row-start: 2;
+				}
+			}
+        }
+        
+        ::slotted(code) {
+            grid-column-start: 2;
+			padding: 10px 20px;
+			background: $bio-white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px $shadow-gray;
+            font-weight: $font-weight-bold;
+            
+			@include breakpoint($large) {
+                grid-column-start: 3;
+			}
+        }
+	}
+
+	img {
+		height: 60px;
+		width: 60px;
+        margin: auto;
+        z-index: 1;
+
+		@include breakpoint($large) {
+			grid-column-start: 2;
+		}
+    }
+}

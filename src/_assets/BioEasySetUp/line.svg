@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="76px" height="2278px" viewBox="0 0 76 2278" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>line</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="49.9573889%" y1="100.018284%" x2="49.9573889%" y2="-0.0201508131%" id="linearGradient-1">
+            <stop stop-color="#5D7DD3" offset="0%"></stop>
+            <stop stop-color="#87FBE1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#5D7DD3" offset="0%"></stop>
+            <stop stop-color="#87FBE1" offset="100%"></stop>
+        </linearGradient>
+        <ellipse id="path-3" cx="30" cy="30" rx="29.6875" ry="30"></ellipse>
+        <filter x="-17.7%" y="-12.5%" width="135.4%" height="135.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feMorphology radius="3" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="3" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.203070367 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <ellipse id="path-5" cx="30" cy="30" rx="29.6875" ry="30"></ellipse>
+        <filter x="-17.7%" y="-12.5%" width="135.4%" height="135.0%" filterUnits="objectBoundingBox" id="filter-6">
+            <feMorphology radius="3" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="3" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.203070367 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="line" transform="translate(7.000000, 4.000000)">
+            <g transform="translate(9.000000, 32.000000)" id="Path" stroke="url(#linearGradient-1)" stroke-width="4">
+                <path d="M20.5,0 C20.5,0 61.3,190.2 20.5,501.5 C20.5,501.5 -21.2,699.7 20.5,858 C62.2,1016.3 38.2,1093.4 20.3,1183.9 C2.4,1274.4 -12.6,1388.7 22.8,1519 C58.2,1649.3 38.5,1806.3 22.5,1862.2 C6.4,1918.1 -17.2,2019.2 20.6,2201.4"></path>
+            </g>
+            <g id="0" transform="translate(0.000000, 2204.000000)">
+                <g id="Oval-Copy-16">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use stroke="url(#linearGradient-2)" stroke-width="6" fill="#0B0A2E" fill-rule="evenodd" xlink:href="#path-3"></use>
+                </g>
+            </g>
+            <g id="0" transform="translate(2.000000, 0.000000)">
+                <g id="Oval-Copy-16">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    <use stroke="url(#linearGradient-2)" stroke-width="6" fill="#0B0A2E" fill-rule="evenodd" xlink:href="#path-5"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
