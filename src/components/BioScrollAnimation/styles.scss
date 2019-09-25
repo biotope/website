@@ -1,0 +1,88 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import '../../resources/scss/defaultSassImports.scss';
+
+@include host('bio-scroll-animation') {
+
+	.animation-wrapper {
+		position: relative;
+
+		.scroll-trigger {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100vh;
+			width: 100%;
+		}
+
+		.animation-container {
+			height: 100vh;
+			width: 100% !important;
+
+			svg {
+				width: 100%;
+				height: 100%;
+
+				/* add custom styles for svg content here if required */
+			}
+		}
+
+		ul.slide-controls {
+			display: none;
+			font-size: 0;
+			line-height: 0;
+			opacity: 0;
+			transition: opacity 300ms;
+			position: fixed;
+			top: 75%;
+			-webkit-transform: translate(0, -75%);
+			transform: translate(0, -75%);
+			right: 0;
+
+			li {
+				&:first-child {
+					display: none;
+				}
+				opacity: 0.5;
+				transition: opacity 300ms;
+				cursor: pointer;
+				display: block;
+				width: 18px;
+				height: 18px;
+				padding: 0 12px 12px;
+				list-style: none;
+				font-size: 0;
+				line-height: 0;
+				&:before {
+					content: ' ';
+					border: 2px solid $main-orange;
+					border-radius: 18px;
+					display: block;
+					width: 14px;
+					height: 14px;
+				}
+				&.active {
+					opacity: 1;
+					&:before {
+						border: none;
+						width: 18px;
+						height: 18px;
+						background: linear-gradient(rgba(255,217,133,1) 0%, rgba(255,123,92,1) 100%);
+					}
+				}
+			}
+			&.visible {
+				display: block;
+				opacity: 1;
+			}
+
+			@include breakpoint($small) {
+				top: 50%;
+				right: 18px;
+				-webkit-transform: translate(0, -50%);
+				transform: translate(0, -50%);
+			}
+		}
+	}
+}
+
+

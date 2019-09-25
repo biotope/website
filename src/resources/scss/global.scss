@@ -1,18 +1,44 @@
 @import 'defaultSassImports.scss';
 
+@mixin swoosh($position, $height, $direction, $color, $left, $right) {
+	content: '';
+	position: absolute;
+	width: 100%;
+	z-index: 100;
+	height: $height;
+	background-color: $color;
+	clip-path: inset(0 0 0 0 round 0 0 $left $right);
+	@if $position == 'top' {
+		top: - $height;
+	}
+	@if $position == 'bottom' {
+		bottom: - $height;
+	}
+	@if $direction == 'up' {
+		transform: rotateX(180deg);
+	}
+}
+
 .splash {
 	font-family: $font-family-titles;
-	background-color: purple;
-    color: #f17c61;
-    padding-bottom: 90px;
-    height: 800px;
+	height: 110vh;
+	background-image: url(../../_assets/splashscreen.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center; 
+	color: $main-orange;
+
 
 	&__intro {
 		display: flex;
 		align-items: center;
 		margin: 0 auto;
-		width: 625px;
+		width: 815px;
 		padding-top: 200px;
+
+		@include breakpoint($large) {
+			padding-top: 300px;
+		}
 	}
 
 	&__content {
@@ -21,7 +47,7 @@
 	}
 
 	&__biotope {
-		font-size: 100px;
+		font-size: 120px;
 		font-weight: 400;
 	}
 
@@ -31,168 +57,304 @@
 	}
 
 	&__logo {
-		width: 325px;
-		margin-top: -175px;
+		width: 475px;
+		margin-top: -265px;
+		z-index: 2;
 	}
 
 	&__claim {
 		color: $bio-white;
+		line-height: 40px;
+		font-size: 24px;
+	}
+}
+
+.knowMore {
+	background: linear-gradient(90deg, $bg-light-blue-gray 0%, $bg-blue-gray 100%);
+	color: $dark-blue-gray;
+	padding: 50px 0 75px;
+	text-align: center;
+	p {
+		font-size: 20px;
+		margin-bottom: 40px;
+	}
+
+	@include breakpoint($large) {
+		padding: 75px 0 112px;
+		p {
+			font-size: 25px;
+			margin-bottom: 50px;
+		}
+	}
+
+	@include breakpoint($xlarge) {
+		padding: 80px 0 120px;
+		p {
+			font-size: 30px;
+			margin-bottom: 70px;
+		}
+	}
+}
+
+.soEasy {
+	position: relative;
+	padding: 90px 0;
+	background-image: url("../../_assets/BioEasySetUp/background.svg");
+	background-size: cover;
+
+	&__intro {
+		position: relative;
+		z-index: 1;
+		background: rgba(248, 251, 253, 0.5);
+
+		@include breakpoint($large) {
+			width: 45%;
+		}
+	}
+
+	&__line {
+		position: absolute;
+		top: -25px;
+		left: 35px;
+		height: 100%;
+
+		@include breakpoint($large) {
+			left: calc(50% - 20px);
+		}
+	}
+}
+
+.resources {
+	padding: 90px 0;
+	background: $bio-gray;
+
+	.col {
+		margin-top: 0;
+	}
+
+	h3 {
+		padding-top: 40px;
+		color: $light-orange;
+		text-transform: none;
+		text-align: center;
+
+		&.resources__headline--blue {
+			color: $dark-blue;
+		}
 	}
 }
 
 .benefits {
-    position: relative;
-    padding-bottom: 90px;
+	position: relative;
+	padding-bottom: 90px;
 
 	&__claim {
 		margin: 20px 0;
-        text-align: center;
-        
-        > div {
-            @include breakpoint($medium) {
-                flex: 1;
-            }
-        }
+		text-align: center;
 
-        img {
-            max-height: 400px;
+		> div {
+			@include breakpoint($medium) {
+				flex: 1;
+			}
+		}
 
-            @include breakpoint($medium) {
-                flex: 1;
-            }
-        }
+		img {
+			max-height: 400px;
+
+			@include breakpoint($medium) {
+				flex: 1;
+			}
+		}
 
 		@include breakpoint($medium) {
-            text-align: left;
-            display: flex;
-            width: 100%;
-            justify-content: space-around;
+			text-align: left;
+			display: flex;
+			width: 100%;
+			justify-content: space-around;
 		}
-    }
-    
+	}
+
 	&__container {
 		@include clearfix();
 		@include breakpoint($medium) {
-            @include span(10);
-            float: none;
-            margin: 0 auto;
-        }
-        
+			@include span(10);
+			float: none;
+			margin: 0 auto;
+		}
+
 		bio-benefit {
 			@include breakpoint($medium) {
 				@include span(4);
 			}
 		}
-    }
+	}
 
-    .row{
-        margin-top: 0;
-    }
+	.row {
+		margin-top: 0;
+	}
+
+	.col {
+		margin-top: 0;
+	}
 }
 
 .extendedBenefits {
-    position: relative;
-    background-color: $even-darker-blue;
-    padding-bottom: 90px;
+	position: relative;
+	background-color: $even-darker-blue;
+	padding-bottom: $swooshHeight;
+
+	&__container {
+		padding: 100px 0;
+
+		@include clearfix();
+		@include breakpoint($medium) {
+			@include span(10);
+			float: none;
+			margin: 0 auto;
+		}
+
+		bio-benefit {
+			@include breakpoint($medium) {
+				@include span(4);
+			}
+		}
+	}
 }
 
-.swoosh {
-    position: absolute;
-    left: 0;
-    top: -130px;
-    width: 100%;
-    height: $swooshHeight;
-    overflow: hidden;
+.company {
+	position: relative;
 
-    &--inverted {
-        top: 0px;
-        transform: rotate(180deg);
-    }
+	&__logos {
+		display: flex;
+		justify-content: space-around;
 
-    &__fold {
-        height: 130px;
-        width: 110vw;
-        border-bottom-left-radius: 41%;
-        border-bottom-right-radius: 41%;
-        box-shadow: 0 81px $bio-white;
+		@include breakpoint($medium) {
+			padding: 0 50px;
+			margin-top: 90px;
+		}
 
-        section.extendedBenefits & {
-            box-shadow: 0 81px $even-darker-blue;
-        }
+		img {
+			margin-right: 10px;
 
-        footer.footer & {
-            box-shadow: 0 81px $bio-gray;
-        }
-    }
+			@include breakpoint($medium) {
+				margin-right: 0;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+			display: none;
+
+			&:nth-child(1),
+			&:nth-child(2) {
+				display: block;
+			}
+
+			@include breakpoint($medium) {
+				&:nth-child(3),
+				&:nth-child(4) {
+					display: block;
+				}
+			}
+
+			@include breakpoint($large) {
+				&:nth-child(5),
+				&:nth-child(6) {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&__leads {
+		text-align: center;
+
+		@include breakpoint($medium) {
+			margin-top: 90px;
+		}
+
+		p {
+			@extend %benefit-text;
+		}
+	}
+
+	.row {
+		margin-top: 0;
+	}
+
+	&::before {
+		@include swoosh('top', $swooshHeight, 'up', white, 60%, 70%);
+	}
+
+	&::after {
+		@include swoosh('bottom', $swooshHeight, 'down', white, 60%, 70%);
+	}
 }
 
 .footer {
-    position: relative;
-    padding: ($includingSwooshPadding + 50px) 20px 0 20px;
-    background: $bio-gray;
-    color: $black;
+	$accountForSwoosh: $swooshHeight + 110px;
 
-    @include breakpoint($medium) {
-        display: flex;
-        justify-content: space-between;
-        padding: $includingSwooshPadding 10vw 0 10vw;
-    }
-    
-    @include breakpoint($large) {
-        padding: $includingSwooshPadding 15vw 0 15vw;
-    }
+	position: relative;
+	padding: $accountForSwoosh 0 40px 0;
+	background: $bio-gray;
+	color: $black;
 
-    @include breakpoint($xlarge) {
-        padding: $includingSwooshPadding 18vw 0 15vw;
-    }
+	.col {
+		@include breakpoint($medium) {
+			display: flex;
+		}
+	}
 
-    
-    
-    &__githubLogo {
-        position: absolute;
-        top: 30px;
-        left: 0;
-        transform: rotate(90deg);
-        width: 70px;
+	&__githubLogo {
+		position: absolute;
+		top: 70px;
+		left: 0;
+		transform: rotate(90deg);
+		width: 70px;
 
-        @include breakpoint($large) {
-            top: auto;
-            left: auto;
-            bottom: 0;
-            transform: rotate(0);
-            width: auto;
-        }
-    }
+		@include breakpoint($large) {
+			top: auto;
+			left: auto;
+			bottom: 0;
+			transform: rotate(0);
+			width: auto;
+		}
+	}
 
-    &__checkItOut {
-        padding-top: 25px;
-        line-height: 1.3;
+	&__checkItOut {
+		padding-top: 25px;
+		line-height: 1.3;
 
-        @include breakpoint($medium) {
-            flex-grow: 1;
-            padding: 0 3vw;
-            font-size: 20px;
-        }
-        @include breakpoint($large) {
-            padding-left: 17vw;
-        }
-    }
+		@include breakpoint($medium) {
+			flex-grow: 1;
+			padding-top: 0;
+			font-size: 20px;
+		}
 
-    &__essentials {
-        display: flex;
-        flex-flow: column;
-        padding: 40px 0;
+		@include breakpoint($large) {
+			padding-left: 17vw;
+		}
+	}
 
-        a {
-            margin-bottom: 10px;
-            color: $black;
-            &:hover {
-                text-decoration: underline;
-            }
+	&__essentials {
+		display: flex;
+		flex-flow: column;
+		padding: 80px 0 40px 0;
 
-            @include breakpoint($large) {
-                margin-bottom: 20px;
-            }
-        }
-    }
+		@include breakpoint($medium) {
+			padding: 25px 0;
+		}
+
+		a {
+			margin-bottom: 10px;
+			color: $black;
+			&:hover {
+				text-decoration: underline;
+			}
+
+			@include breakpoint($large) {
+				margin-bottom: 20px;
+			}
+		}
+	}
 }

@@ -18,9 +18,13 @@ $main-orange: #F17C61;
 $light-orange: #ED9560;
 $dark-blue: #5E7FD3;
 $darker-blue: #1F1F43;
+$dark-blue-gray: #4e4f6b;
 $even-darker-blue: #0A0A2C;
 $light-blue: #87FBE1;
 $lightest-blue: #CED0DF;
+$shadow-gray: #d3d3d3;
+$bg-blue-gray: #d4d9e2;
+$bg-light-blue-gray: #ecf4f9;
 
 // BODY STYLES
 $body-bg: $bio-white;
@@ -61,5 +65,4 @@ $section_margin_top_large: 60px;
 $section_margin_top_xlarge: 80px;
 
 //account for SwooshFold padding
-$swooshHeight: 150px;
-$includingSwooshPadding: $swooshHeight - 100px;
+$swooshHeight: 40px;

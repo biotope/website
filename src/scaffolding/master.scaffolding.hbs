@@ -11,96 +11,216 @@
                 One web component library. As many worlds as you want. Decide what the future looks like.
             </p>
             <bio-button title="Explore" modifier="whiteText"
-                data-resources="[{paths: ['components/BioButton/index.js']}]"></bio-button>
+                data-resources="[{paths: ['components/BioButton/index.js']}]" url="#resources"></bio-button>
             <bio-button title="See Docs" modifier="blue whiteText"
-                data-resources="[{paths: ['components/BioButton/index.js']}]">
+                data-resources="[{paths: ['components/BioButton/index.js']}]" url="https://build.biotope.sh">
             </bio-button>
         </div>
     </div>
 </header>
 
 <section class="benefits">
-    <div class="swoosh">
-        <div class="swoosh__fold"></div>
-    </div>
     <div class="row row--reducedWidth">
         <div class="col">
             <div class="benefits__claim">
                 <img src="../_assets/intro-main.svg" alt="">
                 <div>
-                    <bio-headline power="2" data-resources="[{paths: ['components/BioHeadline/index.js']}]">
-                        Add, change and reuse web components – on any device, anywhere.
-                    </bio-headline>
+                    <h2>
+                        One Web Component Library. As Many Words As You Want.
+                    </h2>
                     <bio-paragraph data-resources="[{paths: ['components/BioParagraph/index.js']}]">
-                        Bioto.pe’s web-component-based frontend ecosystem conrols entire Design Systems via a single
-                        repository. Add, change and reuse web components as many times you want - anywhere
+                       The superpower of Web Components is that they are reusable. Build them once and use them in any project across your whole ocmpany. 
+                       Biotope helps you build Web Components quickly, makes sure they work tohether and reconciles them into a single library. 
+                       This in turn gives you a superpower: Lasting control of your entire UI.
                     </bio-paragraph>
-                    <bio-button title="Who's behind biotope" modifier="long"
+                    <bio-button class="js-openModal" title="Who's behind biotope" modifier="long"
                         data-resources="[{paths: ['components/BioButton/index.js']}]"></bio-button>
                 </div>
             </div>
             <div class="benefits__container">
                 <bio-benefit data-resources="[{paths: ['components/BioBenefit/index.js']}]"
                     imgsrc="../../_assets/framework-agnostic.svg" title="Framework agnostic">
-                    Biotope can be used in combination with any other framework of your choice: Angular, React, etc.
+                    Biotope works with any framework - Angular, React, Vue, etc. so there won't be any compatability issues. Use whichever you want. Or switch when it suits you.
                 </bio-benefit>
                 <bio-benefit data-resources="[{paths: ['components/BioBenefit/index.js']}]"
                     imgsrc="../../_assets/future-proof.svg" title="Futureproof">
-                    Emphasis on web components. Use all your UI-components indipendently in different projects
+                    Web Components are a standard web technology. Because there is no coupling to the apps or websites for which they are used, 
+                    your library of Web Components theoretically lives on forever.
                 </bio-benefit>
                 <bio-benefit data-resources="[{paths: ['components/BioBenefit/index.js']}]"
-                    imgsrc="../../_assets/free.svg" title="Free">
-                    The full version of biotope is opensource and will stay free of charge forever. No strings attached.
+                    imgsrc="../../_assets/icon-open-source.svg" title="100% Open Source">
+                    Biotope's entire toolchain is free. it is maintained by a community of professional developers.
                 </bio-benefit>
             </div>
         </div>
     </div>
 </section>
 
+<section class="scrollAnimation">
+	{{bioInclude 'components/BioScrollAnimation/scaffolding/BioScrollAnimation' }}
+</section>
+
+<section class="knowMore">
+	<div class="row row--reducedWidth">
+		<div class="col">
+			<p>Want to know more about what Biotope can do for you?</p>
+			<bio-button title="Get in touch" url="mailto:biotope@virtual-identity.com"
+				data-resources="[{paths: ['components/BioButton/index.js']}]" modifier="large"></bio-button>
+		</div>
+	</div>
+</section>
+
+<section class="soEasy">
+        <div class="row row--reducedWidth">
+            <div class="col">
+                <img class="soEasy__line" src="../_assets/BioEasySetUp/line.svg">
+                <div class="soEasy__intro">
+                    <bio-section-headline data-resources="[{paths: ['components/BioSectionHeadline/index.js']}]"> It's so </br> <strong>easy</strong></bio-section-headline>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                </div>
+                <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/1.svg" alt="step one">
+                    <p>Get started by installing biotope with npm. It's all open-source!</p>
+                    <code>npm install biotope -g</code>
+                </bio-easy-set-up>
+                <bio-easy-set-up position="left" data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/2.svg" alt="step two">
+                    <p>Just one command and a few simple questions to generate all you need for your project</p>
+                    <code>biotope create myEcosystem</code>
+                </bio-easy-set-up>
+                <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/3.svg" alt="step three">
+                    <p>Install the included build-ststem that helps you to automatically build product-ready resources</p>
+                    <code>npm install</code>
+                </bio-easy-set-up>
+                <bio-easy-set-up position="left" data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/4.svg" alt="step four">
+                    <p>Install the included build-ststem that helps you to automatically build product-ready resources</p>
+                    <code>npm start</code>
+                </bio-easy-set-up>
+                <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/5.svg" alt="step five">
+                    <p>Install the included build-ststem that helps you to automatically build product-ready resources</p>
+                    <code>biotope generate</code>
+                </bio-easy-set-up>
+            </div>
+        </div>
+</section>
+
+<section class="resources" id="resources">
+        <div class="row row--reducedWidth">
+            <div class="col col--large-6">
+                <h3 class="resources__headline--blue">Code & Resources</h3>
+                <bio-resource logo-baseline image-border-color="blue" data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/github-logo.svg">
+                    <p>See the Bioto.pe code on GitHub</p>
+                    <bio-button title="Github" modifier="blue" url="https://github.com/biotope"></bio-button>
+                </bio-resource>
+                <bio-resource image-border-color="blue" data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/npm.svg">
+                    <p>Get the latest version of the Biotope CLI tool from npm</p>
+                    <bio-button title="NPM" modifier="blue" url="https://www.npmjs.com/package/biotope"></bio-button>
+                </bio-resource>
+                <bio-resource image-border-color="blue" data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/documentation.svg">
+                    <p>Read the Bioto.pe documentation</p>
+                    <bio-button title="Read docs" modifier="blue" url="https://build.biotope.sh"></bio-button>
+                </bio-resource>
+            </div>
+            <div class="col col--large-6">
+                <h3>Tutorials</h3>
+                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial.svg">
+                    <p>Create Web Components with Biotope-Element</p>
+                    <bio-button title="Watch"></bio-button>
+                </bio-resource>
+                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial.svg">
+                    <p>Asynchronously load components with Biotope-Resource-Loader</p>
+                    <bio-button title="Watch"></bio-button>
+                </bio-resource>
+                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial.svg">
+                    <p>Automate your Build process with Biotope-Build</p>
+                    <bio-button title="Watch"></bio-button>
+                </bio-resource>
+                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/expert.svg" border="noBorder">
+                    <p>You want to learn more? Ask an expert.</p>
+                    <bio-button modifier="full" title="Contact"></bio-button>
+                </bio-resource>
+            </div>
+        </div>
+</section>
+
 <section class="extendedBenefits">
-    <div class="swoosh">
-        <div class="swoosh__fold"></div>
+    <div class="row row--reducedWidth">
+        <div class="col">
+                <bio-section-headline inverted data-resources="[{paths: ['components/BioSectionHeadline/index.js']}]">
+                    Develop digital experiences </br> <strong>Fleible. Constant. Across All Devices.</strong>
+                </bio-section-headline>
+            <div class="extendedBenefits__container">
+                <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
+                    imgsrc="../../_assets/icon-quality-focus.svg" title="Quality Focus">
+                    Develop high quality components instead of the architecture and development environment required. That's Biotope's job.
+                </bio-benefit>
+                <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
+                    imgsrc="../../_assets/icon-consistent-design.svg" title="Consistent Design">
+                    Roll out your interface from a single point of truth - simultaneously for all of your digital products. Keep your brand identity consistent across all your websites, apps or IoT say goodbye to design debt.
+                </bio-benefit>
+                <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
+                    imgsrc="../../_assets/icon-scalability.svg" title="Scalable Infrastructure">
+                    Grow your library as big as you want. With Biotope collaboration is easy and your projects only uses the Web Components they need so perormance stays high.
+                </bio-benefit>
+            </div>
+        </div>
     </div>
+</section>
+
+<section class="company">
     <div class="row row--reducedWidth">
         <div class="col">
             <bio-section-headline data-resources="[{paths: ['components/BioSectionHeadline/index.js']}]">
-                You will </br> <strong>Benefit</strong>
+                You are in </br> <strong>good company</strong>
             </bio-section-headline>
-            <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
-                imgsrc="../../_assets/free.svg" title="Keep focus">
-                You develop high quality components, biotope takes care of architecture and dev environment for you
-            </bio-benefit>
-            <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
-                imgsrc="../../_assets/free.svg" title="Open source">
-                Keep all your design systems in one central place for multiple projects.
-            </bio-benefit>
-            <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
-                imgsrc="../../_assets/free.svg" title="Collaborate">
-                Bioto.pe makes it easy for a team of many developers to work in your component library.
-            </bio-benefit>
-            <bio-benefit inverted data-resources="[{paths: ['components/BioBenefit/index.js']}]"
-                imgsrc="../../_assets/free.svg" title="Scalability">
-                No matter how big your library gets, your projects only use the ones they need, so performance stays high.
-            </bio-benefit>
+            <div class="company__logos">
+                <img src="../_assets/logo-ui.svg" alt="Union Investment">
+                <img src="../_assets/logo-roche.svg" alt="Roche">
+                <img src="../_assets/logo-basf.svg" alt="BASF">
+                <img src="../_assets/logo-siemens.svg" alt="Siemens">
+                <img src="../_assets/logo-man.svg" alt="MAN">
+                <img src="../_assets/logo-munichre.svg" alt="Munich RE">
+            </div>
+            <div class="company__leads">
+                <p>Need help setting up your frontend ecosystem? <br>
+                    We love to support you.</p>
+                <bio-button title="Contact VI" modifier="full"
+                    data-resources="[{paths: ['components/BioButton/index.js']}]"></bio-button>
+            </div>
         </div>
     </div>
 </section>
 
 <footer class="footer">
-    <div class="swoosh">
-        <div class="swoosh__fold"></div>
-    </div>
-    <a href="#">
-        <img class="footer__githubLogo" src="_assets/github-logo.svg" alt="github octo-cat">
-    </a>
-    <div class="footer__checkItOut">
-        <p>Of course we also built<br><span class="footer__bigWords">this website</span> with biotope.</p>
-        <bio-button title="Check it out" modifier="blue" data-resources="[{paths: ['components/BioButton/index.js']}]">
-        </bio-button>
-    </div>
-    <div class="footer__essentials">
-        <a href="#">Imprint</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">About VI</a>
+    <div class="row row--reducedWidth">
+        <div class="col">
+            <a href="#">
+                <img class="footer__githubLogo" src="_assets/github-logo.svg" alt="github octo-cat">
+            </a>
+            <div class="footer__checkItOut">
+                <p>Of course we also built<br><span class="footer__bigWords">this website</span> with biotope.</p>
+                <bio-button title="Check it out" modifier="blue" data-resources="[{paths: ['components/BioButton/index.js']}]" url="https://github.com/biotope/website">
+                </bio-button>
+            </div>
+            <div class="footer__essentials">
+                <a href="#">Imprint</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">About VI</a>
+            </div>
+        </div>
     </div>
 </footer>
+
+<bio-modal data-resources="[{paths: ['components/BioModal/index.js']}]">
+    <h3>
+        Who's behind Biotope
+    </h3>
+    <bio-collaborator-list>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Marc Emmanuel</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Tiago Marques</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Timo Mayer</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Danny Stey</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Dominikus Weiger</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Lukas Müller</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Benny Konopka</bio-collaborator-tile>
+        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Chris Hummel</bio-collaborator-tile>
+    </bio-collaborator-list>
+</bio-modal>

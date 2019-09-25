@@ -3,11 +3,15 @@
 
 @include host('bio-section-headline') {
     @extend %sectionHeadline;
-    color: white;
+    color: $even-darker-blue;
     text-transform: uppercase;
     
     ::slotted(strong) {
         @extend %sectionHeadlineStrong;
         color: $light-orange;
+    }
+
+    &:host([inverted]) {
+        color: $bio-white;
     }
 }
