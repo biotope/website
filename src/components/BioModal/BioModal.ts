@@ -3,7 +3,8 @@ import template from './template';
 
 import { BioModalProps, BioModalState, BioModalMethods } from './defines';
 
-import BioCollaboratorList from '../BioCollaboratorList/BioCollaboratorList';
+import BioSectionHeadline from '../BioSectionHeadline/BioSectionHeadline';
+import BioCollaboratorTile from '../BioCollaboratorTile/BioCollaboratorTile';
 
 class BioModal extends Component<BioModalProps, BioModalState> {
 	static componentName = 'bio-modal';
@@ -17,7 +18,10 @@ class BioModal extends Component<BioModalProps, BioModalState> {
 		}
 	];
 
-    static dependencies = [ BioCollaboratorList as typeof Component ];
+	static dependencies = [ 
+		BioSectionHeadline as typeof Component,
+		BioCollaboratorTile as typeof Component
+	];
 
 	public methods: BioModalMethods = {};
 
@@ -45,7 +49,7 @@ class BioModal extends Component<BioModalProps, BioModalState> {
 			this.shadowRoot.querySelector(className).addEventListener('click', (e: CustomEvent) => {
 				this.dispatchEvent(new CustomEvent('modal.close'));
 			})
-		})
+		});
 
 		if (this.props.openonpageload) {
 			this.setState({

@@ -30,5 +30,8 @@ module.exports = {
 		  'resources/js/polyfills/bundles/webcomponents-sd-ce.js',
 		  'resources/js/polyfills/bundles/webcomponents-sd.js'
 		]
+	  },
+	  connect: {
+		  port: 9002
 	  }
 };

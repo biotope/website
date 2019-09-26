@@ -10,10 +10,10 @@ export default (
 	return render`
         ${createStyle(styles)}
         <div class="wrapper">
+            <img src="${data.imgsrc}" />
             <p>
                 <slot></slot>
             </p>
-            <img src="${data.imgsrc}" />
         </div>
     `;
 };

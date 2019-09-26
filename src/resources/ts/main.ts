@@ -8,17 +8,19 @@ import ResourceLoader from '@biotope/resource-loader/lib/index.esm';
             initFunction(element);
         });
 
-        document.querySelector('.js-openModal').addEventListener('click', (e: Event) => {
-            e.preventDefault();
-            document.querySelector('bio-modal').dispatchEvent(new CustomEvent('modal.open'));
-        })
+        if (document.querySelector('.js-openModal')) {
+            document.querySelector('.js-openModal').addEventListener('click', (e: Event) => {
+                e.preventDefault();
+                document.querySelector('bio-modal').dispatchEvent(new CustomEvent('modal.open'));
+            })
+        }
         
         document.addEventListener('keydown', (e: KeyboardEvent) => {
             if (e.keyCode === 27) {
                 document.querySelector('bio-modal').dispatchEvent(new CustomEvent('modal.close'));
             }
         })
-    }
+    };
 
     const setupResourceLoader = () => {
         const cssHandler = {
@@ -29,7 +31,7 @@ import ResourceLoader from '@biotope/resource-loader/lib/index.esm';
                 style.href = options.resource.path;
                 document.body.appendChild(style);
             }
-        }
+        };
 
         const jsHandler = {
             match: (options) => options.resource.path.indexOf('.js') > -1,
@@ -39,7 +41,7 @@ import ResourceLoader from '@biotope/resource-loader/lib/index.esm';
                 script.async = true;
                 document.body.appendChild(script);
             }
-        }
+        };
 
         return new ResourceLoader({
             base: biotope.configuration.get('data.staticResourcesBase'),
@@ -51,10 +53,10 @@ import ResourceLoader from '@biotope/resource-loader/lib/index.esm';
                 jsHandler
             ]
         });
-    }
+    };
 
     window.addEventListener('resourcesReady', () => {
         init();
     });
     setupResourceLoader();
-};
+}

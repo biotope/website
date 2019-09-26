@@ -6,20 +6,20 @@
         <img src="_assets/biotope-logo.svg" alt="" class="splash__logo">
         <div class="splash__content">
             <h1 class="splash__biotope">biotope</h1>
-            <h2 class="splash__uitoolchain">ui toolchain</h2>
+            <h2 class="splash__uitoolchain">Toolchain For lasting Design Systems</h2>
             <p class="splash__claim">
-                One web component library. As many worlds as you want. Decide what the future looks like.
+                Evolve your UI to stay ahead of developments on the web and in your company. Gain control of all your websites, apps or IoT - using a single library of Web Components.
             </p>
-            <bio-button title="Explore" modifier="whiteText"
-                data-resources="[{paths: ['components/BioButton/index.js']}]" url="#resources"></bio-button>
-            <bio-button title="See Docs" modifier="blue whiteText"
+            <bio-button title="See how it works" modifier="whiteText mediumLong"
+                data-resources="[{paths: ['components/BioButton/index.js']}]" url="#benefits"></bio-button>
+            <bio-button title="See Docs" modifier="blue whiteText mediumLong"
                 data-resources="[{paths: ['components/BioButton/index.js']}]" url="https://build.biotope.sh">
             </bio-button>
         </div>
     </div>
 </header>
 
-<section class="benefits">
+<section class="benefits" id="benefits">
     <div class="row row--reducedWidth">
         <div class="col">
             <div class="benefits__claim">
@@ -121,7 +121,7 @@
     </div>
 </section>
 
-<section class="resources" id="resources">
+<section class="resources">
         <div class="row row--reducedWidth">
             <div class="col col--large-6">
                 <h3 class="resources__headline--blue">Code & Resources</h3>
@@ -140,17 +140,17 @@
             </div>
             <div class="col col--large-6">
                 <h3>Tutorials</h3>
-                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial.svg">
+                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial-icon.svg">
                     <p>Create Web Components with Biotope-Element</p>
-                    <bio-button title="Watch"></bio-button>
+                    <bio-button title="Read" url="https://element.biotope.sh/"></bio-button>
                 </bio-resource>
-                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial.svg">
+                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial-icon.svg">
                     <p>Asynchronously load components with Biotope-Resource-Loader</p>
-                    <bio-button title="Watch"></bio-button>
+                    <bio-button title="Read" url="https://resource-loader.biotope.sh"></bio-button>
                 </bio-resource>
-                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial.svg">
+                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial-icon.svg">
                     <p>Automate your Build process with Biotope-Build</p>
-                    <bio-button title="Watch"></bio-button>
+                    <bio-button title="Read" url=""></bio-button>
                 </bio-resource>
                 <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/expert.svg" border="noBorder">
                     <p>You want to learn more? Ask an expert.</p>
@@ -238,17 +238,38 @@
 </footer>
 
 <bio-modal data-resources="[{paths: ['components/BioModal/index.js']}]">
-    <h3>
-        Who's behind Biotope
-    </h3>
-    <bio-collaborator-list>
-        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Marc Emmanuel</bio-collaborator-tile>
-        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Tiago Marques</bio-collaborator-tile>
-        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Timo Mayer</bio-collaborator-tile>
-        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="core">Danny Stey</bio-collaborator-tile>
-        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Dominikus Weiger</bio-collaborator-tile>
-        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Lukas Müller</bio-collaborator-tile>
-        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Benny Konopka</bio-collaborator-tile>
-        <bio-collaborator-tile imgsrc="../_assets/free.svg" type="collab">Chris Hummel</bio-collaborator-tile>
-    </bio-collaborator-list>
+
+    <div class="row row--reducedWidth">
+        <div class="col">
+            <div class="whosBehind">
+                <bio-section-headline>
+                    Who's behind <br><strong>Biotope?</strong>
+                </bio-section-headline>
+
+                <h2 class="whosBehind__headline">Core Group</h2>
+
+                <div class="whosBehind__list">
+                    <bio-collaborator-tile imgsrc="../_assets/marc.jpg">Marc Emmanuel
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="../_assets/tiago.jpg">Tiago Marques
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="../_assets/timo.jpg">Timo Mayer</bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="../_assets/danny.jpg">Danny Stey</bio-collaborator-tile>
+                </div>
+
+                <h2 class="whosBehind__headline">Collaborators</h2>
+
+                <div class="whosBehind__list">
+                    <bio-collaborator-tile imgsrc="../_assets/marc.jpg">Marc Emmanuel
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="../_assets/tiago.jpg">Tiago Marques
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="../_assets/timo.jpg">Timo Mayer</bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="../_assets/danny.jpg">Danny Stey</bio-collaborator-tile>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </bio-modal>

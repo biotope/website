@@ -56,7 +56,11 @@
 		
         &.long {
 			padding: 10px 15px;
-        }
+		}
+		
+		&.mediumLong{
+			width: 200px;
+		}
 
 		&.large {
 			@include breakpoint($large) {
