@@ -3,10 +3,13 @@
 
 @include host('bio-benefit') {
     font-family: $font-family-titles;
+    
     .wrapper {
         display: flex;
         flex-flow: row wrap;
+        padding-bottom: 40px;
         text-align: center;
+        
         > * {
             flex: 1 100%;
         }

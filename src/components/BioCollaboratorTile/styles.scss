@@ -10,8 +10,6 @@
         transition: all 0.4s ease;
         
         &:hover {
-            transform: translate3d(0,3px,0);
-            
             img {
                 width: 207px;
                 border: 5px solid $main-orange;
@@ -27,7 +25,7 @@
             display: block;
             margin: 0 auto;
             clip-path: circle();
-            border: 5px solid transparent;
+            border: 5px solid $bio-white;
             border-radius: 50%;
             transition: 0.4s ease;
         }
