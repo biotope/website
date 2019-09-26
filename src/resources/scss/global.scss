@@ -1,24 +1,5 @@
 @import 'defaultSassImports.scss';
 
-@mixin swoosh($position, $height, $direction, $color, $left, $right) {
-	content: '';
-	position: absolute;
-	width: 100%;
-	z-index: 100;
-	height: $height;
-	background-color: $color;
-	clip-path: inset(0 0 0 0 round 0 0 $left $right);
-	@if $position == 'top' {
-		top: - $height;
-	}
-	@if $position == 'bottom' {
-		bottom: - $height;
-	}
-	@if $direction == 'up' {
-		transform: rotateX(180deg);
-	}
-}
-
 .splash {
 	font-family: $font-family-titles;
 	height: 110vh;
@@ -26,8 +7,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center; 
-	color: $main-orange;
-
+	color: $bio-orange;
 
 	&__intro {
 		display: flex;
@@ -69,84 +49,8 @@
 	}
 }
 
-.knowMore {
-	background: linear-gradient(90deg, $bg-light-blue-gray 0%, $bg-blue-gray 100%);
-	color: $dark-blue-gray;
-	padding: 50px 0 75px;
-	text-align: center;
-	p {
-		font-size: 20px;
-		margin-bottom: 40px;
-	}
-
-	@include breakpoint($large) {
-		padding: 75px 0 112px;
-		p {
-			font-size: 25px;
-			margin-bottom: 50px;
-		}
-	}
-
-	@include breakpoint($xlarge) {
-		padding: 80px 0 120px;
-		p {
-			font-size: 30px;
-			margin-bottom: 70px;
-		}
-	}
-}
-
-.soEasy {
-	position: relative;
-	padding: 90px 0;
-	background-image: url("../../_assets/BioEasySetUp/background.svg");
-	background-size: cover;
-
-	&__intro {
-		position: relative;
-		z-index: 1;
-		background: rgba(248, 251, 253, 0.5);
-
-		@include breakpoint($large) {
-			width: 45%;
-		}
-	}
-
-	&__line {
-		position: absolute;
-		top: -25px;
-		left: 35px;
-		height: 100%;
-
-		@include breakpoint($large) {
-			left: calc(50% - 20px);
-		}
-	}
-}
-
-.resources {
-	padding: 90px 0;
-	background: $bio-gray;
-
-	.col {
-		margin-top: 0;
-	}
-
-	h3 {
-		padding-top: 40px;
-		color: $light-orange;
-		text-transform: none;
-		text-align: center;
-
-		&.resources__headline--blue {
-			color: $dark-blue;
-		}
-	}
-}
-
 .benefits {
 	position: relative;
-	padding-bottom: 90px;
 
 	&__claim {
 		margin: 20px 0;
@@ -198,10 +102,88 @@
 	}
 }
 
+.knowMore {
+	background: $bio-darkest-blue;
+	color: $bio-lighter-blue-gray;
+	padding-bottom: 125px;
+	text-align: center;
+	p {
+		padding-top: 50px;
+		font-size: 20px;
+		margin-bottom: 40px;
+	}
+
+	@include breakpoint($large) {
+		padding-bottom: 225px;
+		p {
+			padding-top: 75px;
+			font-size: 25px;
+			margin-bottom: 50px;
+		}
+	}
+
+	@include breakpoint($xlarge) {
+		padding-bottom: 240px;
+		p {
+			padding-top: 80px;
+			font-size: 30px;
+			margin-bottom: 70px;
+		}
+	}
+}
+
+.soEasy {
+	position: relative;
+	background-image: url("../../_assets/BioEasySetUp/background.svg");
+	background-size: cover;
+	@include clearfix();
+
+	&__intro {
+		position: relative;
+		z-index: 3;
+		background: rgba(248, 251, 253, 0.5);
+
+		@include breakpoint($large) {
+			width: 45%;
+		}
+	}
+
+	&__line {
+		position: absolute;
+		top: -25px;
+		left: 35px;
+		height: 100%;
+		z-index: 2;
+
+		@include breakpoint($large) {
+			left: calc(50% - 20px);
+		}
+	}
+}
+
+.resources {
+	padding: 90px 0;
+	background: $bio-gray;
+
+	.col {
+		margin-top: 0;
+	}
+
+	h3 {
+		padding-top: 40px;
+		color: $bio-light-orange;
+		text-transform: none;
+		text-align: center;
+
+		&.resources__headline--blue {
+			color: $bio-dark-blue;
+		}
+	}
+}
+
 .extendedBenefits {
 	position: relative;
-	background-color: $even-darker-blue;
-	padding-bottom: $swooshHeight;
+	background-color: $bio-darkest-blue;
 
 	&__container {
 		padding: 100px 0;
@@ -281,23 +263,13 @@
 	.row {
 		margin-top: 0;
 	}
-
-	&::before {
-		@include swoosh('top', $swooshHeight, 'up', white, 60%, 70%);
-	}
-
-	&::after {
-		@include swoosh('bottom', $swooshHeight, 'down', white, 60%, 70%);
-	}
 }
 
 .footer {
-	$accountForSwoosh: $swooshHeight + 110px;
-
 	position: relative;
-	padding: $accountForSwoosh 0 40px 0;
+	padding: 110px 0 40px 0;
 	background: $bio-gray;
-	color: $black;
+	color: $bio-black;
 
 	.col {
 		@include breakpoint($medium) {
@@ -347,7 +319,7 @@
 
 		a {
 			margin-bottom: 10px;
-			color: $black;
+			color: $bio-black;
 			&:hover {
 				text-decoration: underline;
 			}
