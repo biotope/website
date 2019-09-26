@@ -2,7 +2,7 @@
 
 @include host('bio-github-corner') {
 	svg {
-		fill: #fd6c6c;
+		fill: #fd6c6c !important;
 		color: #fff;
 		position: absolute;
 		top: 0;
