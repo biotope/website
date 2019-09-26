@@ -8,10 +8,12 @@ import ResourceLoader from '@biotope/resource-loader/lib/index.esm';
             initFunction(element);
         });
 
-        document.querySelector('.js-openModal').addEventListener('click', (e: Event) => {
-            e.preventDefault();
-            document.querySelector('bio-modal').dispatchEvent(new CustomEvent('modal.open'));
-        })
+        if (document.querySelector('.js-openModal')) {
+            document.querySelector('.js-openModal').addEventListener('click', (e: Event) => {
+                e.preventDefault();
+                document.querySelector('bio-modal').dispatchEvent(new CustomEvent('modal.open'));
+            })
+        }
         
         document.addEventListener('keydown', (e: KeyboardEvent) => {
             if (e.keyCode === 27) {
