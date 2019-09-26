@@ -4,28 +4,45 @@
 @include host("bio-easy-set-up") {
 	.wrapper {
 		display: grid;
-		grid-template-columns: 60px 1fr;
+		grid-template-columns: 70px 1fr;
 		column-gap: 10px;
 		padding-bottom: 40px;
         
 		@include breakpoint($large) {
-            grid-template-columns: 1fr 60px 1fr;
-            padding-bottom: 110px;
+            grid-template-columns: 1fr 70px 1fr;
+			min-height: 165px;
+			padding-bottom: 190px;
 
 			&.left {
 				::slotted(*) {
 					grid-column-start: 1;
 				}
 
-				::slotted(p) {
-					grid-row-start: 1;
-				}
-
 				::slotted(code) {
 					grid-row-start: 2;
 				}
 			}
-        }
+		}
+
+		::slotted(h4) {
+			grid-column-start: 2;
+			grid-row-start: 1;
+			font-weight: 500;
+
+			@include breakpoint($large) {
+				grid-column-start: 3;
+			}
+		}
+
+		::slotted(p) {
+			grid-column-start: 2;
+			grid-row-start: 1;
+			margin-top: 25px;
+
+			@include breakpoint($large) {
+				grid-column-start: 3;
+			}
+		}
         
         ::slotted(code) {
             grid-column-start: 2;
@@ -36,19 +53,20 @@
             font-weight: $font-weight-bold;
             
 			@include breakpoint($large) {
-                grid-column-start: 3;
+				grid-column-start: 3;
+				height: 26px;
 			}
-        }
+		}
 	}
 
 	img {
-		height: 60px;
-		width: 60px;
-        margin: auto;
-        z-index: 3;
+		height: 70px;
+		width: 70px;
+		z-index: 3;
 
 		@include breakpoint($large) {
+			margin: auto;
 			grid-column-start: 2;
 		}
-    }
+	}
 }
