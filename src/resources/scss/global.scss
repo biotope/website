@@ -108,18 +108,26 @@
 		background: rgba(248, 251, 253, 0.5);
 
 		@include breakpoint($large) {
-			width: 45%;
+			min-height: 350px;
+
+			p {
+				width: 45%;
+			}
 		}
 	}
 
 	&__line {
-		position: absolute;
-		top: -25px;
-		left: 35px;
-		height: 100%;
+		display: none;
 
 		@include breakpoint($large) {
-			left: calc(50% - 20px);
+			display: block;
+			position: absolute;
+			top: -25px;
+			left: calc(50% - 38px - 1.2%);
+		}
+
+		@include breakpoint($xxlarge) {
+			left: calc(50% - 38px)
 		}
 	}
 }
