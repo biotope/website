@@ -41,11 +41,13 @@
 					top: 90px;
 					right: 7%;
 				}
-				svg {
-					transition: all 0.2s ease;
+
+				img {
+					transition: 0.2s ease;
 				}
+				
 				&:hover {
-					svg {
+					img {
 						transform: rotate(180deg);
 					}
 				}
@@ -71,6 +73,7 @@
 			.content {
 				display: block;
 			}
+
 			.backdrop {
 				display: block;
 			}
