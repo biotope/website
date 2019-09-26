@@ -10,18 +10,22 @@
         > * {
             flex: 1 100%;
         }
+
         img {
             width: 100%;
             max-width: 250px;
             margin: 0 auto;
         }
+
         h3 {
             font-weight: $font-weight-normal;
         }
+
         p {
             @extend %benefit-text;
-            color: grey;
+            margin-top: 0;
             text-align: center;
+            color: grey;
         }
     }
 

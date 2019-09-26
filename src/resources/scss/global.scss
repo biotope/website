@@ -105,27 +105,33 @@
 .knowMore {
 	background: $bio-darkest-blue;
 	color: $bio-lighter-blue-gray;
-	padding-bottom: 125px;
 	text-align: center;
+
+	.row {
+		padding-bottom: 150px;
+	}
+
 	p {
-		padding-top: 50px;
 		font-size: 20px;
 		margin-bottom: 40px;
 	}
 
 	@include breakpoint($large) {
-		padding-bottom: 225px;
+		.row {
+			padding: 100px 0 200px;
+		}
 		p {
-			padding-top: 75px;
+			/*padding-top: 75px;*/
 			font-size: 25px;
 			margin-bottom: 50px;
 		}
 	}
 
 	@include breakpoint($xlarge) {
-		padding-bottom: 240px;
+		.row {
+			padding: 200px 0 300px;
+		}
 		p {
-			padding-top: 80px;
 			font-size: 30px;
 			margin-bottom: 70px;
 		}
@@ -158,7 +164,7 @@
 		@include breakpoint($large) {
 			display: block;
 			position: absolute;
-			top: -25px;
+			top: -100px;
 			left: calc(50% - 38px - 1.2%);
 			z-index: 2;
 		}
