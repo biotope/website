@@ -50,6 +50,7 @@
 }
 
 .benefits {
+	@include clearfix();
 	position: relative;
 
 	&__claim {
@@ -103,6 +104,8 @@
 }
 
 .knowMore {
+	@include clearfix();
+	position: relative;
 	background: $bio-darkest-blue;
 	color: $bio-lighter-blue-gray;
 	text-align: center;
@@ -118,10 +121,9 @@
 
 	@include breakpoint($large) {
 		.row {
-			padding: 100px 0 200px;
+			padding: 100px 0 250px;
 		}
 		p {
-			/*padding-top: 75px;*/
 			font-size: 25px;
 			margin-bottom: 50px;
 		}
@@ -129,7 +131,7 @@
 
 	@include breakpoint($xlarge) {
 		.row {
-			padding: 200px 0 300px;
+			padding: 150px 0 300px;
 		}
 		p {
 			font-size: 30px;
@@ -139,10 +141,10 @@
 }
 
 .soEasy {
+	@include clearfix();
 	position: relative;
 	background-image: url("../../_assets/BioEasySetUp/background.svg");
 	background-size: cover;
-	@include clearfix();
 
 	&__intro {
 		position: relative;
@@ -176,8 +178,13 @@
 }
 
 .resources {
-	padding: 90px 0;
+	@include clearfix();
+	position: relative;
 	background: $bio-gray;
+
+	.row {
+		padding: 90px 0;
+	}
 
 	.col {
 		margin-top: 0;
@@ -196,11 +203,16 @@
 }
 
 .extendedBenefits {
+	@include clearfix();
 	position: relative;
-	background-color: $bio-darkest-blue;
+	background: $bio-darkest-blue;
+
+	.row {
+		padding-top: 20px;
+	}
 
 	&__container {
-		padding: 100px 0;
+		padding: 50px 0;
 
 		@include clearfix();
 		@include breakpoint($medium) {
@@ -218,7 +230,12 @@
 }
 
 .company {
+	@include clearfix();
 	position: relative;
+
+	.row {
+		padding: 100px 0;
+	}
 
 	&__logos {
 		display: flex;
@@ -267,6 +284,7 @@
 
 		@include breakpoint($medium) {
 			margin-top: 90px;
+			padding-bottom: 90px;
 		}
 
 		p {
@@ -280,8 +298,8 @@
 }
 
 .footer {
+	@include clearfix();
 	position: relative;
-	padding: 110px 0 40px 0;
 	background: $bio-gray;
 	color: $bio-black;
 
@@ -310,6 +328,10 @@
 	&__checkItOut {
 		padding-top: 25px;
 		line-height: 1.3;
+
+		p {
+			margin-top: 0;
+		}
 
 		@include breakpoint($medium) {
 			flex-grow: 1;
