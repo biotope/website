@@ -1,24 +1,5 @@
 @import 'defaultSassImports.scss';
 
-@mixin swoosh($position, $height, $direction, $color, $left, $right) {
-	content: '';
-	position: absolute;
-	width: 100%;
-	z-index: 100;
-	height: $height;
-	background-color: $color;
-	clip-path: inset(0 0 0 0 round 0 0 $left $right);
-	@if $position == 'top' {
-		top: - $height;
-	}
-	@if $position == 'bottom' {
-		bottom: - $height;
-	}
-	@if $direction == 'up' {
-		transform: rotateX(180deg);
-	}
-}
-
 .splash {
 	font-family: $font-family-titles;
 	height: 800px;
@@ -26,12 +7,12 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center; 
-	color: $main-orange;
+	color: $bio-orange;
 
 	@include breakpoint($large) {
 		height: 110vh;
-	}	
-	
+	}
+
 	&__intro {
 		display: flex;
 		flex-flow: column;
@@ -43,7 +24,7 @@
 			padding-top: 200px;
 		}
 	}
-	
+
 	&__logo {
 		width: 120px;
 		margin: 0 auto;
@@ -54,7 +35,7 @@
 			margin: 0 0 auto 0;
 		}
 	}
-	
+
 	&__biotope {
 		padding: 10px 0;
 		letter-spacing: 2px;
@@ -116,92 +97,9 @@
 	}
 }
 
-.knowMore {
-	background: linear-gradient(90deg, $bg-light-blue-gray 0%, $bg-blue-gray 100%);
-	color: $dark-blue-gray;
-	padding: 50px 0 75px;
-	text-align: center;
-	p {
-		font-size: 20px;
-		margin-bottom: 40px;
-	}
-
-	@include breakpoint($large) {
-		padding: 75px 0 112px;
-		p {
-			font-size: 25px;
-			margin-bottom: 50px;
-		}
-	}
-
-	@include breakpoint($xlarge) {
-		padding: 80px 0 120px;
-		p {
-			font-size: 30px;
-			margin-bottom: 70px;
-		}
-	}
-}
-
-.soEasy {
-	position: relative;
-	padding: 90px 0;
-	background-image: url("../../_assets/BioEasySetUp/background.svg");
-	background-size: cover;
-
-	&__intro {
-		position: relative;
-		z-index: 1;
-		background: rgba(248, 251, 253, 0.5);
-
-		@include breakpoint($large) {
-			min-height: 350px;
-
-			p {
-				width: 45%;
-			}
-		}
-	}
-
-	&__line {
-		display: none;
-
-		@include breakpoint($large) {
-			display: block;
-			position: absolute;
-			top: -25px;
-			left: calc(50% - 38px - 1.2%);
-		}
-
-		@include breakpoint($xxlarge) {
-			left: calc(50% - 38px)
-		}
-	}
-}
-
-.resources {
-	padding: 90px 0;
-	background: $bio-gray;
-
-	.col {
-		margin-top: 0;
-	}
-
-	h3 {
-		padding-top: 40px;
-		color: $light-orange;
-		text-transform: none;
-		text-align: center;
-
-		&.resources__headline--blue {
-			color: $dark-blue;
-		}
-	}
-}
-
 .benefits {
+	@include clearfix();
 	position: relative;
-	padding-bottom: 90px;
 
 	&__claim {
 		margin: 20px 0;
@@ -253,6 +151,105 @@
 	}
 }
 
+.knowMore {
+	@include clearfix();
+	position: relative;
+	background: $bio-darkest-blue;
+	color: $bio-lighter-blue-gray;
+	text-align: center;
+
+	.row {
+		padding-bottom: 150px;
+	}
+
+	p {
+		font-size: 20px;
+		margin-bottom: 40px;
+	}
+
+	@include breakpoint($large) {
+		.row {
+			padding: 100px 0 250px;
+		}
+		p {
+			font-size: 25px;
+			margin-bottom: 50px;
+		}
+	}
+
+	@include breakpoint($xlarge) {
+		.row {
+			padding: 150px 0 300px;
+		}
+		p {
+			font-size: 30px;
+			margin-bottom: 70px;
+		}
+	}
+}
+
+.soEasy {
+	@include clearfix();
+	position: relative;
+	background-image: url("../../_assets/BioEasySetUp/background.svg");
+	background-size: cover;
+
+	&__intro {
+		position: relative;
+		z-index: 3;
+		background: rgba(248, 251, 253, 0.5);
+
+		@include breakpoint($large) {
+			min-height: 350px;
+
+			p {
+				width: 45%;
+			}
+		}
+	}
+
+	&__line {
+		display: none;
+
+		@include breakpoint($large) {
+			display: block;
+			position: absolute;
+			top: -100px;
+			left: calc(50% - 38px - 1.2%);
+			z-index: 2;
+		}
+
+		@include breakpoint($xxlarge) {
+			left: calc(50% - 38px)
+		}
+	}
+}
+
+.resources {
+	@include clearfix();
+	position: relative;
+	background: $bio-gray;
+
+	.row {
+		padding: 90px 0;
+	}
+
+	.col {
+		margin-top: 0;
+	}
+
+	h3 {
+		padding-top: 40px;
+		color: $bio-light-orange;
+		text-transform: none;
+		text-align: center;
+
+		&.resources__headline--blue {
+			color: $bio-dark-blue;
+		}
+	}
+}
+
 .whosBehind {
 	&__headline {
 		margin: 50px 0;
@@ -267,12 +264,16 @@
 }
 
 .extendedBenefits {
+	@include clearfix();
 	position: relative;
-	background-color: $even-darker-blue;
-	padding-bottom: $swooshHeight;
+	background: $bio-darkest-blue;
+
+	.row {
+		padding-top: 20px;
+	}
 
 	&__container {
-		padding: 100px 0;
+		padding: 50px 0;
 
 		@include clearfix();
 		@include breakpoint($medium) {
@@ -290,7 +291,12 @@
 }
 
 .company {
+	@include clearfix();
 	position: relative;
+
+	.row {
+		padding: 100px 0;
+	}
 
 	&__logos {
 		display: flex;
@@ -339,6 +345,7 @@
 
 		@include breakpoint($medium) {
 			margin-top: 90px;
+			padding-bottom: 90px;
 		}
 
 		p {
@@ -349,23 +356,13 @@
 	.row {
 		margin-top: 0;
 	}
-
-	&::before {
-		@include swoosh('top', $swooshHeight, 'up', white, 60%, 70%);
-	}
-
-	&::after {
-		@include swoosh('bottom', $swooshHeight, 'down', white, 60%, 70%);
-	}
 }
 
 .footer {
-	$accountForSwoosh: $swooshHeight + 110px;
-
+	@include clearfix();
 	position: relative;
-	padding: $accountForSwoosh 0 40px 0;
 	background: $bio-gray;
-	color: $black;
+	color: $bio-black;
 
 	.col {
 		@include breakpoint($medium) {
@@ -393,6 +390,10 @@
 		padding-top: 25px;
 		line-height: 1.3;
 
+		p {
+			margin-top: 0;
+		}
+
 		@include breakpoint($medium) {
 			flex-grow: 1;
 			padding-top: 0;
@@ -415,7 +416,7 @@
 
 		a {
 			margin-bottom: 10px;
-			color: $black;
+			color: $bio-black;
 			&:hover {
 				text-decoration: underline;
 			}
