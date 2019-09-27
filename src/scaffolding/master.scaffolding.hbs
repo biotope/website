@@ -33,8 +33,7 @@
                        Biotope helps you build Web Components quickly, makes sure they work tohether and reconciles them into a single library. 
                        This in turn gives you a superpower: Lasting control of your entire UI.
                     </p>
-                    <bio-button class="js-openModal" title="Who's behind biotope" modifier="long"
-                        data-resources="[{paths: ['components/BioButton/index.js']}]"></bio-button>
+                    <bio-button class="js-openModal" modalType="whosBehind" title="Who's behind biotope" modifier="long" data-resources="[{paths: ['components/BioButton/index.js']}]"></bio-button>
                 </div>
             </div>
             <div class="benefits__container">
@@ -71,7 +70,7 @@
 		<div class="col">
 			<p>Want to know more about what Biotope can do for you?</p>
 			<bio-button title="Get in touch" url="mailto:biotope.generic@virtual-identity.com"
-				data-resources="[{paths: ['components/BioButton/index.js']}]" modifier="large whiteText"></bio-button>
+				data-resources="[{paths: ['components/BioButton/index.js']}]" modifier="whiteText"></bio-button>
 		</div>
 	</div>
 
@@ -239,16 +238,15 @@
                 </bio-button>
             </div>
             <div class="footer__essentials">
-                <a href="#">Imprint</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">About VI</a>
+                <a class="js-openModal" modalType="imprint">Imprint</a>
+                <a class="js-openModal" modalType="privacy">Privacy Policy</a>
+                <a href="https://www.virtual-identity.com/">About VI</a>
             </div>
         </div>
     </div>
 </footer>
 
-<bio-modal data-resources="[{paths: ['components/BioModal/index.js']}]">
-
+<bio-modal modalType="whosBehind" data-resources="[{paths: ['components/BioModal/index.js']}]">
     <div class="row row--reducedWidth">
         <div class="col">
             <section class="whosBehind">
@@ -280,6 +278,79 @@
             </section>
         </div>
     </div>
+</bio-modal>
 
+<bio-modal modalType="imprint" data-resources="[{paths: ['components/BioModal/index.js']}]">
+     <div class="row row--reducedWidth">
+        <div class="col">
+            <section class="imprint">
+                <h3>Imprint</h3>
+                <p>Virtual Identity AG <br> 
+                Grünwälder Str. 10-14 | 79098 Freiburg <br>
+                Phone: +49 761 20758=00 | +49 761 20758-01
+                </p>
+                <p>Mail: info@virtual-identity.com</p>
+                <p>Board: Ralf Heller<br>
+                Responsible for content according to § 55 Abs. 2 RStV : Ralf Heller
+                </p>
+                <p>HRB 6218, District Court Freiburg<br>
+                VAT ID: DE 208002218</p>
+                <h4>Legal Note</h4>
+                <p>Copyright | Copyright © 2002-2019 Virtual Identity AG. All rights reserved.</p>
+                <p>The contents of the website of Virtual Identity AG are proteced by copyright and may not be 
+                    reproduced, Duplicated or distributed in any form without the written consent of Virtual Identity AG.
+                </p>
+                <p><strong>Disclaimer</strong> | We check and update the information offered on our website regularly. 
+                Despite careful control, the information proided on the website may have changed. Therefore no liability 
+                or guarantee for the topicality, correctness and comleteness can be taken over. The content of linked pages 
+                are the sole responsibility of their operators.</p>
+            </section>
+        </div>
+    </div>
+</bio-modal>
 
+<bio-modal modalType="privacy" data-resources="[{paths: ['components/BioModal/index.js']}]">
+     <div class="row row--reducedWidth">
+        <div class="col">
+            <section class="privacyPolicy">
+                <h3>Privacy Policy</h3>
+                <p><strong>Information acc. Art 13 GDPR</strong><br>
+                As of: 14.08.2019</p>
+                <p>We appreciate your interest in our website and our company.</p>
+                <p>The projection of your personal data during the collection, processing and use during yor visit to 
+                    our portal is very important to us. We have taken technical and oranizational measures to ensure 
+                    that the data protection rules of both us and external service providers are respected.
+                </p>
+                <p>In the present case, we would like to inform you about the nature, scope and purpouse of the collection 
+                    and use of your personal data provided to us, as well as their processing and use.
+                </p>
+                <h4>1. Contact details</h4>
+                <p>You can contact us as follows:<br>
+                Virtual Identity AG<br>
+                Greenwood road 10-14<br>
+                79098 Freiburg<br>
+                t +49 761 20758-456<br>
+                f +49 761 20758-02<br>
+                Board: Ralf Heller<br>
+                e-mail: info@virtual-identity.com</p>
+                <h4>2. Processing of Data</h4>
+                <p>Personal information is information about your identity. These include e.g. Information such as name, address, telephone number, e-mail address.</p>
+                <p>In general, you can visit our website wothout leaving personal data, e.g. if you only want to inform yourself about tour products and visit the corresponding page.
+                    The accesses made on our homepage and every retrieval of a file deposited on the gomepage are logged. The storage serice internal system-related and statistical purpouses.
+                    The following are logged: browser type / version, operating system used, referrer URL (the previously visited page), host name of the accessing computer (IP address), time 
+                    of service request. However, no personally identifiable information will be transmited by you and this information will be stored separately from any personally identifiable information 
+                    transmitted. Additionally, the IP address of the requesting computers are logged.
+                </p>
+                <p>In certain cases, however, we will need your name and address, as well as other infirmation, so that we can provide the services you require. This further personal data will only be collected 
+                    and saved if youprovide this information voluntarily, for example in the context of a request, registration, an application as an employee or potential supplier or for orders and their transactions.
+                </p>
+                <p></p>
+                <h4>3. Data we collect</h4>
+                <p>a. Data when using the website<br>
+                Please refer to sections 2 and 7-9 of this privacy policy.<br>
+                b. canditature<br>
+                Information about your application can be found in point 5.</p>
+            </section>
+        </div>
+    </div>
 </bio-modal>

@@ -1,9 +1,10 @@
 @import 'node_modules/@biotope/element/lib/host.mixin';
+@import '../../resources/scss/settings/settings';
 
 @include host('bio-github-corner') {
 	svg {
-		fill: #fd6c6c !important;
-		color: #fff;
+		fill: $bio-orange !important;
+		color: $bio-darker-blue;
 		position: absolute;
 		top: 0;
 		border: 0;

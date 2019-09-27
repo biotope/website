@@ -93,15 +93,17 @@ section {
 		color: $bio-white;
 		max-width: 450px;
 		margin: 0 auto;
-		padding: 15px 0 20px;
+		padding: 20px 0;
 		font-size: 15px;
+		font-weight: 400;
 		line-height: 23px;
-
+		
 		@include breakpoint($large) {
 			margin: 0;
 			padding: 30px 0 20px 0;
 			font-size: 18px;
 			max-width: 515px;
+			line-height: 27px;
 		}
 	}
 
@@ -139,10 +141,21 @@ section {
 		}
 
 		@include breakpoint($medium) {
-			text-align: left;
 			display: flex;
-			width: 100%;
 			justify-content: space-around;
+			text-align: left;
+		}
+
+		@include breakpoint($large) {
+			width: 87%;
+		}
+	}
+
+	&__claimText {
+		margin: auto;
+
+		h3{
+			text-transform: none;
 		}
 	}
 
@@ -183,7 +196,6 @@ section {
 
 	p {
 		font-size: 20px;
-		margin-bottom: 40px;
 		color: $bio-white;
 	}
 
@@ -193,7 +205,6 @@ section {
 		}
 		p {
 			font-size: 25px;
-			margin-bottom: 50px;
 		}
 	}
 
@@ -203,7 +214,6 @@ section {
 		}
 		p {
 			font-size: 30px;
-			margin-bottom: 70px;
 		}
 	}
 }
@@ -235,7 +245,7 @@ section {
 			display: block;
 			position: absolute;
 			top: -100px;
-			left: calc(50% - 38px - 1.2%);
+			left: calc(50% - 38px);
 			z-index: 2;
 		}
 
@@ -251,7 +261,11 @@ section {
 	background: $bio-gray;
 
 	.row {
-		padding: 90px 0;
+		padding: 125px 0;
+
+		@include breakpoint($large) {
+			padding-top: 200px
+		}
 	}
 
 	.col {
@@ -291,6 +305,31 @@ section {
 		}
 	}
 }
+
+.imprint, .privacyPolicy {
+	h3 {
+		font-size: 50px;
+	}
+
+	h4 {
+		padding-top: 30px;
+	}
+
+	strong {
+		font-weight: 600;
+	}
+
+	p {
+		background:rgba(248, 251, 253, 0.5);
+	}
+
+	@include breakpoint($large) {
+		p {
+			width: 50%;
+		}
+	}
+}
+
 
 .extendedBenefits {
 	@include clearfix();
@@ -398,12 +437,15 @@ section {
 			display: flex;
 		}
 	}
-
+	
 	&__githubLogo {
 		display: none;
 
-		@include breakpoint($large) {
+		@include breakpoint($medium) {
 			display: block;
+		}
+
+		@include breakpoint($large) {
 			position: absolute;
 			top: auto;
 			left: auto;
@@ -423,7 +465,7 @@ section {
 
 		@include breakpoint($medium) {
 			flex-grow: 1;
-			padding-top: 0;
+			padding: 0 0 0 20px;
 			font-size: 20px;
 		}
 
@@ -444,7 +486,9 @@ section {
 		a {
 			margin-bottom: 10px;
 			color: $bio-black;
+			
 			&:hover {
+				cursor: pointer;
 				text-decoration: underline;
 			}
 
