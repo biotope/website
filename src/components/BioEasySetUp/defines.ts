@@ -8,6 +8,9 @@
  interface BioEasySetUpProps {
 	imgsrc: string;
 	position?: string;
+	headline: string;
+	text: string;
+	code: string;
  }
 
 /**

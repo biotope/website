@@ -8,7 +8,10 @@ class BioEasySetUp extends Component< BioEasySetUpProps, BioEasySetUpState > {
 
     static attributes = [
         'imgsrc',
-        'position'
+        'position',
+        'headline',
+        'text',
+        'code'
     ];
 
     public methods: BioEasySetUpMethods = {
@@ -24,7 +27,10 @@ class BioEasySetUp extends Component< BioEasySetUpProps, BioEasySetUpState > {
     get defaultProps() {
         return {
             imgsrc: '',
-            position: ''
+            position: '',
+            headline: '',
+            text: '',
+            code: ''
         }
     }
 

@@ -2,7 +2,7 @@
 @import "../../resources/scss/defaultSassImports.scss";
 
 @include host("bio-easy-set-up") {
-	.wrapper {
+	.easy-setup-wrapper {
 		display: grid;
 		grid-template-columns: 70px 1fr;
 		column-gap: 10px;
@@ -24,9 +24,12 @@
 			}
 		}
 
-		::slotted(h4) {
+		.text-wrapper {
 			grid-column-start: 2;
 			grid-row-start: 1;
+		}
+
+		h4 {
 			font-weight: 500;
 
 			@include breakpoint($large) {
@@ -34,24 +37,21 @@
 			}
 		}
 
-		::slotted(p) {
-			grid-column-start: 2;
-			grid-row-start: 1;
+		p {
 			margin-top: 25px;
 
 			@include breakpoint($large) {
 				grid-column-start: 3;
 			}
 		}
-        
-        ::slotted(code) {
-            grid-column-start: 2;
+
+        code {
 			padding: 10px 20px;
 			background: $bio-white;
             border-radius: 10px;
             box-shadow: 2px 2px 8px $bio-shadow-gray;
             font-weight: $font-weight-bold;
-            
+
 			@include breakpoint($large) {
 				grid-column-start: 3;
 				height: 26px;
