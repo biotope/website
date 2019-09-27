@@ -51,7 +51,7 @@ $susy: (
 
 		@include breakpoint($medium) {
 			margin-left: calc(1.96% - #{$half-grid-gutter});
-			margin-right: calc(4.3% - #{$half-grid-gutter});
+			margin-right: calc(1.96% - #{$half-grid-gutter});
 		}
 
 		@include breakpoint(1520px) {

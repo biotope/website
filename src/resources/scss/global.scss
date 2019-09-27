@@ -77,7 +77,8 @@
 		max-width: 400px;
 		margin: 0 auto;
 		padding: 20px 0;
-		font-size: 14px;
+		font-size: 15px;
+		font-weight: 400;
 
 		@include breakpoint($large) {
 			margin: 0;
@@ -121,11 +122,18 @@
 		}
 
 		@include breakpoint($medium) {
-			text-align: left;
 			display: flex;
-			width: 100%;
 			justify-content: space-around;
+			text-align: left;
 		}
+
+		@include breakpoint($large) {
+			width: 87%;
+		}
+	}
+
+	&__claimText {
+		margin: auto;
 	}
 
 	&__container {
