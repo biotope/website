@@ -13,7 +13,8 @@
 			bottom: 0;
 			padding: 5%;
 			box-sizing: border-box;
-			background-color: $bio-white;
+			background: url(../../_assets/BioEasySetUp/background.svg);
+			background-size: cover;
 			overflow-y: scroll;
 
 			@include breakpoint($medium) {
@@ -25,17 +26,18 @@
 
 			.modal-close {
 				position: absolute;
-				color: white;
-				border: none;
 				top: 33px;
 				right: 20px;
-				height: 30px;
-				width: 30px;
-				border-radius: 50%;
-				padding: 7px;
-				cursor: pointer;
-				background: linear-gradient(135deg, #6782ce, #a4f6e1);
+				height: 40px;
+				width: 40px;
+				padding: 11px;
 				outline: 0;
+				border-radius: 50%;
+				background: linear-gradient(135deg, #6782ce, #a4f6e1);
+				border: none;
+				color: white;
+				transition: 0.5s ease;
+				cursor: pointer;
 				
 				@include breakpoint($medium) {
 					top: 90px;
@@ -48,6 +50,7 @@
 				
 				&:hover {
 					transform: scale(1.2);
+
 					img {
 						transform: rotate(180deg);
 					}

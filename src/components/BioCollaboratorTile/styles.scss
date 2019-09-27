@@ -25,7 +25,7 @@
             display: block;
             margin: 0 auto;
             clip-path: circle();
-            border: 5px solid $bio-white;
+            border: 5px solid transparent;
             border-radius: 50%;
             transition: 0.4s ease;
         }
