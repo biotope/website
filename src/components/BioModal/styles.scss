@@ -16,7 +16,7 @@
 			background-color: $bio-white;
 			overflow-y: scroll;
 
-			@include breakpoint($medium) {
+			@include breakpoint($large) {
 				top: 5%;
 				left: 5%;
 				bottom: 5%;

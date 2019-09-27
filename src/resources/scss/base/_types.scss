@@ -33,8 +33,7 @@ h3, .footer__bigWords {
 }
 
 h4 {
-	font-size: 17px;
-	font-weight: 500;
+	@extend %headlineH4;
 	line-height: (25/17);
 }
 
