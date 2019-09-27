@@ -49,7 +49,7 @@ class BioModal extends Component<BioModalProps, BioModalState> {
 			this.shadowRoot.querySelector(className).addEventListener('click', (e: CustomEvent) => {
 				this.dispatchEvent(new CustomEvent('modal.close'));
 			})
-		})
+		});
 
 		if (this.props.openonpageload) {
 			this.setState({

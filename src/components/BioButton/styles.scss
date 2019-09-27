@@ -8,8 +8,8 @@
 		min-width: 160px;
 		padding: 10px 20px;
 		background: transparent;
-		color: $black;
-		border: $border solid $main-orange;
+		color: $bio-black;
+		border: $border solid $bio-orange;
 		border-radius: 50px;
 		font-family: $font-family-titles;
 		font-size: 15px;
@@ -22,15 +22,15 @@
 
 		&:hover {
 			border: 2px solid transparent;
-			background: $main-orange;
+			background: $bio-orange;
 			color: $bio-white;
 		}
 
         &.blue {
-			border: $border solid $dark-blue;
+			border: $border solid $bio-dark-blue;
 
 			&:hover{
-				background: $dark-blue;
+				background: $bio-dark-blue;
 			}
 		}
 
@@ -40,7 +40,7 @@
 		
         &.full {
             color: $bio-white;
-			background: linear-gradient(to top, $main-orange, $light-orange);
+			background: linear-gradient(to top, $bio-orange, $bio-light-orange);
 			border: 2px solid $bio-white;
     
             &:before {
@@ -49,8 +49,8 @@
     
             &:hover {
                 background: transparent;
-				color: $black;
-				border: 2px solid $main-orange;
+				color: $bio-black;
+				border: 2px solid $bio-orange;
             }
 		}
 		

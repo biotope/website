@@ -17,7 +17,7 @@
 				::slotted(*) {
 					grid-column-start: 1;
 				}
-				
+
 				::slotted(code) {
 					grid-row-start: 2;
 				}
@@ -33,7 +33,7 @@
 				grid-column-start: 3;
 			}
 		}
-		
+
 		::slotted(p) {
 			grid-column-start: 2;
 			grid-row-start: 1;
@@ -49,7 +49,7 @@
 			padding: 10px 20px;
 			background: $bio-white;
             border-radius: 10px;
-            box-shadow: 2px 2px 8px $shadow-gray;
+            box-shadow: 2px 2px 8px $bio-shadow-gray;
             font-weight: $font-weight-bold;
             
 			@include breakpoint($large) {
@@ -62,11 +62,11 @@
 	img {
 		height: 70px;
 		width: 70px;
-        z-index: 1;
-		
+		z-index: 3;
+
 		@include breakpoint($large) {
 			margin: auto;
 			grid-column-start: 2;
 		}
-    }
+	}
 }

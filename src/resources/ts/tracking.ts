@@ -9,6 +9,10 @@ dataLayer = dataLayer || [];
 		'www.biotope.sh'
 	];
 
+	const visitedSectionIds = [];
+	const visitSectionTime = 2000;
+	let visitSectionTimeout;
+
 	function trackAnchorLink(anchorTitle: string) {
 		dataLayer.push({
 			'event': 'anchor',
@@ -29,21 +33,20 @@ dataLayer = dataLayer || [];
 			'header': slideHeader
 		});
 	}
-	
+
 	function trackLink(link: HTMLElement) {
-		const linkHref = link.getAttribute('url') ||  link.getAttribute('href');
+		const linkHref = link.getAttribute('url') || link.getAttribute('href');
 		const linkURL = new URL(linkHref);
-		const linkText = link.getAttribute('title') || link.innerText;
 		const linkHostname = linkURL ? linkURL.hostname : '';
 		if (internalHostnames.indexOf(linkHostname) != -1) {
-			trackCallToAction('cta-intern', linkText);
+			trackCallToAction('cta-intern', linkHref);
 		} else {
-			trackCallToAction('cta-extern', linkText);
+			trackCallToAction('cta-extern', linkHref);
 		}
 	}
 
 	function trackMailtoLink(mailtoLink: HTMLElement) {
-		const linkHref = mailtoLink.getAttribute('url') ||  mailtoLink.getAttribute('href');
+		const linkHref = mailtoLink.getAttribute('url') || mailtoLink.getAttribute('href');
 		const eMailAddress = linkHref.replace('mailto:', '');
 		dataLayer.push({
 			'event': 'contact',
@@ -56,6 +59,13 @@ dataLayer = dataLayer || [];
 		dataLayer.push({
 			'event': 'modal',
 			'overlay': title
+		});
+	}
+
+	function trackScrollEvent(currentSectionId : string) {
+		dataLayer.push({
+			'event': 'scroll',
+			'header': currentSectionId
 		});
 	}
 
@@ -86,4 +96,31 @@ dataLayer = dataLayer || [];
 	window.addEventListener('bioScrollAnimation.showSlide', (event: CustomEvent) => {
 		trackAnimationShowSlide(event.detail.title);
 	});
+
+	window.addEventListener('scroll', (event) => {
+		const currentSectionId = getCurrentSectionId();
+
+		window.clearTimeout(visitSectionTimeout);
+
+		// only track currentSectionId, if not already visited and after 2 seconds
+		if (currentSectionId && visitedSectionIds.indexOf(currentSectionId) === -1) {
+			visitSectionTimeout = window.setTimeout(() => {
+				trackScrollEvent(currentSectionId);
+				visitedSectionIds.push(currentSectionId);
+			}, visitSectionTime);
+		}
+	});
+
+	function getCurrentSectionId() {
+		const scrollPosition = window.scrollY + Math.round(window.outerHeight / 2);
+		const mainSections: NodeListOf<HTMLElement> = document.querySelectorAll('body > section');
+		let currentSectionId;
+
+		mainSections.forEach((section : HTMLElement) => {
+			if (scrollPosition > section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
+				currentSectionId = section.getAttribute('id');
+			}
+		});
+		return currentSectionId || null;
+	}
 }

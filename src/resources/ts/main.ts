@@ -20,7 +20,7 @@ import ResourceLoader from '@biotope/resource-loader/lib/index.esm';
                 document.querySelector('bio-modal').dispatchEvent(new CustomEvent('modal.close'));
             }
         })
-    }
+    };
 
     const setupResourceLoader = () => {
         const cssHandler = {
@@ -31,7 +31,7 @@ import ResourceLoader from '@biotope/resource-loader/lib/index.esm';
                 style.href = options.resource.path;
                 document.body.appendChild(style);
             }
-        }
+        };
 
         const jsHandler = {
             match: (options) => options.resource.path.indexOf('.js') > -1,
@@ -41,7 +41,7 @@ import ResourceLoader from '@biotope/resource-loader/lib/index.esm';
                 script.async = true;
                 document.body.appendChild(script);
             }
-        }
+        };
 
         return new ResourceLoader({
             base: biotope.configuration.get('data.staticResourcesBase'),
@@ -53,10 +53,10 @@ import ResourceLoader from '@biotope/resource-loader/lib/index.esm';
                 jsHandler
             ]
         });
-    }
+    };
 
     window.addEventListener('resourcesReady', () => {
         init();
     });
     setupResourceLoader();
-};
+}

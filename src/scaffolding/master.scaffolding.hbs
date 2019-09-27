@@ -19,7 +19,7 @@
     </div>
 </header>
 
-<section class="benefits" id="benefits">
+<section id="benefits" class="benefits">
     <div class="row row--reducedWidth">
         <div class="col">
             <div class="benefits__claim">
@@ -54,64 +54,74 @@
             </div>
         </div>
     </div>
+
+	<bio-swoosh color="#fff" direction="down" height="270" data-resources="[{paths: ['components/BioSwoosh/index.js']}]"></bio-swoosh>
+
 </section>
 
-<section class="scrollAnimation">
+<section id="scrollAnimation" class="scrollAnimation">
 	{{bioInclude 'components/BioScrollAnimation/scaffolding/BioScrollAnimation' }}
 </section>
 
-<section class="knowMore">
+<section id="knowMore" class="knowMore">
+
+	<bio-swoosh color="#0A0A2C" direction="up" height="270" data-resources="[{paths: ['components/BioSwoosh/index.js']}]"></bio-swoosh>
+
 	<div class="row row--reducedWidth">
 		<div class="col">
 			<p>Want to know more about what Biotope can do for you?</p>
 			<bio-button title="Get in touch" url="mailto:biotope.generic@virtual-identity.com"
-				data-resources="[{paths: ['components/BioButton/index.js']}]" modifier="large"></bio-button>
+				data-resources="[{paths: ['components/BioButton/index.js']}]" modifier="large whiteText"></bio-button>
 		</div>
 	</div>
+
 </section>
 
-<section class="soEasy">
-        <div class="row row--reducedWidth">
-            <div class="col">
-                <img class="soEasy__line" src="../_assets/BioEasySetUp/line.svg">
-                <div class="soEasy__intro">
-                    <bio-section-headline data-resources="[{paths: ['components/BioSectionHeadline/index.js']}]">Biotope Installation </br> <strong>Start building <br> within minutes.</strong></bio-section-headline>
-                    <p>
-                        No complicated registration process. No hidden costs. No more big technology decisions at the beginning of each project - 
-                        Biotope works with any framework so you can build in the environment of your choice. And everyone else too. Build up your 
-                        Web Component Library together and
-                    </p>
-                </div>
-                <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/1.svg" alt="step one">
-                    <h4>Install Package</h4>
-                    <p>Install biotope as global package with npm.</p>
-                    <code>npm install biotope -g</code>
-                </bio-easy-set-up>
-                <bio-easy-set-up position="left" data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/2.svg" alt="step two">
-                    <h4>Set Up Project</h4>
-                    <p>Trust the CLI tool to set up your project. Run command to create biotope-boilerplate and choose preferences:</p>
-                    <code>biotope create myEcosystem</code>
-                </bio-easy-set-up>
-                <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/3.svg" alt="step three">
-                    <h4>Install Build-System</h4>
-                    <p>The included build-system helps you to automatically build production-ready resources.</p>
-                    <code>npm install</code>
-                </bio-easy-set-up>
-                <bio-easy-set-up position="left" data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/4.svg" alt="step four">
-                    <h4>Run Build</h4>
-                    <p>Change directory to the newly generated biotope instance and run it from there.</p>
-                    <code>npm start</code>
-                </bio-easy-set-up>
-                <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/5.svg" alt="step five">
-                    <h4>Start Building Components</h4>
-                    <p>Install the included build-ststem that helps you to automatically build product-ready resources</p>
-                    <code>biotope generate</code>
-                </bio-easy-set-up>
+<section id="installation" class="installation">
+
+	<bio-swoosh color="#f8fbfd" direction="up" height="270" shift="-40" data-resources="[{paths: ['components/BioSwoosh/index.js']}]"></bio-swoosh>
+
+    <div class="row row--reducedWidth">
+        <div class="col">
+            <img class="installation__line" src="../_assets/BioEasySetUp/line.svg">
+            <div class="installation__intro">
+                <bio-section-headline data-resources="[{paths: ['components/BioSectionHeadline/index.js']}]">Biotope Installation </br> <strong>Start building within minutes.</strong></bio-section-headline>
+                <p>
+                    No complicated registration process. No hidden costs. No more big technology decisions at the beginning of each project -
+                    Biotope works with any framework so you can build in the environment of your choice. And everyone else too. Build up your
+                    Web Component Library together and
+                </p>
             </div>
+            <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/1.svg" alt="step one">
+                <h4>Install Package</h4>
+                <p>Install biotope as global package with npm.</p>
+                <code>npm install biotope -g</code>
+            </bio-easy-set-up>
+            <bio-easy-set-up position="left" data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/2.svg" alt="step two">
+                <h4>Set Up Project</h4>
+                <p>Trust the CLI tool to set up your project. Run command to create biotope-boilerplate and choose preferences:</p>
+                <code>biotope create myEcosystem</code>
+            </bio-easy-set-up>
+            <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/3.svg" alt="step three">
+                <h4>Install Build-System</h4>
+                <p>The included build-system helps you to automatically build production-ready resources.</p>
+                <code>npm install</code>
+            </bio-easy-set-up>
+            <bio-easy-set-up position="left" data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/4.svg" alt="step four">
+                <h4>Run Build</h4>
+                <p>Change directory to the newly generated biotope instance and run it from there.</p>
+                <code>npm start</code>
+            </bio-easy-set-up>
+            <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]" imgsrc="_assets/BioEasySetUp/5.svg" alt="step five">
+                <h4>Start Building Components</h4>
+                <p>Install the included build-ststem that helps you to automatically build product-ready resources</p>
+                <code>biotope generate</code>
+            </bio-easy-set-up>
         </div>
+    </div>
 </section>
 
-<section class="resources">
+<section id="resources" class="resources">
         <div class="row row--reducedWidth">
             <div class="col col--large-6">
                 <h3 class="resources__headline--blue">Code & Resources</h3>
@@ -150,7 +160,10 @@
         </div>
 </section>
 
-<section class="extendedBenefits">
+<section id="extendedBenefits" class="extendedBenefits">
+
+	<bio-swoosh color="#0A0A2C" direction="up" height="270" data-resources="[{paths: ['components/BioSwoosh/index.js']}]"></bio-swoosh>
+
     <div class="row row--reducedWidth">
         <div class="col">
                 <bio-section-headline inverted data-resources="[{paths: ['components/BioSectionHeadline/index.js']}]">
@@ -172,9 +185,12 @@
             </div>
         </div>
     </div>
+
+	<bio-swoosh color="#0A0A2C" direction="down" height="270" shift="-40" data-resources="[{paths: ['components/BioSwoosh/index.js']}]"></bio-swoosh>
+
 </section>
 
-<section class="company">
+<section id="company" class="company">
     <div class="row row--reducedWidth">
         <div class="col">
             <bio-section-headline data-resources="[{paths: ['components/BioSectionHeadline/index.js']}]">
@@ -199,6 +215,9 @@
 </section>
 
 <footer class="footer">
+
+	<bio-swoosh color="#f8fbfd" direction="up" height="270" shift="-40" data-resources="[{paths: ['components/BioSwoosh/index.js']}]"></bio-swoosh>
+
     <div class="row row--reducedWidth">
         <div class="col">
             <a href="#">
