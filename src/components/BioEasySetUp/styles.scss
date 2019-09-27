@@ -6,12 +6,12 @@
 		display: grid;
 		grid-template-columns: 70px 1fr;
 		column-gap: 10px;
-		padding-bottom: 40px;
+		padding: 40px 0;
         
 		@include breakpoint($large) {
             grid-template-columns: 1fr 70px 1fr;
 			min-height: 165px;
-			padding-bottom: 190px;
+			padding: 0 0 190px 0;
 
 			&.left {
 				::slotted(*) {

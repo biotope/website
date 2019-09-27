@@ -10,8 +10,6 @@
         transition: all 0.4s ease;
         
         &:hover {
-            transform: translate3d(0,3px,0);
-            
             img {
                 width: 207px;
                 border: 5px solid $bio-orange;

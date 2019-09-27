@@ -104,7 +104,7 @@ section {
 
 		@include breakpoint($large) {
 			margin: 0;
-			padding: 20px 0;
+			padding: 30px 0 20px 0;
 			font-size: 18px;
 			max-width: 515px;
 		}
@@ -126,7 +126,7 @@ section {
 	position: relative;
 
 	&__claim {
-		margin: 20px 0;
+		margin: 20px 0 80px 0;
 		text-align: center;
 
 		> div {
@@ -189,6 +189,7 @@ section {
 	p {
 		font-size: 20px;
 		margin-bottom: 40px;
+		color: $bio-white;
 	}
 
 	@include breakpoint($large) {
@@ -263,10 +264,14 @@ section {
 	}
 
 	h3 {
-		padding-top: 40px;
+		padding: 40px 0 20px 0;
 		color: $bio-light-orange;
 		text-transform: none;
 		text-align: center;
+
+		@include breakpoint($large) {
+			padding: 40px 0 0 0;
+		}
 
 		&.resources__headline--blue {
 			color: $bio-dark-blue;
@@ -285,6 +290,10 @@ section {
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
+
+		@include breakpoint($medium) {
+			justify-content: space-between;
+		}
 	}
 }
 
@@ -334,6 +343,7 @@ section {
 
 		img {
 			margin-right: 10px;
+			display: none;
 
 			@include breakpoint($medium) {
 				margin-right: 0;
@@ -342,7 +352,6 @@ section {
 			&:last-child {
 				margin-right: 0;
 			}
-			display: none;
 
 			&:nth-child(1),
 			&:nth-child(2) {
@@ -396,13 +405,11 @@ section {
 	}
 
 	&__githubLogo {
-		position: absolute;
-		top: 70px;
-		left: 0;
-		transform: rotate(90deg);
-		width: 70px;
+		display: none;
 
 		@include breakpoint($large) {
+			display: block;
+			position: absolute;
 			top: auto;
 			left: auto;
 			bottom: 0;

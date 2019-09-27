@@ -1,3 +1,5 @@
+// @import '../defaultSassImports.scss';
+
 %benefit-text {
     font-family: $font-family-body;
     font-weight: $font-weight-light;
@@ -27,9 +29,10 @@
 	}
 }
 
-%paragraph {
+p {
     font-family: $font-family-body;
     font-weight: $font-weight-light;
+    color: $bio-darker-blue;
 }
 
 %sectionHeadline {
