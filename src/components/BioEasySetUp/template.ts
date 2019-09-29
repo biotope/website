@@ -5,13 +5,17 @@ import { BioEasySetUpProps, BioEasySetUpState, BioEasySetUpMethods } from './def
 
 
 export default (render: Function, data: BioEasySetUpProps & BioEasySetUpState & BioEasySetUpMethods , createStyle: Function) => {
-    const classes = classNames('wrapper', data.position);
+    const classes = classNames('easy-setup-wrapper', data.position);
 
     return render`
         ${createStyle(styles)}
         <div class=${classes}>
             <img src="${data.imgsrc}" />
-            <slot></slot>
+            <div class="text-wrapper">
+				<h4>${data.headline}</h4>
+				<p>${data.text}</p>
+            </div>
+            <code>${data.code}</code>
         </div>
     `;
 }

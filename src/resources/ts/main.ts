@@ -9,10 +9,18 @@ import ResourceLoader from '@biotope/resource-loader/lib/index.esm';
         });
 
         if (document.querySelector('.js-openModal')) {
-            document.querySelector('.js-openModal').addEventListener('click', (e: Event) => {
-                e.preventDefault();
-                document.querySelector('bio-modal').dispatchEvent(new CustomEvent('modal.open'));
-            })
+            document.querySelectorAll('.js-openModal').forEach(e => {
+                
+                e.addEventListener('click', (e: Event) => {
+                    e.preventDefault();
+                    
+                    const target: any = e.target               
+                    openModal(target.getAttribute('modaltype'));
+                    function openModal(type: string) {
+                        document.querySelector(`bio-modal[modalType = ${type}]`).dispatchEvent(new CustomEvent('modal.open'));
+                    }
+                })
+            });
         }
         
         document.addEventListener('keydown', (e: KeyboardEvent) => {

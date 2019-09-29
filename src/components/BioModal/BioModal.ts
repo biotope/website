@@ -3,7 +3,6 @@ import template from './template';
 
 import { BioModalProps, BioModalState, BioModalMethods } from './defines';
 
-import BioSectionHeadline from '../BioSectionHeadline/BioSectionHeadline';
 import BioCollaboratorTile from '../BioCollaboratorTile/BioCollaboratorTile';
 
 class BioModal extends Component<BioModalProps, BioModalState> {
@@ -19,7 +18,6 @@ class BioModal extends Component<BioModalProps, BioModalState> {
 	];
 
 	static dependencies = [ 
-		BioSectionHeadline as typeof Component,
 		BioCollaboratorTile as typeof Component
 	];
 

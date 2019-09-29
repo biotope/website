@@ -14,8 +14,19 @@
 %headlineH2 {
     font-family: $font-family-titles;
     font-weight: $font-weight-normal;
-    // line-height: 20px;
-    // font-size: 20px;
+}
+
+%headlineH4 {
+	font-family: $font-family-titles;
+	font-weight: $font-weight-medium;
+
+	font-size: 18px;
+	@include breakpoint($small) {
+		font-size: 25px;
+	}
+	@include breakpoint($medium) {
+		font-size: 30px;
+	}
 }
 
 p {
@@ -25,20 +36,30 @@ p {
 }
 
 %sectionHeadline {
-    font-family: $font-family-body;
+    font-family:$font-family-titles;
     font-weight: $font-weight-light;
-    font-size: 30px;
+	font-size: 20px;
+
+	@include breakpoint($small) {
+		font-size: 25px;
+	}
+
     @include breakpoint($medium) {
-        font-size: 40px;
+        font-size: 30px;
     }
 }
 
 %sectionHeadlineStrong {
-    font-size: 50px;
-    line-height: 40px;
+	font-size: 30px;
+	line-height: 30px;
+
+	@include breakpoint($small) {
+		font-size: 50px;
+		line-height: 50px;
+	}
     
     @include breakpoint($medium) {
-        font-size: 70px;
+        font-size: 60px;
         line-height: 60px;
     }
 }
