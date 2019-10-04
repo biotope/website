@@ -25,9 +25,9 @@
 			}
 
 			.modal-close {
-				position: absolute;
-				top: 33px;
-				right: 20px;
+				position: fixed;
+				top: 4%;
+				right: 4%;
 				height: 40px;
 				width: 40px;
 				padding: 11px;
@@ -38,10 +38,11 @@
 				color: white;
 				transition: 0.5s ease;
 				cursor: pointer;
+				z-index: 1;
 				
-				@include breakpoint($medium) {
-					top: 90px;
-					right: 7%;
+				@include breakpoint($large) {
+					top: 12%;
+					right: 12%;
 				}
 
 				img {
