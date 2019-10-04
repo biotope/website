@@ -8,6 +8,7 @@
  interface BioBenefitProps {
 	imgsrc: string;
 	title: string;
+	color: string;
  }
 
 /**

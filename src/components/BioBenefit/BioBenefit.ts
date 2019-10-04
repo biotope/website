@@ -10,7 +10,8 @@ class BioBenefit extends Component< BioBenefitProps, BioBenefitState > {
 
     static attributes = [
         'imgsrc',
-        'title'
+        'title',
+        'color'
     ];
 
     public methods: BioBenefitMethods = {
@@ -26,7 +27,8 @@ class BioBenefit extends Component< BioBenefitProps, BioBenefitState > {
     get defaultProps() {
         return {
             imgsrc: '',
-            title: ''
+            title: '',
+            color: ''
         }
     }
 
