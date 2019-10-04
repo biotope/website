@@ -1,5 +1,9 @@
 @import 'defaultSassImports.scss';
 
+body {
+	overflow-x: hidden;
+}
+
 section {
 	h3 {
 		@extend %sectionHeadline;

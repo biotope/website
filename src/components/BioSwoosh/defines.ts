@@ -9,7 +9,7 @@
 	direction?: string
 	height: number
 	color?: string
-	shift?: number
+	offsetX?: number
  }
 
 

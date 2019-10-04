@@ -21,8 +21,6 @@
 			svg {
 				width: 100%;
 				height: 100%;
-
-				/* add custom styles for svg content here if required */
 			}
 		}
 
@@ -48,7 +46,7 @@
 				display: block;
 				width: 18px;
 				height: 18px;
-				padding: 0 12px 12px;
+				margin: 0 12px 12px;
 				list-style: none;
 				font-size: 0;
 				line-height: 0;
@@ -64,8 +62,7 @@
 					opacity: 1;
 					&:before {
 						border: none;
-						width: 18px;
-						height: 18px;
+						padding: 2px;
 						background: linear-gradient(rgba(255,217,133,1) 0%, rgba(255,123,92,1) 100%);
 					}
 				}
