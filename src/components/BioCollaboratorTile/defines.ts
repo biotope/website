@@ -6,8 +6,9 @@
  * Props
  */
  interface BioCollaboratorTileProps {
-	imgsrc: string,
-	type: string
+	imgsrc: string;
+	type: string;
+	github: string;
  }
 
 /**
@@ -21,7 +22,8 @@
  * Methods
  */
  interface BioCollaboratorTileMethods {
-
+	mouseEnterHandle: Function;
+	mouseLeaveHandle: Function;
  }
 
 
