@@ -28,6 +28,10 @@ import ResourceLoader from '@biotope/resource-loader/lib/index.esm';
                 document.querySelector('bio-modal').dispatchEvent(new CustomEvent('modal.close'));
             }
         })
+
+        document.addEventListener('cookies.accept', (e: CustomEvent) => {
+            ((window as any).biotope as any).trackingInit();
+        })
     };
 
     const setupResourceLoader = () => {

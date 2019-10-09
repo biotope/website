@@ -1,7 +1,7 @@
 declare var dataLayer: any[];
 dataLayer = dataLayer || [];
 
-{
+(window as any).biotope.trackingInit = () => {
 	const internalHostnames = [
 		'localhost',
 		'biotope.sh',

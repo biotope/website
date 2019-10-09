@@ -1,0 +1,56 @@
+import Component from '@biotope/element';
+import template from './template';
+
+import { BioCookieBannerProps, BioCookieBannerState, BioCookieBannerMethods } from './defines';
+import BioButton from '../BioButton/BioButton';
+
+
+
+class BioCookieBanner extends Component< BioCookieBannerProps, BioCookieBannerState > {
+    static componentName = 'bio-cookie-banner';
+
+    static attributes = [
+
+    ];
+
+    static dependencies = [
+        BioButton as typeof Component
+    ]
+
+    public methods: BioCookieBannerMethods = {
+
+        handleAccept: () => {
+            document.dispatchEvent(new CustomEvent('cookies.accept'));
+            this.methods.hideBanner();
+        },
+
+        handleDecline: () => {
+            this.methods.hideBanner();
+        },
+
+        hideBanner: () => {
+            this.setState({
+                hidden: true
+            })
+        }
+
+    };
+   
+    get defaultState() {
+        return {
+            hidden: false
+        }
+    }
+  
+    get defaultProps() {
+        return {
+
+        }
+    }
+
+    render() {
+        return template(this.html, { ...this.props, ...this.state, ...this.methods }, this.createStyle);
+    }
+}
+
+export default BioCookieBanner;
