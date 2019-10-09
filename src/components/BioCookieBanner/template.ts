@@ -10,7 +10,7 @@ export default (render: Function, data: BioCookieBannerProps & BioCookieBannerSt
         ${createStyle(styles)}
         <div class="${classes}">
             <div class="wrapper-inner">
-                <p>Diese Webseite verwendet Cookies, damit Sie alle Funktionen optimal nutzen können. Mit ihrem nächsten Klick auf der Website stimmen Sie der Cookie-Nutzung zu. </p>
+                <p>We use cookies so that we can offer you the best possible website experience. These are cookies which are used solely for anonymous statistical purposes to help us improve the user experience on the website. You are free to decide whether you would like to permit these cookies. Further information can be found in our Privacy Policy.</p>
                 <div class="buttons">
                     <bio-button onclick="${data.handleAccept}" class="accept" modifier="whiteText blue" title="Accept"></bio-button>
                     <bio-button onclick="${data.handleDecline}" class="decline" modifier="whiteText blue" title="Decline"></bio-button>
