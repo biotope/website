@@ -21,7 +21,7 @@ class BioButton extends Component<BioButtonProps, BioButtonState> {
 				if (this.props.url[0] === '#') {
 					const targetElement: HTMLElement = document.querySelector(this.props.url);
 					if (!!targetElement) {
-						window.scrollTo(0, targetElement.offsetTop);
+						targetElement.scrollIntoView({behavior: 'smooth'});
 					}
 				} else {
 					window.open(this.props.url);
