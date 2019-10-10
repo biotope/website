@@ -9,6 +9,16 @@
         flex-flow: row wrap;
         padding-bottom: 40px;
         text-align: center;
+
+        &.inverted {
+            h3 {
+                color: $bio-white;
+                }
+
+            p {
+                color: $bio-lighter-blue;
+            }
+        }
         
         > * {
             flex: 1 100%;
@@ -31,14 +41,4 @@
         }
     }
 
-    &:host([inverted]) {
-        .wrapper {
-            h3 {
-                color: $bio-white;
-            }
-            p {
-                color: $bio-lighter-blue;
-            }
-        }
-    }
 }

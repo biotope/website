@@ -15,7 +15,7 @@ export default (render: Function, data: BioEasySetUpProps & BioEasySetUpState & 
 				<h4>${data.headline}</h4>
 				<p>${data.text}</p>
             </div>
-            <code>${data.code}</code>
+            <p class="code">${data.code}</p>
         </div>
     `;
 }
