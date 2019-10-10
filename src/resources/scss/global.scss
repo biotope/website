@@ -42,6 +42,9 @@ section {
 		@include breakpoint($large) {
 			flex-flow: row;
 			justify-content: center;
+		}
+
+		@include breakpoint($xxlarge) {
 			padding-top: 200px;
 		}
 	}
