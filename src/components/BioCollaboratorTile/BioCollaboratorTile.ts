@@ -18,13 +18,7 @@ class BioCollaboratorTile extends Component< BioCollaboratorTileProps, BioCollab
 
 
     public methods: BioCollaboratorTileMethods = {
-        mouseEnterHandle: () => {
-            this.shadowRoot.querySelector('.wrapper').classList.add('hover')
-        },
-        
-        mouseLeaveHandle: () => {
-            this.shadowRoot.querySelector('.wrapper').classList.remove('hover')
-        }
+
     };
    
     get defaultState() {

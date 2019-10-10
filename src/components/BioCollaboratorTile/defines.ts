@@ -22,8 +22,7 @@
  * Methods
  */
  interface BioCollaboratorTileMethods {
-	mouseEnterHandle: Function;
-	mouseLeaveHandle: Function;
+	
  }
 
 
