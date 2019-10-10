@@ -332,6 +332,14 @@ section {
 			width: 50%;
 		}
 	}
+
+	a {
+		cursor: pointer;
+
+		&:hover {
+			color: $bio-dark-blue-gray;
+		}
+	}
 }
 
 

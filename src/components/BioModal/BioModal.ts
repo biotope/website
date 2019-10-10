@@ -34,13 +34,15 @@ class BioModal extends Component<BioModalProps, BioModalState> {
 		});
         
 		this.addEventListener('modal.close', (e: CustomEvent) => {
-            const scrollY = document.body.style.top;
-			document.body.style.position = '';
-			document.body.style.top = '';
-			window.scrollTo(0, parseInt(scrollY || '0') * -1);
-			this.setState({
-                open: false
-			});
+			if (this.state.open) {
+				const scrollY = document.body.style.top;
+				document.body.style.position = '';
+				document.body.style.top = '';
+				window.scrollTo(0, parseInt(scrollY || '0') * -1);
+				this.setState({
+					open: false
+				});
+			}
 		});
 
 		['.backdrop', '.modal-close'].forEach((className: string) => {

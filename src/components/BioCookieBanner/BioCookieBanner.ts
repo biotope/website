@@ -23,8 +23,9 @@ class BioCookieBanner extends Component< BioCookieBannerProps, BioCookieBannerSt
             document.dispatchEvent(new CustomEvent('cookies.accept'));
             this.methods.hideBanner();
         },
-
+        
         handleDecline: () => {
+            document.dispatchEvent(new CustomEvent('cookies.decline'));
             this.methods.hideBanner();
         },
 
@@ -35,6 +36,20 @@ class BioCookieBanner extends Component< BioCookieBannerProps, BioCookieBannerSt
         }
 
     };
+
+    created() {
+        super.created();
+        if (document.cookie.includes('cookies-accepted=true')) {
+            this.setState({
+                hidden: true
+            })
+        }
+        this.addEventListener('cookiebanner.open', (e: CustomEvent) => {
+            this.setState({
+                hidden: false
+            })
+        })
+    }
    
     get defaultState() {
         return {

@@ -1,74 +1,70 @@
-import ResourceLoader from '@biotope/resource-loader/lib/index.esm';
+import ResourceLoader from "@biotope/resource-loader/lib/index.esm";
 
 {
-    const init = () => {
-        const elementsWithDataInit: HTMLElement[] = [].slice.call(document.querySelectorAll('[data-init]'));
-        elementsWithDataInit.forEach((element: HTMLElement) => {
-            const initFunction = eval(element.dataset.init);
-            initFunction(element);
+	const init = () => {
+		const elementsWithDataInit: HTMLElement[] = [].slice.call(document.querySelectorAll("[data-init]"));
+		elementsWithDataInit.forEach((element: HTMLElement) => {
+			const initFunction = eval(element.dataset.init);
+			initFunction(element);
         });
 
-        if (document.querySelector('.js-openModal')) {
-            document.querySelectorAll('.js-openModal').forEach(e => {
-                
-                e.addEventListener('click', (e: Event) => {
-                    e.preventDefault();
-                    
-                    const target: any = e.target               
-                    openModal(target.getAttribute('modaltype'));
-                    function openModal(type: string) {
-                        document.querySelector(`bio-modal[modalType = ${type}]`).dispatchEvent(new CustomEvent('modal.open'));
-                    }
-                })
-            });
+		if (document.querySelector(".js-openModal")) {
+			document.querySelectorAll(".js-openModal").forEach(e => {
+				e.addEventListener("click", (e: Event) => {
+					e.preventDefault();
+
+					const target: any = e.target;
+					openModal(target.getAttribute("modaltype"));
+					function openModal(type: string) {
+						document
+							.querySelector(`bio-modal[modalType = ${type}]`)
+							.dispatchEvent(new CustomEvent("modal.open"));
+					}
+				});
+			});
         }
         
-        document.addEventListener('keydown', (e: KeyboardEvent) => {
+        document.addEventListener("keydown", (e: KeyboardEvent) => {
             if (e.keyCode === 27) {
-                document.querySelector('bio-modal').dispatchEvent(new CustomEvent('modal.close'));
+                [].slice.call(document.querySelectorAll("bio-modal")).forEach((modal: HTMLElement) => {
+                    modal.dispatchEvent(new CustomEvent("modal.close"));
+                });
             }
-        })
-
-        document.addEventListener('cookies.accept', (e: CustomEvent) => {
-            ((window as any).biotope as any).trackingInit();
-        })
-    };
-
-    const setupResourceLoader = () => {
-        const cssHandler = {
-            match: (options) => options.resource.path.indexOf('.css') > -1,
-            handle: (options) => {
-                const style = document.createElement('link');
-                style.rel = 'stylesheet';
-                style.href = options.resource.path;
-                document.body.appendChild(style);
-            }
-        };
-
-        const jsHandler = {
-            match: (options) => options.resource.path.indexOf('.js') > -1,
-            handle: (options) => {
-                const script = document.createElement('script');
-                script.src = options.resource.path;
-                script.async = true;
-                document.body.appendChild(script);
-            }
-        };
-
-        return new ResourceLoader({
-            base: biotope.configuration.get('data.staticResourcesBase'),
-            baseMap: {
-                '##content': biotope.configuration.get('data.staticResourcesContentRepoBase')
-            },
-            handler: [
-                cssHandler,
-                jsHandler
-            ]
         });
     };
 
-    window.addEventListener('resourcesReady', () => {
-        init();
-    });
-    setupResourceLoader();
+	const setupResourceLoader = () => {
+		const cssHandler = {
+			match: options => options.resource.path.indexOf(".css") > -1,
+			handle: options => {
+				const style = document.createElement("link");
+				style.rel = "stylesheet";
+				style.href = options.resource.path;
+				document.body.appendChild(style);
+			}
+		};
+
+		const jsHandler = {
+			match: options => options.resource.path.indexOf(".js") > -1,
+			handle: options => {
+				const script = document.createElement("script");
+				script.src = options.resource.path;
+				script.async = true;
+				document.body.appendChild(script);
+			}
+		};
+
+		return new ResourceLoader({
+			base: biotope.configuration.get("data.staticResourcesBase"),
+			baseMap: {
+				"##content": biotope.configuration.get("data.staticResourcesContentRepoBase")
+			},
+			handler: [cssHandler, jsHandler]
+		});
+	};
+
+	window.addEventListener("resourcesReady", () => {
+		init();
+	});
+	setupResourceLoader();
 }
