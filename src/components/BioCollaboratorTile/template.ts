@@ -36,13 +36,6 @@ export default (
             <p>
                 <slot></slot>
             </p>
-            ${
-				data.github
-					? Component.wire()`<div class="hover-layer">
-            <div>`
-					: ""
-			}
-            
         </div>
     `;
 };
