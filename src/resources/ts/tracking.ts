@@ -6,7 +6,6 @@ const initGoogleTagManager = (w, d, s, l, i) => {
 	var f = d.getElementsByTagName(s)[0],
 		j = d.createElement(s),
 		dl = l != "dataLayer" ? "&l=" + l : "";
-	j.id = "test";
 	j.async = "true";
 	j.onload = function() {
 		((window as any).biotope as any).initTrackingMethods();
