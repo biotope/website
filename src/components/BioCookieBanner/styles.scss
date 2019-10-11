@@ -9,22 +9,33 @@
 		background-color: $bio-orange;
 		&-inner {
 			width: 90%;
-			margin: 0 auto;
-			display: flex;
+            margin: 0 auto;
+            
+            @include breakpoint($medium) {
+                display: flex;
+            }
 			p {
-                flex: 4;
+                @include breakpoint($medium) {
+                    flex: 4;
+                }
                 margin: 20px 0;
 			}
 			.buttons {
-                margin: 20px 40px;
-				flex: 1;
+                margin: 20px 0;
                 display: flex;
-                flex-flow: column;
+                flex-flow: row;
                 justify-content: space-around;
+                @include breakpoint($medium) {
+                    flex: 1;
+                    flex-flow: column;
+                    margin: 20px 40px;
+                }
 
                 bio-button {
                     &:last-child {
-                        margin-top: 20px;
+                        @include breakpoint($medium) {
+                            margin-top: 20px;
+                        }
                     }
                 }
 			}
