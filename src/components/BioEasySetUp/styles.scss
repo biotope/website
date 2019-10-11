@@ -80,12 +80,12 @@
 			grid-column: 2;
 		}
 	}
-}
-
-&:host([bloated]) {
-	@include breakpoint($large) {
-		.code {
-			max-height: 26px;
+	
+	&:host([bloated]) {
+		@include breakpoint($large) {
+			.code {
+				max-height: 26px;
+			}
 		}
 	}
 }
