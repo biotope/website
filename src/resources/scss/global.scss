@@ -335,6 +335,19 @@ section {
 			width: 50%;
 		}
 	}
+
+	a {
+		color: $bio-dark-blue;
+
+		&.internal{
+			color: $bio-darker-blue;
+		}
+
+		&:hover {
+			color: $bio-darker-blue;
+			cursor: pointer;
+		}
+	}
 }
 
 
