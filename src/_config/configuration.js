@@ -21,3 +21,7 @@ biotope.configuration.data.global = biotope.configuration.data.global || {};
 //// i18n
 biotope.configuration.data.i18n = biotope.configuration.data.i18n || {};
 biotope.configuration.data.i18n.browserwarning = 'Ihr Browser ist veraltet! Die Seite wird möglicherweise in Funktionalität und Darstellung eingeschränkt sein.';
+
+// google analytics
+biotope.configuration.data.global.gtmId = 'GTM-5ZKW795';
+biotope.configuration.data.global.gaId = 'UA-265294-9';
