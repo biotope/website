@@ -123,28 +123,36 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 				this.addSlideControl(index);
 			});
 
+			// using a timeout prevents iOS Safari from executing scroll handler before accelerated scrolling really is finished
+			let scrollTimeout;
+
 			window.addEventListener('scroll', (event) => {
 				if (this.state.slides.length > 0 && !this.state.scrolling) {
-					const scrollPosition = Math.round(window.pageYOffset);
-					const startOffset = this.offsetTop;
-					const endOffset = startOffset + this.props.scrollLength;
 
-					if (scrollPosition > startOffset && scrollPosition <= endOffset) {
-						this.showSlideControls();
-						if (scrollPosition > startOffset + this.state.slides[this.state.currentSlide].offset) {
-							const slideIndex = this.state.currentSlide + 1;
-							const targetOffset = startOffset + this.state.slides[slideIndex].offset;
+					window.clearTimeout(scrollTimeout);
 
-							if (targetOffset <= endOffset) {
+					scrollTimeout = window.setTimeout(() => {
+						const scrollPosition = Math.floor(window.pageYOffset);
+						const startOffset = this.offsetTop;
+						const endOffset = startOffset + this.props.scrollLength;
+
+						if (scrollPosition > startOffset && scrollPosition <= endOffset) {
+							this.showSlideControls();
+							if (scrollPosition > (startOffset + this.state.slides[this.state.currentSlide].offset)) {
+								const slideIndex = this.state.currentSlide + 1;
+								const targetOffset = startOffset + this.state.slides[slideIndex].offset;
+
+								if (targetOffset <= endOffset) {
+									this.scrollToSlide(slideIndex, this.props.slideDuration);
+								}
+							} else if (scrollPosition < (startOffset + this.state.slides[this.state.currentSlide].offset)) {
+								const slideIndex = this.state.currentSlide - 1;
 								this.scrollToSlide(slideIndex, this.props.slideDuration);
 							}
-						} else if (scrollPosition < startOffset + this.state.slides[this.state.currentSlide].offset) {
-							const slideIndex = this.state.currentSlide - 1;
-							this.scrollToSlide(slideIndex, this.props.slideDuration);
+						} else {
+							this.hideSlideControls();
 						}
-					} else {
-						this.hideSlideControls();
-					}
+					}, 20);
 				}
 			});
 
@@ -228,7 +236,7 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 		slideControlElement.addEventListener('click', (event)=> {
 			this.scrollToSlide(slideIndex, 0);
 		});
-		
+
 		slideControls.appendChild(slideControlElement);
 	}
 
