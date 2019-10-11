@@ -1,33 +1,84 @@
 @import "node_modules/@biotope/element/lib/host.mixin";
-@import '../../resources/scss/defaultSassImports.scss';
+@import "../../resources/scss/defaultSassImports.scss";
 
-@include host('bio-collaborator-tile') {
-    .wrapper {
-        margin: 8px;
-        width: 250px;
-        height: 270px;
-        cursor: pointer;
-        transition: all 0.4s ease;
-        
-        &:hover {
-            img {
-                width: 207px;
-                border: 5px solid $bio-orange;
-            }
-        }
-        
-        p {
-            text-align: center;
-        }
-        
-        img {
-            width: 200px;
-            display: block;
-            margin: 0 auto;
-            clip-path: circle();
-            border: 5px solid transparent;
-            border-radius: 50%;
-            transition: 0.4s ease;
-        }
-    }
+@include host("bio-collaborator-tile") {
+	.wrapper {
+		margin: 8px;
+		width: 250px;
+		height: 270px;
+		transition: all 0.4s ease;
+
+		.img-wrapper {
+			display: flex;
+			justify-content: center;
+
+			.info {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				display: block;
+				z-index: 200000;
+				clip-path: circle();
+				border: 5px solid transparent;
+				border-radius: 50%;
+				background-color: rgba(26, 26, 26, 0.5);
+				transition: 0.4s ease;
+				opacity: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: row;
+
+				a {
+					text-decoration: none;
+                    color: white;
+                    font-weight: 600;
+                    font-size: 25px;
+                    
+                    &:hover {
+                        color: #d4d4d4;
+                    }
+
+                    svg {
+                        fill: white;
+                        height: 20px;
+                        width: 20px;
+                    }
+				}
+			}
+
+			img {
+				width: 200px;
+				display: block;
+				clip-path: circle();
+				border: 5px solid transparent;
+				border-radius: 50%;
+				transition: 0.4s ease;
+			}
+		}
+
+		p {
+			text-align: center;
+		}
+
+		&:hover {
+			.img-wrapper {
+				img {
+					width: 207px;
+				}
+				.info {
+					width: 207px;
+					height: 207px;
+					border: 5px solid $bio-orange;
+                    opacity: 1;
+                    
+                    a {
+                        svg {
+                            fill: #d4d4d4;
+                        }
+                    }
+				}
+			}
+		}
+	}
 }

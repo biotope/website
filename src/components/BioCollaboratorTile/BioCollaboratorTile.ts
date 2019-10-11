@@ -3,15 +3,19 @@ import template from './template';
 
 import { BioCollaboratorTileProps, BioCollaboratorTileState, BioCollaboratorTileMethods } from './defines';
 
-
+interface BioCollaboratorTile {
+    wrapper: HTMLElement
+}
 
 class BioCollaboratorTile extends Component< BioCollaboratorTileProps, BioCollaboratorTileState > {
     static componentName = 'bio-collaborator-tile';
 
     static attributes = [
         'imgsrc',
-        'type'
+        'type',
+        'github'
     ];
+
 
     public methods: BioCollaboratorTileMethods = {
 
@@ -26,7 +30,8 @@ class BioCollaboratorTile extends Component< BioCollaboratorTileProps, BioCollab
     get defaultProps() {
         return {
             imgsrc: '',
-            type: ''
+            type: '',
+            github: ''
         }
     }
 

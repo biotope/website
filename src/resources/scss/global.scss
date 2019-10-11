@@ -340,7 +340,11 @@ section {
 		color: $bio-dark-blue;
 
 		&.internal{
-			color: $bio-darker-blue;
+			color: $bio-light-orange;
+			
+			&:hover{
+				color: $bio-orange;
+			}
 		}
 
 		&:hover {
@@ -517,4 +521,9 @@ section {
 			}
 		}
 	}
+}
+
+bio-cookie-banner {
+	position: fixed;
+	bottom: 0;
 }
