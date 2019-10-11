@@ -28,9 +28,19 @@
 
         &.blue {
 			border: $border solid $bio-dark-blue;
-
+			
 			&:hover{
 				background: $bio-dark-blue;
+			}
+		}
+		
+		&.white {
+			border: $border solid $bio-white;
+			color: $bio-white;
+			
+			&:hover{
+				background: $bio-white;
+				color: $bio-orange;
 			}
 		}
 
