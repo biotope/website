@@ -302,10 +302,19 @@ section {
 	}
 
 	a {
-		cursor: pointer;
+		color: $bio-dark-blue;
+
+		&.internal{
+			color: $bio-light-orange;
+			
+			&:hover{
+				color: $bio-orange;
+			}
+		}
 
 		&:hover {
-			color: $bio-dark-blue-gray;
+			color: $bio-darker-blue;
+			cursor: pointer;
 		}
 	}
 }
