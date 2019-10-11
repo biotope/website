@@ -190,41 +190,6 @@ section {
 	}
 }
 
-.knowMore {
-	@include clearfix();
-	position: relative;
-	background: $bio-darkest-blue;
-	color: $bio-lighter-blue-gray;
-	text-align: center;
-
-	.row {
-		padding-bottom: 150px;
-	}
-
-	p {
-		font-size: 20px;
-		color: $bio-white;
-	}
-
-	@include breakpoint($large) {
-		.row {
-			padding: 100px 0 250px;
-		}
-		p {
-			font-size: 25px;
-		}
-	}
-
-	@include breakpoint($xlarge) {
-		.row {
-			padding: 150px 0 300px;
-		}
-		p {
-			font-size: 30px;
-		}
-	}
-}
-
 .installation {
 	@include clearfix();
 	position: relative;
