@@ -88,6 +88,10 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 	initAnimation() {
 		const animationContainer: HTMLElement = this.shadowRoot.querySelector('.animation-container');
 
+		// TODO: how to update this on resize?
+		const aspectRatio =  window.innerWidth / window.innerHeight;
+		const preserveAspectRatioString = aspectRatio >= 1 ? 'xMidYMin slice': 'xMidYMid slice';
+
 		const animation = Lottie.loadAnimation({
 			container: animationContainer,
 			renderer: 'svg',
@@ -95,7 +99,7 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 			autoplay: false,
 			path: this.props.animationDataPath,
 			rendererSettings: {
-				preserveAspectRatio: 'xMidYMid slice', // Supports the same options as the svg element's preserveAspectRatio property
+				preserveAspectRatio: preserveAspectRatioString, // Supports the same options as the svg element's preserveAspectRatio property
 				progressiveLoad: true, // Boolean, only svg renderer, loads dom elements when needed. Might speed up initialization for large number of elements.
 				viewBoxOnly: true
 			}
@@ -136,6 +140,8 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 						const startOffset = this.offsetTop;
 						const endOffset = startOffset + this.props.scrollLength;
 
+						this.hideSlideControls();
+
 						if (scrollPosition > startOffset && scrollPosition <= endOffset) {
 							this.showSlideControls();
 							if (scrollPosition > (startOffset + this.state.slides[this.state.currentSlide].offset)) {
@@ -149,10 +155,10 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 								const slideIndex = this.state.currentSlide - 1;
 								this.scrollToSlide(slideIndex, this.props.slideDuration);
 							}
-						} else {
+						} /*else {
 							this.hideSlideControls();
-						}
-					}, 20);
+						}*/
+					}, 30);
 				}
 			});
 
