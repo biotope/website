@@ -87,11 +87,6 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 
 	initAnimation() {
 		const animationContainer: HTMLElement = this.shadowRoot.querySelector('.animation-container');
-
-		// TODO: how to update this on resize?
-		const aspectRatio =  window.innerWidth / window.innerHeight;
-		const preserveAspectRatioString = aspectRatio >= 1 ? 'xMidYMin slice': 'xMidYMid slice';
-
 		const animation = Lottie.loadAnimation({
 			container: animationContainer,
 			renderer: 'svg',
@@ -99,7 +94,7 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 			autoplay: false,
 			path: this.props.animationDataPath,
 			rendererSettings: {
-				preserveAspectRatio: preserveAspectRatioString, // Supports the same options as the svg element's preserveAspectRatio property
+				preserveAspectRatio: 'xMidYMid slice', // Supports the same options as the svg element's preserveAspectRatio property
 				progressiveLoad: true, // Boolean, only svg renderer, loads dom elements when needed. Might speed up initialization for large number of elements.
 				viewBoxOnly: true
 			}
