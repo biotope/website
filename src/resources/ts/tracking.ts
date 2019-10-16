@@ -29,8 +29,12 @@ const setCookie = (cname, cvalue, exdays, domain) => {
 };
 
 const deleteGoogleAnalyticsScripts = () => {
-	document.querySelector('[src^="https://www.google-analytics.com/"]').remove();
-	document.querySelector('[src^="https://www.googletagmanager.com/"]').remove();
+	if (document.querySelector('[src^="https://www.googletagmanager.com/"]')) {
+		document.querySelector('[src^="https://www.googletagmanager.com/"]').remove();
+		}
+	if (document.querySelector('[src^="https://www.google-analytics.com/"]')) {
+		document.querySelector('[src^="https://www.google-analytics.com/"]').remove();
+	}
 };
 
 const initGoogleAnalytics = () => {
@@ -65,8 +69,10 @@ const initGoogleAnalytics = () => {
 		deleteGoogleAnalyticsScripts();
 	});
 
-	document.querySelector("[data-cookie-settings]").addEventListener("click", () => {
-		document.querySelector("bio-cookie-banner").dispatchEvent(new CustomEvent("cookiebanner.open"));
+	document.querySelectorAll("[data-cookie-settings]").forEach(element => {
+		element.addEventListener("click", () => {
+			document.querySelector("bio-cookie-banner").dispatchEvent(new CustomEvent("cookiebanner.open"));
+		});
 	});
 };
 
