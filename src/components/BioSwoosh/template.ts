@@ -12,10 +12,10 @@ export default (render: Function, data: BioSwooshProps , createStyle: Function) 
 			}
 			bio-swoosh {
 				height: ${data.height}px;
-				margin-top: -${data.height}px;
+				margin-top: -${data.height-1}px;
 			}		
 			:host([direction='down']) {
-				margin-top: 0;
+				margin-top: -1px;
 				margin-bottom: -${data.height}px;
 				transform: rotate(180deg);
 			}

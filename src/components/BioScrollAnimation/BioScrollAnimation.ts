@@ -87,7 +87,6 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 
 	initAnimation() {
 		const animationContainer: HTMLElement = this.shadowRoot.querySelector('.animation-container');
-
 		const animation = Lottie.loadAnimation({
 			container: animationContainer,
 			renderer: 'svg',
@@ -136,6 +135,8 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 						const startOffset = this.offsetTop;
 						const endOffset = startOffset + this.props.scrollLength;
 
+						this.hideSlideControls();
+
 						if (scrollPosition > startOffset && scrollPosition <= endOffset) {
 							this.showSlideControls();
 							if (scrollPosition > (startOffset + this.state.slides[this.state.currentSlide].offset)) {
@@ -149,10 +150,8 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 								const slideIndex = this.state.currentSlide - 1;
 								this.scrollToSlide(slideIndex, this.props.slideDuration);
 							}
-						} else {
-							this.hideSlideControls();
 						}
-					}, 20);
+					}, 30);
 				}
 			});
 
@@ -234,7 +233,7 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 		let slideControlElement = Component.wire()`<li>slide ${slideIndex}</li>`;
 
 		slideControlElement.addEventListener('click', (event)=> {
-			this.scrollToSlide(slideIndex, 0);
+			this.scrollToSlide(slideIndex, 50);
 		});
 
 		slideControls.appendChild(slideControlElement);
