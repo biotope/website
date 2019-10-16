@@ -150,9 +150,7 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 								const slideIndex = this.state.currentSlide - 1;
 								this.scrollToSlide(slideIndex, this.props.slideDuration);
 							}
-						} /*else {
-							this.hideSlideControls();
-						}*/
+						}
 					}, 30);
 				}
 			});
@@ -235,7 +233,7 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 		let slideControlElement = Component.wire()`<li>slide ${slideIndex}</li>`;
 
 		slideControlElement.addEventListener('click', (event)=> {
-			this.scrollToSlide(slideIndex, 0);
+			this.scrollToSlide(slideIndex, 50);
 		});
 
 		slideControls.appendChild(slideControlElement);
