@@ -14,13 +14,7 @@
             @include breakpoint($medium) {
                 display: flex;
             }
-			p {
-                color: $bio-white;
-                margin: 20px 0;
-                @include breakpoint($medium) {
-                    flex: 4;
-                }
-			}
+
 			.buttons {
                 margin: 20px 0;
                 display: flex;
@@ -37,11 +31,20 @@
                         margin-top: 10px;
                     }
                 }
-			}
+            }
+            
+            ::slotted(p) {
+                color: $bio-white !important;
+                margin: 20px 0;
+
+                @include breakpoint($medium) {
+                    flex: 4;
+                }
+            }
         }
         
         &.hidden {
             display: none;
         }
-	}
+    }
 }
