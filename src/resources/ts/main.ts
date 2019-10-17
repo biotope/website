@@ -10,12 +10,8 @@ import ResourceLoader from "@biotope/resource-loader/lib/index.esm";
 
 		if (document.querySelector(".js-openModal")) {
 			document.querySelectorAll(".js-openModal").forEach(e => {
-				console.log(e);
-				
 				e.addEventListener("click", (e: Event) => {
-					console.log('WHOT');
 					e.preventDefault();
-
 					const target: any = e.target;
 					openModal(target.getAttribute("modaltype"));
 					function openModal(type: string) {
