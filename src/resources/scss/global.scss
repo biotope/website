@@ -216,7 +216,7 @@ section {
 		@include breakpoint($large) {
 			display: block;
 			position: absolute;
-			top: -265px;
+			top: -215px;
 			left: calc(50% - 38px);
 			z-index: 2;
 		}

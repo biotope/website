@@ -8,6 +8,8 @@
  interface BioSwooshProps {
 	direction?: string
 	height: number
+	marginBottom?: number
+	marginTop?: number
 	color?: string
 	offsetX?: number
  }
