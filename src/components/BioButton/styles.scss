@@ -44,7 +44,7 @@
 			}
 		}
 
-		&.smallMobileWidth {
+		&.compact {
 			min-width: 130px;
 			
 			@include breakpoint($medium){
