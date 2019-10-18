@@ -8,20 +8,22 @@ export default (render: Function, data: BioSwooshProps , createStyle: Function) 
 		return `<style>
 			:host {
 				height: ${data.height}px;
-				margin-top: -${data.height}px;
+				margin-top: ${-data.height + data.marginTop}px;
+				margin-bottom: ${data.marginBottom}px;
 			}
 			bio-swoosh {
 				height: ${data.height}px;
-				margin-top: -${data.height-1}px;
+				margin-top: ${-data.height + data.marginTop}px;
+				margin-bottom: ${data.marginBottom}px;
 			}		
 			:host([direction='down']) {
-				margin-top: -1px;
-				margin-bottom: -${data.height}px;
+				margin-top: ${data.marginBottom}px;
+				margin-bottom: ${-data.height + data.marginTop}px;
 				transform: rotate(180deg);
 			}
 			bio-swoosh[direction='down'] {
-				margin-top: 0;
-				margin-bottom: -${data.height}px;
+				margin-top: ${data.marginBottom}px;
+				margin-bottom: ${-data.height + data.marginTop}px;
 				transform: rotate(180deg);
 			}
 		</style>`;

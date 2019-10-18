@@ -12,6 +12,8 @@ class BioSwoosh extends Component< BioSwooshProps, null > {
 		'color',
 		'direction',
 		{name: 'height', converter: (value) => parseInt(value) },
+		{name: 'margin-top', converter: (value) => parseInt(value) },
+		{name: 'margin-bottom', converter: (value) => parseInt(value) },
 		{name: 'offset-x', converter: (value) => parseInt(value) },
     ];
   
@@ -20,7 +22,9 @@ class BioSwoosh extends Component< BioSwooshProps, null > {
 			direction: 'up',
 			color: 'white',
 			height: 100,
-			offset: 0
+			offset: 0,
+			marginTop: 0,
+			marginBottom: 0
         }
     }
 
