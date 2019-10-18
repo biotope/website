@@ -44,6 +44,14 @@
 			}
 		}
 
+		&.smallMobileWidth {
+			min-width: 130px;
+			
+			@include breakpoint($medium){
+				min-width: 160px;
+			}
+		}
+
 		&.whiteText{
 			color: $bio-white;
 		}
