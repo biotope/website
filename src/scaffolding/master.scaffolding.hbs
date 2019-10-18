@@ -89,25 +89,25 @@
 				imgsrc="_assets/BioEasySetUp/2.svg"
 				alt="step two"
                 headline="Set Up Project"
-                text="Trust the CLI tool to set up your project. Run command to create Biotope-Boilerplate and choose preferences."
+                text="Trust the CLI tool to set up your project. Create Biotope-Boilerplate with your preferences and install all npm dependencies."
                 code="biotope create myEcosystem">
             </bio-easy-set-up>
-            <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]"
+            {{!-- <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]"
 				imgsrc="_assets/BioEasySetUp/3.svg"
 				alt="step three"
                 headline="Install Build-System"
                 text="The included build-system helps you to automatically build production-ready resources."
                 code="npm install">
+            </bio-easy-set-up> --}}
+            <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]"
+				imgsrc="_assets/BioEasySetUp/3.svg"
+				alt="step four"
+                headline="Run Build"
+                text="Change directory to the newly generated Biotope instance and run it from there. The build-system helps you to automatically build production-ready resources."
+                code="npm start">
             </bio-easy-set-up>
             <bio-easy-set-up position="left" data-resources="[{paths: ['components/BioEasySetUp/index.js']}]"
 				imgsrc="_assets/BioEasySetUp/4.svg"
-				alt="step four"
-                headline="Run Build"
-                text="Change directory to the newly generated Biotope instance and run it from there."
-                code="npm start">
-            </bio-easy-set-up>
-            <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]"
-				imgsrc="_assets/BioEasySetUp/5.svg"
 				alt="step five"
                 headline="Start Building Components"
                 text="Use the CLI tool to create your first component. Run the command to generate the boilerplate you need to start coding right away."
