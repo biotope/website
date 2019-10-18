@@ -1,0 +1,112 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/defaultSassImports.scss";
+
+@include host("bio-resource") {
+	.wrapper {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 52px 1fr;
+		padding: 20px 0;
+		border-bottom: 1px solid $bio-orange;
+
+		@include breakpoint($small) {
+			grid-template-columns: 52px 1fr 200px;
+			grid-template-rows: 1fr;
+		}
+
+		@include breakpoint($medium) {
+			grid-template-columns: 62px 1fr 200px;
+		}
+
+		@include breakpoint($large) {
+			grid-template-rows: 100px;
+		}
+
+		&.blue {
+			border-bottom: 1px solid $bio-dark-blue;
+
+			.wrapper__imageWrapper {
+				border: 2px solid $bio-dark-blue;
+			}
+        }
+        
+        &.noBorder {
+            border: none;
+        }
+
+		&__imageWrapper {
+			position: relative;
+			height: 48px;
+			width: 48px;
+			background: $bio-white;
+			border-radius: 50%;
+			border: 2px solid $bio-orange;
+			overflow: hidden;
+
+			@include breakpoint($small) {
+				margin: auto 0;
+			}
+
+			@include breakpoint($medium) {
+				height: 60px;
+				width: 60px;
+			}
+
+			img {
+				position: absolute;
+				top: calc(50% - 20px);
+				left: calc(50% - 20px);
+				width: 40px;
+				height: 40px;
+                
+				@include breakpoint($medium) {
+                    top: calc(50% - 25px);
+                    left: calc(50% - 25px);
+					width: 50px;
+					height: 50px;
+				}
+			}
+		}
+
+		::slotted(p) {
+			grid-column: 1 / span 3;
+			grid-row: 2;
+
+			@include breakpoint($small) {
+				grid-column: 2;
+				grid-row: 1;
+				margin-left: 20px;
+            }
+            
+			@include breakpoint($large) {
+				margin: auto 0 auto 20px;
+			}
+		}
+
+		::slotted(bio-button) {
+			text-align: right;
+			grid-column: 2 / span 2;
+
+			@include breakpoint($small) {
+				grid-column: 3;
+				margin: auto 0;
+			}
+		}
+	}
+
+	&:host([logo-baseline]) {
+		.wrapper {
+			&__imageWrapper {
+				img {
+					top: calc(50% - 15px);
+					left: calc(50% - 21px);
+
+					@include breakpoint($medium) {
+						top: calc(50% - 20px);
+						left: calc(50% - 26px);
+					}
+				}
+			}
+		}
+	}
+}

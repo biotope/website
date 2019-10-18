@@ -1,0 +1,60 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/defaultSassImports.scss";
+
+@include host("bio-cookie-banner") {
+    z-index: 2000;
+    width: 100%;
+
+	.wrapper {
+        max-height: 100vh;
+        overflow: auto;
+        background-color: $bio-orange;
+
+        @include breakpoint($medium) {
+            padding: 20px 0;
+        }
+
+		&-inner {
+			width: 90%;
+            margin: 0 auto;
+            
+            @include breakpoint($medium) {
+                display: flex;
+            }
+
+			.buttons {
+                margin: 20px 0;
+                display: flex;
+                flex-flow: row;
+                justify-content: space-around;
+                
+                @include breakpoint($medium) {
+                    flex: 1;
+                    flex-flow: column;
+                    margin: 20px 40px;
+
+                    bio-button {
+                        &:last-child {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+            
+            ::slotted(p) {
+                margin: 20px 0;
+                color: $bio-white !important;
+                font-size: 15px;
+                
+                @include breakpoint($medium) {
+                    flex: 4;
+                    font-size: 17px;
+                }
+            }
+        }
+        
+        &.hidden {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,91 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/defaultSassImports.scss";
+
+@include host("bio-easy-set-up") {
+	.easy-setup-wrapper {
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-columns: 70px 1fr;
+		grid-template-columns: 70px 1fr;
+		column-gap: 10px;
+		padding: 40px 0;
+        
+		@include breakpoint($large) {
+            -ms-grid-columns: 1fr 70px 1fr;
+            grid-template-columns: 1fr 70px 1fr;
+			min-height: 165px;
+			padding: 0 0 190px 0;
+
+			&.left {
+				.text-wrapper, .code{
+					-ms-grid-column: 1;
+					grid-column: 1;
+				}
+			}
+		}
+
+		.text-wrapper {
+			-ms-grid-column: 2;
+			-ms-grid-row: 1;
+			grid-column: 2;
+			grid-row: 1;
+
+			@include breakpoint($large) {
+				-ms-grid-column: 3;
+				grid-column-start: 3;
+			}
+		}
+
+		h4 {
+			font-weight: 500;
+
+			@include breakpoint($large) {
+				margin-bottom: 0;
+			}
+		}
+
+		p {
+			margin-top: 0;
+		}
+
+        .code {
+			-ms-grid-column: 2;
+			-ms-grid-row: 2;
+			grid-column: 2;
+			grid-row: 2;
+			padding: 10px 20px;
+			margin: 0;
+			background: $bio-white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px $bio-shadow-gray;
+			font-weight: $font-weight-bold;
+			
+			@include breakpoint($large) {
+				-ms-grid-column: 3;
+				grid-column: 3;
+				-ms-grid-row: 2;
+				grid-row: 2;
+			}
+		}
+	}
+
+	img {
+		height: 70px;
+		width: 70px;
+		z-index: 3;
+
+		@include breakpoint($large) {
+			margin: auto;
+			-ms-grid-column: 2;
+			grid-column: 2;
+		}
+	}
+	
+	&:host([bloated]) {
+		@include breakpoint($large) {
+			.code {
+				max-height: 26px;
+			}
+		}
+	}
+}

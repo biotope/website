@@ -1,0 +1,64 @@
+@import '../defaultSassImports.scss';
+
+/* Global heading styles */
+h1, h2, h3, h4 ,h5 {
+	font-weight: $font-weight-bold;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 45px;
+	line-height: (45/40);
+
+	@include breakpoint ($medium) {
+		font-size: 90px;
+	}
+}
+
+h2 {
+	@extend %headlineH2;
+}
+
+h3, .footer__bigWords {
+	font-family: $font-family-titles;
+	font-weight: $font-weight-normal;
+	font-size: 30px;
+	line-height: (27/20);
+	text-transform: uppercase;
+
+	@include breakpoint ($medium) {
+		font-size: 35px;
+   }
+}
+
+h4 {
+	@extend %headlineH4;
+	line-height: (25/17);
+}
+
+
+/* Global link styles */
+a {
+	cursor: pointer;
+	font-weight: $font-weight-bold;
+	text-decoration: none;
+	letter-spacing: 0.2px;
+}
+
+/* Global sup element */
+sup {
+	font-size: 75%;
+}
+
+/* Screen reader only */
+.sr-only {
+	border: 0 none;
+	clip: rect(0px, 0px, 0px, 0px);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}

@@ -1,0 +1,67 @@
+// GLOBAL SASS SETTINGS
+
+// FONTS
+$font-family-body:    'Work Sans', sans-serif;
+$font-family-titles:        'Monda', sans-serif;
+$font-weight-light:         200;
+$font-weight-normal:        400;
+$font-weight-medium:        500;
+$font-weight-bold:          600;
+
+// Z-INDEXES
+//$z-index-component-xyz: 1;
+
+// COLORS
+$bio-white: #fff;
+$bio-gray: #F8FBFD;
+$bio-black: #000;
+$bio-orange: #F17C61;
+$bio-light-orange: #ED9560;
+$bio-dark-blue: #5E7FD3;
+$bio-darker-blue: #1F1F43;
+$bio-darkest-blue: #0A0A2C;
+$bio-dark-blue-gray: #4e4f6b;
+$bio-light-blue: #87FBE1;
+$bio-lighter-blue: #CED0DF;
+$bio-shadow-gray: #d3d3d3;
+$bio-blue-gray: #d4d9e2;
+$bio-lighter-blue-gray: #ecf4f9;
+
+// BODY STYLES
+$body-bg: $bio-white;
+$body-font-color:   $bio-black;
+$body-font-family:  $font-family-body;
+$body-font-weight:  $font-weight-normal;
+$body-font-style:   normal;
+$body-font-size:    17px;
+$body-line-height:  25px;
+$body-min-width:    300px;
+
+// COMPONENT STYLES
+$content-max-width: 1280px;
+$component-max-width: 1200px;
+
+// breakpoint definitions
+$xsmall:  300px;
+$small:   600px;
+$medium:  768px;
+$large:   992px;
+$xlarge:  1200px;
+$xxlarge: 1520px;
+
+// MaxValues
+$xsmallMax: $small - 1;
+$smallMax:  $medium - 1;
+$mediumMax: $large - 1;
+$largeMax:  $xlarge - 1;
+$xlargeMax: 10000px;
+
+// Grid
+$grid-gutter: 30px;
+
+// margins for content and sections
+$section_content_top: 33px;
+$section_margin_top_small: 60px;
+$section_margin_top_medium: 60px;
+$section_margin_top_large: 60px;
+$section_margin_top_xlarge: 80px;

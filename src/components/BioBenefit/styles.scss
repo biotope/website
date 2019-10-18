@@ -1,0 +1,45 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import '../../resources/scss/defaultSassImports.scss';
+
+@include host('bio-benefit') {
+    font-family: $font-family-titles;
+    
+    .wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        padding-bottom: 40px;
+        text-align: center;
+
+        &.inverted {
+            h3 {
+                color: $bio-white;
+                }
+
+            p {
+                color: $bio-lighter-blue;
+            }
+        }
+        
+        > * {
+            flex: 1 100%;
+        }
+
+        img {
+            width: 100%;
+            max-width: 250px;
+            max-height: 250px;
+            margin: 0 auto;
+        }
+
+        h3 {
+            font-weight: $font-weight-normal;
+        }
+
+        p {
+            @extend %benefit-text;
+            margin-top: 0;
+            text-align: center;
+        }
+    }
+
+}

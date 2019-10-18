@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg width="76px" height="2278px" version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 76 1957.5" style="enable-background:new 0 0 76 1957.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:url(#SVGID_1_);stroke-width:4;}
+	.st1{filter:url(#filter-4);}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#0B0A2E;stroke:url(#SVGID_2_);stroke-width:6;}
+	.st4{filter:url(#filter-6);}
+	.st5{fill-rule:evenodd;clip-rule:evenodd;fill:#0B0A2E;stroke:url(#SVGID_3_);stroke-width:6;}
+</style>
+<filter  filterUnits="objectBoundingBox" height="135.0%" id="filter-6" width="135.4%" x="-17.7%" y="-12.5%">
+	<feMorphology  in="SourceAlpha" operator="dilate" radius="3" result="shadowSpreadOuter1"></feMorphology>
+	<feOffset  dx="0" dy="3" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+	<feGaussianBlur  in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"></feGaussianBlur>
+	<feComposite  in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+	<feColorMatrix  in="shadowBlurOuter1" type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.203070367 0">
+		</feColorMatrix>
+</filter>
+<filter  filterUnits="objectBoundingBox" height="135.0%" id="filter-4" width="135.4%" x="-17.7%" y="-12.5%">
+	<feMorphology  in="SourceAlpha" operator="dilate" radius="3" result="shadowSpreadOuter1"></feMorphology>
+	<feOffset  dx="0" dy="3" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+	<feGaussianBlur  in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"></feGaussianBlur>
+	<feComposite  in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+	<feColorMatrix  in="shadowBlurOuter1" type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.203070367 0">
+		</feColorMatrix>
+</filter>
+<title>line</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1">
+	<g id="line" transform="translate(7.000000, 4.000000)">
+		<g id="Path" transform="translate(9.000000, 32.000000)">
+			
+				<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-915.2216" y1="1642.3619" x2="-915.2216" y2="1643.3322" gradientTransform="matrix(43.3068 0 0 -2201.3999 39657.75 3617499)">
+				<stop  offset="0" style="stop-color:#5D7DD3"/>
+				<stop  offset="1" style="stop-color:#87FBE1"/>
+			</linearGradient>
+			<path class="st0" d="M20.5,0c0,0,40.8,190.2,0,501.5c0,0-41.7,198.2,0,356.5s17.7,235.4-0.2,325.9s-32.9,204.8,2.5,335.1
+				s15.7,287.3-0.3,343.2"/>
+		</g>
+		<g transform="translate(0.000000, 2204.000000)">
+			<g id="Oval-Copy-16">
+				<g class="st1">
+					<ellipse id="path-3_1_" class="st2" cx="30" cy="-300.5" rx="29.7" ry="30"/>
+				</g>
+				<g>
+					
+						<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-911.9884" y1="-513.5076" x2="-911.9884" y2="-514.5076" gradientTransform="matrix(59.375 0 0 -60 54179.3125 -31141)">
+						<stop  offset="0" style="stop-color:#5D7DD3"/>
+						<stop  offset="1" style="stop-color:#87FBE1"/>
+					</linearGradient>
+					<ellipse class="st3" cx="30" cy="-300.5" rx="29.7" ry="30"/>
+				</g>
+			</g>
+		</g>
+		<g transform="translate(2.000000, 0.000000)">
+			<g>
+				<g class="st4">
+					<ellipse id="path-5_1_" class="st2" cx="30" cy="30" rx="29.7" ry="30"/>
+				</g>
+				<g>
+					
+						<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-913.9884" y1="1684.9833" x2="-913.9884" y2="1683.9833" gradientTransform="matrix(59.375 0 0 -60 54298.0625 101099)">
+						<stop  offset="0" style="stop-color:#5D7DD3"/>
+						<stop  offset="1" style="stop-color:#87FBE1"/>
+					</linearGradient>
+					<ellipse class="st5" cx="30" cy="30" rx="29.7" ry="30"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

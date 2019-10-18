@@ -1,0 +1,88 @@
+@import "node_modules/@biotope/element/lib/host.mixin";
+@import "../../resources/scss/defaultSassImports.scss";
+
+@include host("bio-modal") {
+	.modal {
+		.content {
+			display: none;
+			z-index: 11;
+			position: fixed;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			padding: 5%;
+			box-sizing: border-box;
+			background: url(../../_assets/BioEasySetUp/background.svg);
+			background-size: cover;
+			overflow-y: scroll;
+
+			@include breakpoint($large) {
+				top: 5%;
+				left: 5%;
+				bottom: 5%;
+				right: 5%;
+			}
+
+			.modal-close {
+				position: fixed;
+				top: 4%;
+				right: 4%;
+				height: 40px;
+				width: 40px;
+				padding: 11px;
+				outline: 0;
+				border-radius: 50%;
+				background: linear-gradient(135deg, #6782ce, #a4f6e1);
+				border: none;
+				color: white;
+				transition: 0.5s ease;
+				cursor: pointer;
+				z-index: 1;
+				
+				@include breakpoint($large) {
+					top: 12%;
+					right: 12%;
+				}
+
+				img {
+					transition: 0.5s ease;
+				}
+				
+				&:hover {
+					transform: scale(1.2);
+
+					img {
+						transform: rotate(180deg);
+					}
+				}
+			}
+
+			::slotted(div) {
+				height: 100%;
+			}
+		}
+		
+		.backdrop {
+			position: fixed;
+			display: none;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: #000;
+			opacity: 0.5;
+			z-index: 10;
+		}
+
+		&.open {
+			.content {
+				display: block;
+			}
+
+			.backdrop {
+				display: block;
+			}
+		}
+	}
+}

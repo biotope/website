@@ -1,0 +1,501 @@
+<bio-github-corner href="https://github.com/biotope"
+    data-resources="[{paths: ['components/BioGithubCorner/index.js']}]"></bio-github-corner>
+
+<header class="splash">
+    <div class="splash__intro">
+        <img src="_assets/biotope-logo.svg" alt="" class="splash__logo">
+        <div class="splash__content">
+            <h1 class="splash__biotope">biotope</h1>
+            <h2 class="splash__uitoolchain">Toolchain For Lasting Design Systems</h2>
+            <p class="splash__claim">
+                Evolve your UI to stay ahead of developments on the web and in your company. Gain control of all your websites, Apps or IoT - using a single library of Web Components.
+            </p>
+            <bio-button title="See how it works" modifier="whiteText mediumLong"
+                data-resources="[{paths: ['components/BioButton/index.js']}]" url="#benefits"></bio-button>
+            <bio-button title="See Docs" modifier="blue whiteText mediumLong"
+                data-resources="[{paths: ['components/BioButton/index.js']}]" url="https://github.com/biotope/biotope/blob/master/docs/quickstart.md">
+            </bio-button>
+        </div>
+    </div>
+</header>
+
+<section id="benefits" class="benefits">
+    <div class="row row--reducedWidth">
+        <div class="col">
+            <div class="benefits__claim">
+                <img src="../_assets/intro-main.svg" alt="">
+				<div class="benefits__claimText">
+                    <h3>
+                        One Web Component Library.<br>
+                        As Many Worlds As You Want.
+                    </h3>
+                    <p>
+                        The superpower of Web Components is that they are reusable. Build them once and use them in any project across your whole company. 
+                       Biotope helps you build Web Components quickly, makes sure they work together and reconciles them into a single library. 
+                       This in turn gives you a superpower: Lasting control of your entire UI.
+                    </p>
+                    <bio-button class="js-openModal" modalType="whosBehind" title="Who's behind biotope" modifier="long" data-resources="[{paths: ['components/BioButton/index.js']}]"></bio-button>
+                </div>
+            </div>
+            <div class="benefits__container">
+                <bio-benefit data-resources="[{paths: ['components/BioBenefit/index.js']}]"
+                    imgsrc="../../_assets/framework-agnostic.svg" title="Framework Agnostic">
+                    Biotope works with any framework - Angular, React, Vue, etc. so there won't be any compatibility issues. Use whichever you want. Or switch when it suits you.
+                </bio-benefit>
+                <bio-benefit data-resources="[{paths: ['components/BioBenefit/index.js']}]"
+                    imgsrc="../../_assets/future-proof.svg" title="Futureproof">
+                    Web Components are a standard web technology. Because there is no coupling to the apps or websites where they are used in, 
+                    your library of Web Components theoretically lives on forever.
+                </bio-benefit>
+                <bio-benefit data-resources="[{paths: ['components/BioBenefit/index.js']}]"
+                    imgsrc="../../_assets/icon-open-source.svg" title="100% Open Source">
+                    Biotope's entire toolchain is free. It is maintained by a community of professional developers.
+                </bio-benefit>
+            </div>
+        </div>
+    </div>
+
+	<bio-swoosh color="#fff" direction="down" height="270" margin-top="50" margin-bottom="0" data-resources="[{paths: ['components/BioSwoosh/index.js']}]"></bio-swoosh>
+
+</section>
+
+<section id="scrollAnimation" class="scrollAnimation">
+	{{bioInclude 'components/BioScrollAnimation/scaffolding/BioScrollAnimation' }}
+</section>
+
+<section id="installation" class="installation">
+
+	<bio-swoosh color="#f8fbfd" direction="up" height="270" margin-top="50" offset-x="-768" data-resources="[{paths: ['components/BioSwoosh/index.js']}]"></bio-swoosh>
+
+    <div class="row row--reducedWidth">
+        <div class="col">
+            <div class="installation__intro">
+                <h3>Biotope Installation <br> <strong>Start building <br> within minutes.</strong></h3>
+                <p>
+                    No complicated registration process. No hidden costs. No more big technology decisions at the beginning of each project -
+                    Biotope works with any framework so you can build in the environment of your choice. And everyone else too. Build up your
+                    Web Component Library together.
+                </p>
+            </div>
+            <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]"
+				imgsrc="_assets/BioEasySetUp/1.svg"
+				alt="step one"
+                headline="Install Package"
+                text="Install Biotope as global package with npm."
+                code="npm install biotope -g"
+                bloated>
+            </bio-easy-set-up>
+            <bio-easy-set-up position="left" data-resources="[{paths: ['components/BioEasySetUp/index.js']}]"
+				imgsrc="_assets/BioEasySetUp/2.svg"
+				alt="step two"
+                headline="Set Up Project"
+                text="Trust the CLI tool to set up your project. Create Biotope-Boilerplate with your preferences and install all npm dependencies."
+                code="biotope create myEcosystem">
+            </bio-easy-set-up>
+            <bio-easy-set-up data-resources="[{paths: ['components/BioEasySetUp/index.js']}]"
+				imgsrc="_assets/BioEasySetUp/3.svg"
+				alt="step four"
+                headline="Run Build"
+                text="Change directory to the newly generated Biotope instance and run it from there. The build-system helps you to automatically build production-ready resources."
+                code="npm start">
+            </bio-easy-set-up>
+            <bio-easy-set-up position="left" data-resources="[{paths: ['components/BioEasySetUp/index.js']}]"
+				imgsrc="_assets/BioEasySetUp/4.svg"
+				alt="step five"
+                headline="Start Building Components"
+                text="Use the CLI tool to create your first component. Run the command to generate the boilerplate you need to start coding right away."
+                code="biotope generate">
+            </bio-easy-set-up>
+            <img class="installation__line" src="../_assets/BioEasySetUp/line.svg">
+        </div>
+    </div>
+</section>
+
+<section id="resources" class="resources">
+        <div class="row row--reducedWidth">
+            <div class="col col--large-6">
+                <h3 class="resources__headline--blue">Code & Resources</h3>
+                <bio-resource logo-baseline image-border-color="blue" data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/github-logo.svg">
+                    <p>See the Biotope code on GitHub</p>
+                    <bio-button title="Github" modifier="blue" url="https://github.com/biotope"></bio-button>
+                </bio-resource>
+                <bio-resource image-border-color="blue" data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/npm.svg">
+                    <p>Get the latest version of the Biotope CLI tool from npm</p>
+                    <bio-button title="NPM" modifier="blue" url="https://www.npmjs.com/package/biotope"></bio-button>
+                </bio-resource>
+                <bio-resource image-border-color="blue" data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/documentation.svg">
+                    <p>Read the Biotope documentation</p>
+                    <bio-button title="Read docs" modifier="blue" url="https://github.com/biotope/biotope/tree/master/docs"></bio-button>
+                </bio-resource>
+            </div>
+            <div class="col col--large-6">
+                <h3>Tutorials</h3>
+                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial-icon.svg">
+                    <p>Create Web Components with Biotope-Element</p>
+                    <bio-button title="Read" url="https://element.biotope.sh/docs/"></bio-button>
+                </bio-resource>
+                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial-icon.svg">
+                    <p>Check out an example website built with Biotope</p>
+                    <bio-button title="Read" url="https://github.com/biotope/website"></bio-button>
+                </bio-resource>
+                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial-icon.svg">
+                    <p>Automate your Build process with Biotope-Build</p>
+                    <bio-button title="Read" url="https://build.biotope.sh"></bio-button>
+                </bio-resource>
+                <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/expert.svg" border="noBorder">
+                    <p>You want to learn more? Ask an expert.</p>
+                    <bio-button modifier="full" title="Contact" url="mailto:coregroup@biotope.sh"></bio-button>
+                </bio-resource>
+            </div>
+        </div>
+</section>
+
+<section id="extendedBenefits" class="extendedBenefits">
+
+	<bio-swoosh color="#0A0A2C" direction="up" height="270" data-resources="[{paths: ['components/BioSwoosh/index.js']}]"></bio-swoosh>
+
+    <div class="row row--reducedWidth">
+        <div class="col">
+                <h3 class="inverted">
+                    Develop digital experiences <br> <strong>Flexible. Constant.<br> Across All Devices.</strong>
+                </h3>
+            <div class="extendedBenefits__container">
+                <bio-benefit color="inverted" data-resources="[{paths: ['components/BioBenefit/index.js']}]"
+                    imgsrc="../../_assets/icon-quality-focus.svg" title="Quality Focus">
+                    Develop high quality components instead of the architecture and development environment required. (That's Biotope's job).
+                </bio-benefit>
+                <bio-benefit color="inverted" data-resources="[{paths: ['components/BioBenefit/index.js']}]"
+                    imgsrc="../../_assets/icon-consistent-design.svg" title="Consistent Design">
+                    Roll out your interface from a single point of truth - simultaneously for all of your digital products. Keep your brand identity consistent across all your websites, apps or IoT. Say goodbye to design debt.
+                </bio-benefit>
+                <bio-benefit color="inverted" data-resources="[{paths: ['components/BioBenefit/index.js']}]"
+                    imgsrc="../../_assets/icon-scalability.svg" title="Scalable Infrastructure">
+                    Grow your library as big as you want. With Biotope collaboration is easy and your projects only uses the Web Components they need so performance stays high.
+                </bio-benefit>
+            </div>
+        </div>
+    </div>
+
+	<bio-swoosh color="#0A0A2C" direction="down" height="270" offset-x="-768" data-resources="[{paths: ['components/BioSwoosh/index.js']}]"></bio-swoosh>
+
+</section>
+
+<section id="company" class="company">
+    <div class="row row--reducedWidth">
+        <div class="col">
+            <h3>
+                You are in <br> <strong>good company</strong>
+            </h3>
+            <div class="company__logos">
+                <img src="../_assets/logo-ui.svg" alt="Union Investment">
+                <img src="../_assets/logo-roche.svg" alt="Roche">
+                <img src="../_assets/logo-basf.svg" alt="BASF">
+                <img src="../_assets/logo-siemens.svg" alt="Siemens">
+            </div>
+            <div class="company__leads">
+                <p>Need help setting up your frontend ecosystem? <br>
+                    We'd love to support you.</p>
+                <bio-button title="Contact VI" modifier="full"
+                    data-resources="[{paths: ['components/BioButton/index.js']}]" url="mailto:biotope.support@virtual-identity.com"></bio-button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+
+	<bio-swoosh color="#f8fbfd" direction="up" height="270" offset-x="-768" data-resources="[{paths: ['components/BioSwoosh/index.js']}]"></bio-swoosh>
+
+    <div class="row row--reducedWidth">
+        <div class="col">
+            <a href="#">
+                <img class="footer__githubLogo" src="_assets/github-logo.svg" alt="github octo-cat">
+            </a>
+            <div class="footer__checkItOut">
+                <p>Of course we also built<br><span class="footer__bigWords">this website</span> with Biotope.</p>
+                <bio-button title="See how" modifier="blue" data-resources="[{paths: ['components/BioButton/index.js']}]" url="https://github.com/biotope/website">
+                </bio-button>
+            </div>
+            <div class="footer__essentials">
+                <a class="js-openModal" modalType="imprint">Imprint</a>
+                <a class="js-openModal" modalType="privacy">Privacy Policy</a>
+                <a href="https://www.virtual-identity.com/">About VI</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<bio-modal modalType="whosBehind" data-resources="[{paths: ['components/BioModal/index.js']}]">
+    <div class="row row--reducedWidth">
+        <div class="col">
+            <section class="whosBehind">
+                <h3>
+                    Who's behind <br><strong>Biotope?</strong>
+                </h3>
+
+                <h4 class="whosBehind__headline">Core Group</h4>
+
+                <div class="whosBehind__list">
+                    <bio-collaborator-tile imgsrc="https://avatars1.githubusercontent.com/u/8701422?s=460&v=4" github="https://github.com/SheepFromHeaven">Marc Emmanuel
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="_assets/custom-avatars/tiago-marques.jpg" github="https://github.com/tiagomapmarques">Tiago Marques
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars1.githubusercontent.com/u/1905161?s=460&v=4" github="https://github.com/timomayer">Timo Mayer</bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars3.githubusercontent.com/u/4408826?s=460&v=4" github="https://github.com/dannystey">Danny Stey</bio-collaborator-tile>
+                </div>
+
+                <h4 class="whosBehind__headline">Collaborators</h4>
+
+                <div class="whosBehind__list">
+                    <bio-collaborator-tile imgsrc="https://avatars2.githubusercontent.com/u/4015313?s=460&v=4"
+                    github="https://github.com/janrembold">Jan Rembold
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars1.githubusercontent.com/u/3169754?s=460&v=4" github="https://github.com/alxbenz">Alexander Benz
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars0.githubusercontent.com/u/4249843?s=460&v=4" github="https://github.com/jurekbarth">Jurek Barth
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars1.githubusercontent.com/u/1375720?s=460&v=4" github="https://github.com/smohadjer">Saeid Mohadjer
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars3.githubusercontent.com/u/3465835?s=460&v=4" github="https://github.com/jashson">Matthias Schulz
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="_assets/custom-avatars/robin-spielmann.jpg" github="https://github.com/iam-robin">Robin Spielmann</bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars3.githubusercontent.com/u/32572355?s=460&v=4" github="https://github.com/dweiger">Dominikus Weiger
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars0.githubusercontent.com/u/4287128?s=460&v=4" github="https://github.com/davelosert">David Losert
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars3.githubusercontent.com/u/51372512?s=460&v=4" github="https://github.com/tiagoaguiar31">Tiago Aguiar
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars2.githubusercontent.com/u/16318844?s=460&v=4" github="https://github.com/luke-m">Lukas Müller
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars3.githubusercontent.com/u/23478343?s=460&v=4" github="https://github.com/VI-Lukas">Lukas Gorniak
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars2.githubusercontent.com/u/8968377?s=460&v=4" github="https://github.com/koepferd">Deborah Köpfer
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars1.githubusercontent.com/u/10438490?s=460&v=4" github="https://github.com/hummelch">Christoph Hummel
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars2.githubusercontent.com/u/25197658?s=460&v=4" github="https://github.com/no-creative-name">Kai Wißler
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars2.githubusercontent.com/u/48211993?s=460&v=4" github="https://github.com/simonbraunbrown">Simon Braun
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars3.githubusercontent.com/u/41577958?s=460&v=4" github="https://github.com/filipemartinsfe">Filipe Martins
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars1.githubusercontent.com/u/7582607?s=460&v=4" github="https://github.com/clemensf">Clemens Fiedler
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars3.githubusercontent.com/u/32572354?s=460&v=4" github="https://github.com/bennyvi">Benjamin Konopka
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars1.githubusercontent.com/u/46744222?s=460&v=4" github="https://github.com/ItsmeEddi">Edwin Repp
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars3.githubusercontent.com/u/5878267?s=460&v=4" github="https://github.com/jonerd">Jonas Begemann
+                    </bio-collaborator-tile>
+                    <bio-collaborator-tile imgsrc="https://avatars3.githubusercontent.com/u/26483886?s=460&v=4" github="https://github.com/IvailoStoyanov">Ivaylo Stoyanov
+                    </bio-collaborator-tile>
+                </div>
+            </section>
+        </div>
+    </div>
+</bio-modal>
+
+<bio-modal modalType="imprint" data-resources="[{paths: ['components/BioModal/index.js']}]">
+     <div class="row row--reducedWidth">
+        <div class="col">
+            <section class="imprint">
+                <h3>Imprint</h3>
+                <p>Virtual Identity AG <br> 
+                Grünwälder Str. 10-14 | 79098 Freiburg <br>
+                t +49 761 20758-00 | f +49 761 20758-01
+                </p>
+                <p>Mail: <a href="mailto:info@virtual-identity.com">info@virtual-identity.com</a></p>
+                <p>CEO: Ralf Heller<br>
+                Responsible for the content according to § 55 paragraph 2 RStV: Ralf Heller
+                </p>
+                <p>HRB 6218, Amtsgericht Freiburg<br>
+                Value Added Tax (VAT) ID: DE 208002218</p>
+                <h4>Legal information</h4>
+                <p>Copyright © 2002-2019 Virtual Identity AG. All rights reserved.</p>
+                <p>The contents of the Biotope website are protected by copyright and may not be reproduced, duplicated or 
+                    distributed in any form without the written consent of Virtual Identity AG.
+                </p>
+                <p>| <strong>Disclaimer</strong> | We regularly check and update the information provided on our 
+                website. Despite careful control of the content, the information provided on this website may have changed. 
+                Therefore no liability or guarantee can be assumed that the contents are up-to-date, accurate and complete. 
+                The operators of linked pages are solely responsible for their content.</p>
+            </section>
+        </div>
+    </div>
+</bio-modal>
+
+<bio-modal modalType="privacy" data-resources="[{paths: ['components/BioModal/index.js']}]">
+     <div class="row row--reducedWidth">
+        <div class="col">
+            <section class="privacyPolicy">
+                <h3>Privacy Policy</h3>
+                <p><strong>Data protection declaration / information according to art. 13 DSGVO</strong><br>
+                Last update: 10.10.2019</p>
+                <p>Thank you for your interest in our website and our company.</p>
+                <p>The protection of your personal data during collection, processing and use on the occasion of 
+                    your visit to our portal is important to us. We have taken technical and organizational measures
+                    to ensure that the data protection regulations are observed both by us and by external service providers.
+                </p>
+                <p>We would like to inform you about the type, scope and purpose of the collection and use of your personal 
+                    data provided to us as well as about its processing and use.
+                </p>
+                <h4>1. Contact details</h4>
+                <p>Virtual Identity AG<br>
+                Grünwälderstraße 10-14<br>
+                79098 Freiburg<br>
+                t +49 761 20758-456<br>
+                f +49 761 20758-02<br>
+                Board: Ralf Heller<br>
+                e-mail: <a href="mailto:info@virtual-identity.com">info@virtual-identity.com</a></p>
+                <h4>2. Processing of Data</h4>
+                <p>Personal data is information about your identity. This includes information such as name, address, telephone number and e-mail address.</p>
+                <p>In general, you can visit our website without leaving any personal data behind, e.g. if you only want to inform yourself about our products 
+                    and call up the corresponding pages. The accesses made to our homepage and each retrieval of a file stored on the homepage are logged. The 
+                    storage serves internal system-related and statistical purposes. Logged: Browser type/version, operating system used, referrer URL (the previously 
+                    visited page), host name of the accessing computer (IP address), time of server request. However, no personal data will be transmitted on your part 
+                    and this information will be stored separately from any personal data transmitted. In addition, the IP addresses of the requesting computers are logged
+                </p>
+                <p>In certain cases, however, we need your name and address as well as other information so that we can provide the desired services. This further personal 
+                    data is only collected and stored if you provide this information voluntarily, for example as part of an inquiry, a registration, an application as an 
+                    employee or potential supplier or when placing and processing orders
+                </p>
+                <p></p>
+                <h4>3. Purposes and legal bases</h4>
+                <p>If you provide us with personal data, we will only use it to answer your inquiries (legal basis is Art. 6 Para. 1 lit. a, b or f DSGVO) and to process 
+                    projects (legal basis is Art. 6 Para. 1 lit. a, b or f DSGVO) with regard to advertising measures vis-à-vis you (legal basis is Art. 6 Para. 1 lit. a, 
+                    b or f DSGVO). 6 para. 1 lit. a DSGVO) in order to provide you with access to certain information or offers or to use information and communication 
+                    systems (legal basis here is Art. 6 para. 1 lit. a, b or f DSGVO) and within the framework of statutory provisions (legal basis here is Art. 6 para. 1 
+                    lit. c DSGVO). We will collect, process and use the personal data you provide online only for the purposes disclosed to you. Your personal data will 
+                    only be passed on to third parties or otherwise transferred if this is necessary for the purpose of carrying out the activities mentioned here, e.g. 
+                    if service providers are called in or if you have given your prior consent to the transfer. These third parties may not use the data for other purposes.
+                    <br>
+                    Of course, we will respect your wishes if you do not wish to provide us with your personal data to support our customer relationship (in 
+                    particular for direct marketing or market research purposes).
+                    <br>
+                    We only disclose personal data about customers or suppliers if we are required to do so by law (legal basis is Art. 6 Para. 1 lit. c DSGVO), or if we are 
+                    required to do so by a court decision (legal basis is Art. 6 Para. 1 lit. c or f DSGVO) or if the disclosure is necessary to enforce or protect our 
+                    General Terms and Conditions or other agreements (legal basis is Art. 6 Para. 1 lit. c or f DSGVO). This applies mutatis mutandis to the processing of data. 
+                    <br>
+                    The data will not be disclosed for commercial purposes.
+                    <br>
+                    Our employees and the service companies commissioned by us are obliged by us to secrecy and to comply with the provisions of the current data protection laws. 
+                    The access to personal data by our employees is limited to those employees who need the respective data due to their professional tasks.</p>
+                <h4>4. Data that we collect</h4>
+                <p>Please refer to Sections 2,3 and 7-9 of this Privacy Policy.</p>
+                <h4>5.	Transfer of data to third parties or to a third country</h4>
+                <p>We do not pass on your data to third parties without a legal basis. Nor do we transfer your data to a third country unless you yourself are in a third country or 
+                    the processing of contracts requires the transfer of your data to a third country.</p>
+                <h4>6.	Cookies</h4>
+                <p>a) General</p>
+                <p>We do not pass on your data to third parties without a legal basis. We also do not pass on your data to third countries unless you are in a third country or the 
+                    processing of contracts requires the transfer of your data to a third country. In order to make visiting our website attractive and to enable the use of certain 
+                    functions, we use so-called cookies on various pages. These are small text files that are stored on your terminal device. Some of the cookies we use are deleted 
+                    after the end of the browser session, i.e. after closing your browser (so-called session cookies). Other cookies remain on your end device and enable us or our 
+                    partner companies to recognize your browser during your next visit (persistent cookies). We use cookies to personalise content and advertisements and to analyse 
+                    access to our website. We also share information about your use of our site with our social media, advertising and analytics partners. Details can be found at: 
+                    <a href="http://www.google.com/intl/de/policies/privacy/partners/">http://www.google.com/intl/de/policies/privacy/partners/.</a></p>
+                <p>b) Legal base</p>
+                <p>The legal basis for the use of cookies is your consent. We only set one or more cookies if you have given your consent to the use of cookies in the cookie popup 
+                    that appears when you visit our website. The legal basis is then Art. 6 Para. 1 lit. a GDPR.</p>
+                <h4>7.	Google Analytics</h4>
+                <p>This website uses Google Analytics, a web analysis service provided by Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google").</p>
+                <p>Google Analytics uses "cookies", which are text files placed on your computer, to help the website analyze how users use the site. 
+                    The information generated by the cookie about your use of the website (including your IP address) will be transmitted to and stored 
+                    by Google on servers in the United States. Google will use the stored information to evaluate your use of the website, to compile 
+                    reports on website activity for website operators and to provide other services relating to website activity and internet usage.</p>
+                <p>Google may also transfer this information to third parties where required to do so by law, or where such third parties process the information on 
+                    Google's behalf. Google will not associate your IP address with any other data held by Google. You may refuse the use of cookies by selecting the 
+                    appropriate settings on your browser, however please note that if you do this you may not be able to use the full functionality of this website. 
+                    By using this website, you consent to the processing of data about you by Google in the manner and for the purposes set out above.</p>
+                <p>You may object to the collection of data at any time with effect for the future by using the Google Analytics deactivation add-on 
+                    for browsers at <a href="http://tools.google.com/dlpage/gaoptout?hl=de">http://tools.google.com/dlpage/gaoptout?hl=de</a>.</p>
+                <p>You can also prevent Google Universal Analytics from capturing your data by clicking the following link. Remove all tracking provided by this website by declining the use of 
+                    Google Analytics:</p>
+                <p><a class="internal" data-cookie-settings>Open your cookie settings to decline being tracked using the Google Tag Manager and Google Analytics.</a></p>
+                <p>We point out that this website uses Google Analytics with the extension "_anonymizeIp()". This means that IP addresses are stored 
+                    exclusively in anonymous form, thus excluding any direct personal reference in connection with the stored data.</p>
+                <h4>8.	Google Tag Manager</h4>
+                <p>This website uses the Google Tag Manager. This service allows website tags to be managed through an interface. The Google Tool Manager only implements 
+                    tags. This means that no cookies are used and no personal data is collected. Google Tool Manager triggers other tags that may collect data. However, 
+                    the Google Tag Manager does not access this data. If a deactivation has been made at the domain or cookie level, it remains valid for all tracking tags 
+                    if they are implemented with the Google Tag Manager.</p>
+                <p><a class="internal" data-cookie-settings>
+                    Open your cookie settings to decline being tracked using the Google Tag Manager and Google Analytics.</a></p>
+                <p>More information about the Google Tag Manager can be found here:</p>
+                <p><a href="http://www.google.de/tagmanager/faq.html">http://www.google.de/tagmanager/faq.html</a></p>
+                <p><a href="http://www.google.de/tagmanager/use-policy.html">http://www.google.de/tagmanager/use-policy.html</a></p>
+                <h4>9.	LinkedIn Insight Tag</h4>
+                <p>The LinkedIn Insight tag creates a unique LinkedIn browser cookie in a visitor's browser and enables the collection 
+                    of the following data for that cookie: metadata such as IP address, timestamp, and page events (e.g., page views). 
+                    The provider is LinkedIn Corporation, 2029 Stierlin Court, Mountain View, CA 94043, USA. Each time you access one of 
+                    our pages that includes the features of LinkedIn, a connection is established to a LinkedIn server.
+                    If you are registered with LinkedIn, LinkedIn will be able to link your interaction with our online services to your user account. LinkedIn 
+                    is certified according to the Privacy Shield Agreement and thus guarantees compliance with European data protection legislation 
+                    (<a href="https://www.privacyshield.gov/participant?id=a2zt0000000L0UZAA0&status=Active">https://www.privacyshield.gov/participant?id=a2zt0000000L0UZAA0&status=Active</a>). 
+                    Further information from LinkedIn on data protection: <a href="https://www.linkedin.com/legal/privacy-policy">https://www.linkedin.com/legal/privacy-policy</a>, 
+                    an opt-out option can be found here: 
+                    <a href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out">https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out</a>
+                    For more information on the LinkedIn Insight tag, please visit: <a href="https://www.linkedin.com/help/linkedin/answer/65521">https://www.linkedin.com/help/linkedin/answer/65521</a>
+                    <p>
+                    <a data-cookie-settings class="internal">Open your cookie settings to decline being tracked using the LinkedIn Insight Tag.</a>
+                    </p>
+                    </p>
+                <h4>10.	Your rights</h4>
+                <p>In particular, you may request information about the purposes of the processing, the category of personal data, the categories of recipients 
+                    to whom your data has been or will be disclosed, the planned storage period, the existence of a right of rectification, deletion, limitation of 
+                    processing or opposition, the existence of a right of appeal, the origin of your data if it has not been collected from us, as well as the 
+                    existence of an automated decision making process including profiling and, if applicable, meaningful information on its details.</p>
+                <p>If your data should not be correct, you can of course also request a correction or completion of your data.</p>
+                <p>You may also request that your data be deleted unless processing is necessary to exercise your right to freedom of expression and information, to fulfil a legal obligation, for reasons 
+                    of public interest or to assert, exercise or defend legal claims. We will comply with this request for deletion immediately, but must of course comply with any applicable legal 
+                    storage regulations.</p>
+                <p>You may also demand that we restrict the processing of your personal data insofar as the accuracy of the data is disputed by you, the processing is unlawful, but you refuse to delete 
+                    it and we no longer need the data, but you need it to assert, exercise or defend legal claims or you have lodged an objection against the processing pursuant to Art. 21 DSGVO.</p>
+                <p>If you have given your consent to the use of data, you can revoke it at any time with effect for the future.</p>
+                <p>You also have the right to data transfer. We will make your data available to you in a machine-readable format if you make a corresponding request.</p>
+                <p>If your personal data is processed on the basis of legitimate interests pursuant to Art. 6 para. 1 sentence 1 lit. f DSGVO, you have the right to object to the processing of 
+                    your personal data pursuant to Art. 21 DSGVO if there are reasons for doing so which arise from your particular situation or if the objection is directed against direct advertising. 
+                    In the latter case, you have a general right of objection, which is implemented by us without stating a particular situation.</p>
+                <p>All requests for information, requests for information, requests for deletion, etc. or objections to data processing should be directed to the contact details of our data protection 
+                    officer given below.</p>
+                <p>If you do not agree with our data processing, you also have the right to complain to the data protection supervisory authority responsible for us. </p>
+                <p>The responsible supervisory authority for data protection for us is:</p>
+                <p>Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg<br>
+                    Postfach 10 29 32<br>
+                    70025 Stuttgart</p>
+                <p>However, we would be pleased if you would talk to us first, so that we can clarify possible ambiguities or uncertainties together.</p>
+                <h4>11.	Data security</h4>
+                <p>We maintain current technical measures to ensure data security, in particular to protect your personal data from the dangers of data transmission 
+                    and from third parties gaining knowledge. These will be adapted to the current state of the art.</p>
+                <h4>12.	Changes to our data protection information</h4>
+                <p>We reserve the right to change our security and data protection measures as far as this becomes necessary due to technical or legal developments 
+                    or in case of justified legitimate interests. In these cases, we will also adapt our data protection information accordingly. Please therefore 
+                    take note of the latest version of our data protection declaration.</p>
+                <h4>13.	Deletion</h4>
+                <p>Stored personal data will be deleted if you revoke your consent to their storage, if their knowledge is no longer required to fulfil the purpose 
+                    for which they were stored, or if their storage is inadmissible for other legal reasons, unless legal storage regulations speak against deletion, 
+                    then the data will be blocked instead of deleted.</p>
+                <h4>14.	Automated decision making including profiling</h4>
+                <p>There is no automated decision making, including profiling.</p>
+                <h4>15.	Contact person for questions regarding data protection</h4>
+                <p>If you have any further questions regarding the collection, processing and use of your personal data, please contact our data protection officer at</p>
+                <p>Virtual Identity AG<br>
+                    Data Protection Officer<br>
+                    -	Persönlich / vertraulich / confidential - <br>
+                    Grünwälderstraße 10-14<br>
+                    79098 Freiburg<br>
+                    E-Mail: <a href="mailto:datenschutz@virtual-identity.com">datenschutz@virtual-identity.com</a>
+                </p>
+            </section>
+        </div>
+    </div>
+</bio-modal>
+
+<bio-cookie-banner data-resources="[{paths: ['components/BioCookieBanner/index.js']}]">
+    <p>We use cookies to create the best possible website experience and see whether our marketing campaigns are effective. Google Analytics (cookies expire in 24 months)
+        helps us gain a better understanding on how users interact with the website. With the LinkedIn Insight Tag (cookies expire in 24 months) we gain insights whether our
+        marketing efforts are having the desired effect. You are free to decline these cookies, but we'd be happy if you let us use your anonymized data. Further information
+        can be found in our <a class="js-openModal" modalType="privacy">Privacy Policy</a>
+    </p>
+</bio-cookie-banner>
+

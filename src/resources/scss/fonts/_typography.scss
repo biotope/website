@@ -1,0 +1,65 @@
+// @import '../defaultSassImports.scss';
+
+%benefit-text {
+    font-family: $font-family-body;
+    font-weight: $font-weight-light;
+    line-height: 1.35;
+    font-size: 15px;
+
+    @include breakpoint($medium) {
+        font-size: 15px;
+    }
+}
+
+%headlineH2 {
+    font-family: $font-family-titles;
+    font-weight: $font-weight-normal;
+}
+
+%headlineH4 {
+	font-family: $font-family-titles;
+	font-weight: $font-weight-medium;
+
+	font-size: 18px;
+	@include breakpoint($small) {
+		font-size: 25px;
+	}
+	@include breakpoint($medium) {
+		font-size: 30px;
+	}
+}
+
+p {
+    font-family: $font-family-body;
+    font-weight: $font-weight-light;
+    color: $bio-darker-blue;
+}
+
+%sectionHeadline {
+    font-family:$font-family-titles;
+    font-weight: $font-weight-light;
+	font-size: 20px;
+
+	@include breakpoint($small) {
+		font-size: 25px;
+	}
+
+    @include breakpoint($medium) {
+        font-size: 30px;
+    }
+}
+
+%sectionHeadlineStrong {
+	font-size: 30px;
+	line-height: 30px;
+
+	@include breakpoint($small) {
+		font-size: 50px;
+		line-height: 50px;
+	}
+    
+    @include breakpoint($medium) {
+        font-size: 60px;
+        line-height: 60px;
+    }
+}
