@@ -168,6 +168,18 @@ initGoogleAnalytics();
 		});
 	});
 
+	document.querySelectorAll('bio-github-corner').forEach((corner: HTMLElement) => {
+		corner.addEventListener('click', (e: Event) => {
+			trackLink(corner.shadowRoot.querySelector('a'));
+		})
+	})
+
+	document.querySelectorAll('bio-collaborator-tile').forEach((tile: HTMLElement) => {
+		tile.addEventListener('click', (e: Event) => {
+			trackLink(tile.shadowRoot.querySelector('a'));
+		}) 
+	})
+
 	window.addEventListener("bioScrollAnimation.showSlide", (event: CustomEvent) => {
 		trackAnimationShowSlide(event.detail.title);
 	});
