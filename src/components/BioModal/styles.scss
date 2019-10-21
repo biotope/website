@@ -38,7 +38,7 @@
 				color: white;
 				transition: 0.5s ease;
 				cursor: pointer;
-				z-index: 1;
+				z-index: 12;
 				
 				@include breakpoint($large) {
 					top: 12%;
