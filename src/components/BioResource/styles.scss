@@ -83,13 +83,13 @@
 			}
 		}
 
-		::slotted(bio-button) {
+		::slotted(bio-button),::slotted(bio-link-button) {
 			text-align: right;
 			grid-column: 2 / span 2;
+			align-self: center;
 
 			@include breakpoint($small) {
 				grid-column: 3;
-				margin: auto 0;
 			}
 		}
 	}

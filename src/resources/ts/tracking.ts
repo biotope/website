@@ -108,7 +108,7 @@ initGoogleAnalytics();
 	}
 
 	function trackLink(link: HTMLElement) {
-		const linkHref = link.getAttribute("url") || link.getAttribute("href");
+		const linkHref = link.getAttribute("href");
 		const linkURL = new URL(linkHref);
 		const linkHostname = linkURL ? linkURL.hostname : "";
 		if (internalHostnames.indexOf(linkHostname) != -1) {
@@ -119,7 +119,7 @@ initGoogleAnalytics();
 	}
 
 	function trackMailtoLink(mailtoLink: HTMLElement) {
-		const linkHref = mailtoLink.getAttribute("url") || mailtoLink.getAttribute("href");
+		const linkHref = mailtoLink.getAttribute("href");
 		const eMailAddress = linkHref.replace("mailto:", "");
 		dataLayer.push({
 			event: "contact",
