@@ -17,7 +17,7 @@
 				width: 200px;
 				height: 200px;
 				display: block;
-				z-index: 200000;
+				z-index: 1;
 				clip-path: circle();
 				border: 5px solid transparent;
 				border-radius: 50%;
@@ -30,6 +30,10 @@
 				flex-direction: row;
 
 				a {
+					display: block;
+					width: 100%;
+					text-align: center;
+					padding: 45% 0;
 					text-decoration: none;
                     color: white;
                     font-weight: 600;
