@@ -34,7 +34,7 @@ module.exports = {
 	  connect: {
 		  port: 9002
 	  },
-	  favicon: {
+	  favicons: {
 		  path: '/favicons/'
 	  }
 };
