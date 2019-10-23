@@ -23,7 +23,6 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 		{name: 'slides', converter: (value) => parseInt(value) },
 		{name: 'slide-duration', converter: (value) => parseInt(value) },
 		{name: 'scroll-length', converter: (value) => parseInt(value) },
-		{name: 'scroll-factor', converter: (value) => parseFloat(value) }
 	];
 
 	public methods: BioScrollAnimationMethods = {};
@@ -32,6 +31,7 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 		return {
 			currentSlide: 0,
 			scrolling: false,
+			touched: false,
 			slides: [
 				{
 					title: 'start',
@@ -126,7 +126,7 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 			let scrollTimeout;
 
 			window.addEventListener('scroll', (event) => {
-				if (this.state.slides.length > 0 && !this.state.scrolling) {
+				if (this.state.slides.length > 0 && !this.state.scrolling && !this.state.touched) {
 
 					window.clearTimeout(scrollTimeout);
 
@@ -134,19 +134,20 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 						const scrollPosition = Math.floor(window.pageYOffset);
 						const startOffset = this.offsetTop;
 						const endOffset = startOffset + this.props.scrollLength;
+						const minScrollThreshold = 5; // prevents rounding issues
 
 						this.hideSlideControls();
 
 						if (scrollPosition > startOffset && scrollPosition <= endOffset) {
 							this.showSlideControls();
-							if (scrollPosition > (startOffset + this.state.slides[this.state.currentSlide].offset)) {
+							if (scrollPosition > (startOffset + this.state.slides[this.state.currentSlide].offset) + minScrollThreshold) {
 								const slideIndex = this.state.currentSlide + 1;
 								const targetOffset = startOffset + this.state.slides[slideIndex].offset;
 
 								if (targetOffset <= endOffset) {
 									this.scrollToSlide(slideIndex, this.props.slideDuration);
 								}
-							} else if (scrollPosition < (startOffset + this.state.slides[this.state.currentSlide].offset)) {
+							} else if (scrollPosition < (startOffset + this.state.slides[this.state.currentSlide].offset) - minScrollThreshold) {
 								const slideIndex = this.state.currentSlide - 1;
 								this.scrollToSlide(slideIndex, this.props.slideDuration);
 							}
@@ -157,14 +158,25 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 
 			let resizeTimeout;
 
-			// prevent automatic scrolling when resizing
+			// prevent automatic scrolling when resizing (esp. when mobile browser address bars slide in)
 			window.addEventListener('resize', (event) => {
 				this.state.scrolling = true;
+				window.clearTimeout(resizeTimeout);
 				resizeTimeout = window.setTimeout(() => {
 					this.state.scrolling = false;
-					window.clearTimeout(resizeTimeout);
-				}, 250);
+				}, 1000);
 			});
+
+			// prevent automatic scrolling while touching
+			let touchTimeout;
+			window.addEventListener('touchmove', (event) => {
+				this.state.touched = true;
+				window.clearTimeout(touchTimeout);
+				touchTimeout = window.setTimeout(() => {
+					this.state.touched = false;
+				}, 300);
+			});
+
 		}
 	}
 
@@ -233,10 +245,17 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 		let slideControlElement = Component.wire()`<li>slide ${slideIndex}</li>`;
 
 		slideControlElement.addEventListener('click', (event)=> {
-			this.scrollToSlide(slideIndex, 50);
+			// prevent rendering issue of iOS touch devices when scrolling automatically too fast.
+			if (!this.isTouchDevice()) {
+				this.scrollToSlide(slideIndex, 0);
+			}
 		});
 
 		slideControls.appendChild(slideControlElement);
+	}
+
+	isTouchDevice() {
+		return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
 	}
 
 	showSlideControls() {

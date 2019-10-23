@@ -22,7 +22,8 @@
  interface BioScrollAnimationState {
 	currentSlide: number
 	slides: BioScrollAnimationSlide[]
-	scrolling: boolean
+	scrolling: boolean,
+	touched: boolean
 }
 
 /**
