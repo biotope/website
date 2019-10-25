@@ -411,7 +411,8 @@
                     for browsers at <a href="http://tools.google.com/dlpage/gaoptout?hl=de">http://tools.google.com/dlpage/gaoptout?hl=de</a>.</p>
                 <p>You can also prevent Google Universal Analytics from capturing your data by clicking the following link. Remove all tracking provided by this website by declining the use of 
                     Google Analytics:</p>
-                <p><a class="internal" data-cookie-settings>Open your cookie settings to decline being tracked using the Google Tag Manager and Google Analytics.</a></p>
+                <p><a class="internal" data-disable-google-tracking>Click here to disable Google tracking and reload the page.</a></p>
+                <bio-google-tracking-status data-resources="[{paths:['components/BioGoogleTrackingStatus/index.js']}]"></bio-google-tracking-status>
                 <p>We point out that this website uses Google Analytics with the extension "_anonymizeIp()". This means that IP addresses are stored 
                     exclusively in anonymous form, thus excluding any direct personal reference in connection with the stored data.</p>
                 <h4>8.	Google Tag Manager</h4>
@@ -419,8 +420,9 @@
                     tags. This means that no cookies are used and no personal data is collected. Google Tool Manager triggers other tags that may collect data. However, 
                     the Google Tag Manager does not access this data. If a deactivation has been made at the domain or cookie level, it remains valid for all tracking tags 
                     if they are implemented with the Google Tag Manager.</p>
-                <p><a class="internal" data-cookie-settings>
-                    Open your cookie settings to decline being tracked using the Google Tag Manager and Google Analytics.</a></p>
+                <p><a class="internal" data-disable-google-tracking>
+                    Click here to disable Google tracking and reload the page.</a></p>
+                <bio-google-tracking-status data-resources="[{paths:['components/BioGoogleTrackingStatus/index.js']}]"></bio-google-tracking-status>
                 <p>More information about the Google Tag Manager can be found here:</p>
                 <p><a href="http://www.google.de/tagmanager/faq.html">http://www.google.de/tagmanager/faq.html</a></p>
                 <p><a href="http://www.google.de/tagmanager/use-policy.html">http://www.google.de/tagmanager/use-policy.html</a></p>
@@ -437,8 +439,12 @@
                     <a href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out">https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out</a>
                     For more information on the LinkedIn Insight tag, please visit: <a href="https://www.linkedin.com/help/linkedin/answer/65521">https://www.linkedin.com/help/linkedin/answer/65521</a>
                     <p>
-                    <a data-cookie-settings class="internal">Open your cookie settings to decline being tracked using the LinkedIn Insight Tag.</a>
                     </p>
+                    </p>
+
+                    <p>
+                        <strong>Click on this link to be navigated to the website where you can opt out of LinkedIn tracking:</strong> 
+                        <a href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out">https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out</a>
                     </p>
                 <h4>10.	Your rights</h4>
                 <p>In particular, you may request information about the purposes of the processing, the category of personal data, the categories of recipients 
@@ -491,7 +497,7 @@
     </div>
 </bio-modal>
 
-<bio-cookie-banner data-resources="[{paths: ['components/BioCookieBanner/index.js']}]">
+<bio-cookie-banner data-resources="[{paths: ['components/BioCookieBanner/index.js']}]" class="hiddenOnLoad">
     <p>We use cookies to create the best possible website experience and see whether our marketing campaigns are effective. Google Analytics (cookies expire in 24 months)
         helps us gain a better understanding on how users interact with the website. With the LinkedIn Insight Tag (cookies expire in 12 months) we gain insights whether our
         marketing efforts are having the desired effect. You are free to decline these cookies, but we'd be happy if you let us use your anonymized data. Further information
