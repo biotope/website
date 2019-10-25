@@ -20,31 +20,14 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 
     static attributes = [
 		'animation-data-path',
-		{name: 'slides', converter: (value) => parseInt(value) },
-		{name: 'slide-duration', converter: (value) => parseInt(value) },
 		{name: 'scroll-length', converter: (value) => parseInt(value) },
-		{name: 'scroll-factor', converter: (value) => parseFloat(value) }
 	];
 
 	public methods: BioScrollAnimationMethods = {};
 
-	get defaultState() {
-		return {
-			currentSlide: 0,
-			scrolling: false,
-			slides: [
-				{
-					title: 'start',
-					offset: 0
-				}
-			]
-		}
-	}
-
 	get defaultProps() {
 		return {
 			animationDataPath: '',
-			slideDuration: 2000,
 			scrollLength: 10000
 		};
 	}
@@ -106,126 +89,90 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 		});
 	}
 
+	private slides = [];
+	
 	initSlides() {
+		
+		this.slides = [{
+			title: 'start',
+			offset: 0
+		}];
 
 		const slidesSections = this.querySelectorAll('.animation-slide');
 
 		if (slidesSections.length > 1) {
 			slidesSections.forEach((slideSection, index) => {
-				this.state.slides.push({
-					title: slideSection.querySelector('h2') ? slideSection.querySelector('h2').innerText : '',
+				this.slides.push({
+					title: slideSection.querySelector('h3') ? slideSection.querySelector('h3').innerText : '',
 					offset: Math.round((index + 1) * this.props.scrollLength / slidesSections.length)
 				});
 			});
 
-			this.state.slides.forEach((slide, index) => {
+			this.slides.forEach((slide, index) => {
 				this.addSlideControl(index);
 			});
 
-			// using a timeout prevents iOS Safari from executing scroll handler before accelerated scrolling really is finished
-			let scrollTimeout;
-
 			window.addEventListener('scroll', (event) => {
-				if (this.state.slides.length > 0 && !this.state.scrolling) {
+				if (this.slides.length > 0) {
+					const scrollPosition = Math.floor(window.pageYOffset);
+					const startOffset = this.offsetTop;
+					const endOffset = startOffset + this.props.scrollLength;
+					this.hideSlideControls();
 
-					window.clearTimeout(scrollTimeout);
-
-					scrollTimeout = window.setTimeout(() => {
-						const scrollPosition = Math.floor(window.pageYOffset);
-						const startOffset = this.offsetTop;
-						const endOffset = startOffset + this.props.scrollLength;
-
-						this.hideSlideControls();
-
-						if (scrollPosition > startOffset && scrollPosition <= endOffset) {
-							this.showSlideControls();
-							if (scrollPosition > (startOffset + this.state.slides[this.state.currentSlide].offset)) {
-								const slideIndex = this.state.currentSlide + 1;
-								const targetOffset = startOffset + this.state.slides[slideIndex].offset;
-
-								if (targetOffset <= endOffset) {
-									this.scrollToSlide(slideIndex, this.props.slideDuration);
-								}
-							} else if (scrollPosition < (startOffset + this.state.slides[this.state.currentSlide].offset)) {
-								const slideIndex = this.state.currentSlide - 1;
-								this.scrollToSlide(slideIndex, this.props.slideDuration);
-							}
-						}
-					}, 30);
+					if (scrollPosition > startOffset && scrollPosition <= endOffset) {
+						this.showSlideControls();
+						this.updateSlideControls(scrollPosition);
+					}
 				}
-			});
-
-			let resizeTimeout;
-
-			// prevent automatic scrolling when resizing
-			window.addEventListener('resize', (event) => {
-				this.state.scrolling = true;
-				resizeTimeout = window.setTimeout(() => {
-					this.state.scrolling = false;
-					window.clearTimeout(resizeTimeout);
-				}, 250);
 			});
 		}
 	}
 
-	scrollToSlide(slideIndex, slideDuration) {
-		if (this.state.slides.length > 0 && !this.state.scrolling) {
+	scrollToSlide(slideIndex) {
+		if (this.slides.length > 0) {
 			const startOffset = this.offsetTop;
-			const targetOffset = startOffset + this.state.slides[slideIndex].offset;
-			const slideTitle = this.state.slides[slideIndex].title;
+			const targetOffset = startOffset + this.slides[slideIndex].offset;
 
-			this.state.scrolling = true;
-			this.activateSlideControl(slideIndex);
-			this.dispatchShowSlideEvent(slideTitle);
-
-			this.animateScrollTo(targetOffset, slideDuration, () => {
-				this.state.currentSlide = slideIndex;
-				this.state.scrolling = false;
-			});
+			window.scroll(0, targetOffset);
 		}
 	}
 
+	updateSlideControls(scrollPosition) {
+		this.slides.forEach((slide)=> {
+			const startOffset = this.offsetTop;
+			const slideOffset = startOffset + slide.offset;
+			const slideIndex = this.slides.indexOf(slide);
+
+			if (scrollPosition > slideOffset) {
+				this.activateSlideControl(slideIndex + 1);
+				this.dispatchShowSlideEvent(this.slides[slideIndex + 1].title);
+			}
+		})
+	};
+
+	private showSlideTimeout = 0;
+	private currentSlideTitle = "";
+
+	// only dispatch showSlide event when showed longer than 2 seconds
 	dispatchShowSlideEvent(slideTitle) {
-		const showSlideEvent = new CustomEvent (
-			'bioScrollAnimation.showSlide',
-			{
-				detail: {
-					title: slideTitle
-				},
-				bubbles: true,
-				cancelable: true
-			});
+		window.clearTimeout(this.showSlideTimeout);
 
-		this.dispatchEvent(showSlideEvent);
-	}
+		if (slideTitle != this.currentSlideTitle) {
+			this.showSlideTimeout = window.setTimeout(()=> {
+				this.currentSlideTitle = slideTitle;
+				const showSlideEvent = new CustomEvent (
+					'bioScrollAnimation.showSlide',
+					{
+						detail: {
+							title: slideTitle
+						},
+						bubbles: true,
+						cancelable: true
+					});
 
-	animateScrollTo(scrollToOffset: number, duration: number, callback?: Function) {
-		const startOffset = window.pageYOffset;
-		const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-
-		if ('requestAnimationFrame' in window === false) {
-			window.scroll(0, scrollToOffset);
-			if (callback) {
-				callback();
-			}
-			return;
+				this.dispatchEvent(showSlideEvent);
+			}, 2000);
 		}
-
-		const animateScrolling = () => {
-			const now = 'now' in window.performance ? performance.now() : new Date().getTime();
-			const time = Math.min(1, ((now - startTime) / duration));
-			// using linear time function, animation is already easing.
-			window.scroll(0, Math.ceil((time * (scrollToOffset - startOffset)) + startOffset));
-
-			if (time === 1) {
-				if (callback) {
-					callback();
-				}
-				return;
-			}
-			requestAnimationFrame(animateScrolling);
-		};
-		animateScrolling();
 	}
 
 	addSlideControl(slideIndex) {
@@ -233,10 +180,17 @@ class BioScrollAnimation extends Component< BioScrollAnimationProps, BioScrollAn
 		let slideControlElement = Component.wire()`<li>slide ${slideIndex}</li>`;
 
 		slideControlElement.addEventListener('click', (event)=> {
-			this.scrollToSlide(slideIndex, 50);
+			// prevent rendering issue on iOS touch devices when scrolling automatically too fast.
+			if (!this.isTouchDevice()) {
+				this.scrollToSlide(slideIndex);
+			}
 		});
 
 		slideControls.appendChild(slideControlElement);
+	}
+
+	isTouchDevice() {
+		return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
 	}
 
 	showSlideControls() {

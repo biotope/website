@@ -15,7 +15,7 @@ class BioCookieBanner extends Component< BioCookieBannerProps, BioCookieBannerSt
 
     static dependencies = [
         BioButton as typeof Component
-    ]
+    ];
 
     public methods: BioCookieBannerMethods = {
 
@@ -39,7 +39,8 @@ class BioCookieBanner extends Component< BioCookieBannerProps, BioCookieBannerSt
 
     created() {
         super.created();
-        if (document.cookie.includes('cookies-accepted=true')) {
+        this.classList.remove('hiddenOnLoad');
+        if (document.cookie.indexOf("cookie_consent") != -1) {
             this.setState({
                 hidden: true
             })

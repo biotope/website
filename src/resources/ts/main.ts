@@ -30,7 +30,7 @@ import ResourceLoader from "@biotope/resource-loader/lib/index.esm";
                     modal.dispatchEvent(new CustomEvent("modal.close"));
                 });
             }
-        });
+		});
     };
 
 	const setupResourceLoader = () => {

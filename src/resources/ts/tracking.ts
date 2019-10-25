@@ -38,7 +38,7 @@ const deleteGoogleAnalyticsScripts = () => {
 };
 
 const initGoogleAnalytics = () => {
-	if (document.cookie.includes("cookies-accepted=true")) {
+	if (document.cookie.indexOf("cookie_consent=true") != -1) {
 		initGoogleTagManager(
 			window,
 			document,
@@ -49,24 +49,31 @@ const initGoogleAnalytics = () => {
 	}
 
 	document.addEventListener("cookies.accept", (e: CustomEvent) => {
-		setCookie("cookies-accepted", "true", 365, window.location.hostname);
+		setCookie("cookie_consent", "true", 365, window.location.hostname);
 		initGoogleTagManager(
 			window,
 			document,
 			"script",
 			"dataLayer",
 			((window as any).biotope as any).configuration.get("global.gtmId")
-		);
+			);
+		document.querySelectorAll('bio-google-tracking-status').forEach((statusElement: HTMLElement) => {
+			statusElement.dispatchEvent(new CustomEvent('google.tracking.enabled'));
+		})
 	});
 
 	document.addEventListener("cookies.decline", (e: CustomEvent) => {
 		deleteCookies([
-			"cookies-accepted",
+			"cookie_consent",
 			"_gid",
 			"_ga",
 			`_gat_${((window as any).biotope as any).configuration.get("global.gaId")}`
 		]);
+		setCookie("cookie_consent", "false", 365, window.location.hostname);
 		deleteGoogleAnalyticsScripts();
+		document.querySelectorAll('bio-google-tracking-status').forEach((statusElement: HTMLElement) => {
+			statusElement.dispatchEvent(new CustomEvent('google.tracking.disabled'));
+		})
 	});
 
 	document.querySelectorAll("[data-cookie-settings]").forEach(element => {
@@ -74,6 +81,15 @@ const initGoogleAnalytics = () => {
 			document.querySelector("bio-cookie-banner").dispatchEvent(new CustomEvent("cookiebanner.open"));
 		});
 	});
+
+	document.querySelectorAll('[data-disable-google-tracking]').forEach((disableLink: HTMLElement) => {
+		disableLink.addEventListener('click', (e: Event) => {
+			e.preventDefault();
+			document.dispatchEvent(new CustomEvent('cookies.decline'));
+			setCookie("cookie_consent", "false", 365, window.location.hostname);
+			location.reload();
+		})
+	})
 };
 
 initGoogleAnalytics();
