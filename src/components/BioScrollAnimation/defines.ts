@@ -7,7 +7,6 @@
  */
  interface BioScrollAnimationProps {
 	animationDataPath: string
-	slideDuration?: number
 	scrollLength: number
  }
 
@@ -19,12 +18,7 @@
 /**
  * State
  */
- interface BioScrollAnimationState {
-	currentSlide: number
-	slides: BioScrollAnimationSlide[]
-	scrolling: boolean,
-	touched: boolean
-}
+ interface BioScrollAnimationState { }
 
 /**
  * Methods
