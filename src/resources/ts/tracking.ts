@@ -16,7 +16,7 @@ const initGoogleTagManager = (w, d, s, l, i) => {
 
 const deleteCookies = (cnames: string[]) => {
 	cnames.forEach(cname => {
-		document.cookie = `${cname}= ; expires = Thu, 01 Jan 1970 00:00:00 GMT`;
+		document.cookie = `${cname}= ;path=/ ;domain=${location.hostname} ;expires = Thu, 01 Jan 1970 00:00:00 GMT`;
 	});
 };
 
