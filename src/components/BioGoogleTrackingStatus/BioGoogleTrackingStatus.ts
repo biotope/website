@@ -19,7 +19,7 @@ class BioGoogleTrackingStatus extends Component<BioGoogleTrackingStatusProps, Bi
 
         const cookies = document.cookie.split(';');
         cookies.forEach((cookie: string) => {
-            if (cookie.includes('cookie_consent')) {
+            if (cookie.indexOf("cookie_consent") != -1) {
                 const d = cookie.split('=');
                 if (d[1] === 'true') {
                     this.setState({
@@ -31,7 +31,7 @@ class BioGoogleTrackingStatus extends Component<BioGoogleTrackingStatusProps, Bi
                     })
                 }
             }
-        })
+        });
 
 		this.addEventListener("google.tracking.disabled", () => {
             this.setState({
