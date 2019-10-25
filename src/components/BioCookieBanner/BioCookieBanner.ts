@@ -39,7 +39,8 @@ class BioCookieBanner extends Component< BioCookieBannerProps, BioCookieBannerSt
 
     created() {
         super.created();
-        if (document.cookie.includes('cookies-accepted=true')) {
+        this.classList.remove('hiddenOnLoad');
+        if (document.cookie.includes('cookie_consent')) {
             this.setState({
                 hidden: true
             })
