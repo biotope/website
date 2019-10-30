@@ -10,11 +10,11 @@
             <p class="splash__claim">
                 Evolve your UI to stay ahead of developments on the web and in your company. Gain control of all your websites, Apps or IoT - using a single library of Web Components.
             </p>
-            <bio-button title="See how it works" modifier="whiteText mediumLong"
-                data-resources="[{paths: ['components/BioButton/index.js']}]" url="#benefits"></bio-button>
-            <bio-button title="See Docs" modifier="blue whiteText mediumLong"
+            <bio-link-button title="See how it works" modifier="whiteText mediumLong"
+                data-resources="[{paths: ['components/BioButton/index.js']}]" url="#benefits"></bio-link-button>
+            <bio-link-button title="See Docs" modifier="blue whiteText mediumLong"
                 data-resources="[{paths: ['components/BioButton/index.js']}]" url="https://github.com/biotope/biotope/blob/master/docs/quickstart.md">
-            </bio-button>
+            </bio-link-button>
         </div>
     </div>
 </header>
@@ -117,34 +117,34 @@
                 <h3 class="resources__headline--blue">Code & Resources</h3>
                 <bio-resource logo-baseline image-border-color="blue" data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/github-logo.svg">
                     <p>See the Biotope code on GitHub</p>
-                    <bio-button title="Github" modifier="blue" url="https://github.com/biotope"></bio-button>
+                    <bio-link-button title="Github" modifier="blue alignRight" url="https://github.com/biotope"></bio-link-button>
                 </bio-resource>
                 <bio-resource image-border-color="blue" data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/npm.svg">
                     <p>Get the latest version of the Biotope CLI tool from npm</p>
-                    <bio-button title="NPM" modifier="blue" url="https://www.npmjs.com/package/biotope"></bio-button>
+                    <bio-link-button title="NPM" modifier="blue alignRight" url="https://www.npmjs.com/package/biotope"></bio-link-button>
                 </bio-resource>
                 <bio-resource image-border-color="blue" data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/documentation.svg">
                     <p>Read the Biotope documentation</p>
-                    <bio-button title="Read docs" modifier="blue" url="https://github.com/biotope/biotope/blob/master/docs/quickstart.md"></bio-button>
+                    <bio-link-button title="Read docs" modifier="blue alignRight" url="https://github.com/biotope/biotope/blob/master/docs/quickstart.md"></bio-link-button>
                 </bio-resource>
             </div>
             <div class="col col--large-6">
                 <h3>Tutorials</h3>
                 <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial-icon.svg">
                     <p>Create Web Components with Biotope-Element</p>
-                    <bio-button title="Read" url="https://element.biotope.sh/docs/"></bio-button>
+                    <bio-link-button title="Read" modifier="alignRight" url="https://element.biotope.sh/docs/"></bio-link-button>
                 </bio-resource>
                 <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial-icon.svg">
                     <p>Check out an example website built with Biotope</p>
-                    <bio-button title="Read" url="https://github.com/biotope/website"></bio-button>
+                    <bio-link-button title="Read" modifier="alignRight" url="https://github.com/biotope/website"></bio-link-button>
                 </bio-resource>
                 <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/tutorial-icon.svg">
                     <p>Automate your Build process with Biotope-Build</p>
-                    <bio-button title="Read" url="https://build.biotope.sh"></bio-button>
+                    <bio-link-button title="Read" modifier="alignRight" url="https://build.biotope.sh"></bio-link-button>
                 </bio-resource>
                 <bio-resource data-resources="[{paths: ['components/BioResource/index.js']}]" imgsrc="_assets/expert.svg" border="noBorder">
                     <p>You want to learn more? Ask an expert.</p>
-                    <bio-link-button data-resources="[{paths: ['components/BioLinkButton/index.js']}]" modifier="full" title="Contact" url="mailto:coregroup@biotope.sh"></bio-link-button>
+                    <bio-link-button data-resources="[{paths: ['components/BioLinkButton/index.js']}]" modifier="full alignRight" title="Contact" url="mailto:coregroup@biotope.sh"></bio-link-button>
                 </bio-resource>
             </div>
         </div>
@@ -195,8 +195,7 @@
             <div class="company__leads">
                 <p>Need help setting up your frontend ecosystem? <br>
                     We'd love to support you.</p>
-                <bio-link-button title="Contact VI" modifier="full"
-                    data-resources="[{paths: ['components/BioLinkButton/index.js']}]" url="mailto:biotope.support@virtual-identity.com"></bio-button>
+                <bio-link-button title="Contact VI" modifier="full alignCenter" data-resources="[{paths: ['components/BioLinkButton/index.js']}]" url="mailto:biotope.support@virtual-identity.com"></bio-link-button>
             </div>
         </div>
     </div>
@@ -213,8 +212,8 @@
             </a>
             <div class="footer__checkItOut">
                 <p>Of course we also built<br><span class="footer__bigWords">this website</span> with Biotope.</p>
-                <bio-button title="See how" modifier="blue" data-resources="[{paths: ['components/BioButton/index.js']}]" url="https://github.com/biotope/website">
-                </bio-button>
+                <bio-link-button title="See how" modifier="blue" data-resources="[{paths: ['components/BioButton/index.js']}]" url="https://github.com/biotope/website">
+                </bio-link-button>
             </div>
             <div class="footer__essentials">
                 <a class="js-openModal" modalType="imprint">Imprint</a>
