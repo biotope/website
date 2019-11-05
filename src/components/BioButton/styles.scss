@@ -26,58 +26,8 @@
 			color: $bio-white;
 		}
 
-        &.blue {
-			border: $border solid $bio-dark-blue;
-			
-			&:hover{
-				background: $bio-dark-blue;
-			}
-		}
-		
-		&.white {
-			border: $border solid $bio-white;
-			color: $bio-white;
-			
-			&:hover{
-				background: $bio-white;
-				color: $bio-orange;
-			}
-		}
-
-		&.compact {
-			min-width: 130px;
-			
-			@include breakpoint($medium){
-				min-width: 160px;
-			}
-		}
-
-		&.whiteText{
-			color: $bio-white;
-		}
-		
-        &.full {
-            color: $bio-white;
-			background: linear-gradient(to top, $bio-orange, $bio-light-orange);
-			border: 2px solid $bio-white;
-    
-            &:before {
-                margin: 0;
-            }
-    
-            &:hover {
-                background: transparent;
-				color: $bio-black;
-				border: 2px solid $bio-orange;
-            }
-		}
-		
         &.long {
 			padding: 10px 15px;
-		}
-		
-		&.mediumLong{
-			width: 200px;
 		}
 	}
 }

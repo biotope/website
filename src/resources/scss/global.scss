@@ -114,12 +114,11 @@ section {
 		}
 	}
 
-	bio-button {
-		display: block;
+	bio-link-button {
+		display: inline-block;
 		margin-bottom: 10px;
 
 		@include breakpoint($large) {
-			display: inline;
 			margin-right: 15px;
 		}
 	}

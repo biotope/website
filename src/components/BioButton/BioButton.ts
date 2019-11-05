@@ -10,26 +10,6 @@ class BioButton extends Component<BioButtonProps, BioButtonState> {
 
 	public methods: BioButtonMethods = {};
 
-	connectedCallback() {
-		this.registerEventListeners();
-	}
-
-	registerEventListeners() {
-		if (this.props.url) {
-			this.addEventListener('click', (e: Event) => {
-				e.preventDefault();
-				if (this.props.url[0] === '#') {
-					const targetElement: HTMLElement = document.querySelector(this.props.url);
-					if (!!targetElement) {
-						targetElement.scrollIntoView({behavior: 'smooth'});
-					}
-				} else {
-					window.open(this.props.url);
-				}
-			});
-		}
-	}
-
 	get defaultState() {
 		return {};
 	}
