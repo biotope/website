@@ -6,7 +6,7 @@ import {BioButtonProps, BioButtonState, BioButtonMethods} from './defines';
 class BioButton extends Component<BioButtonProps, BioButtonState> {
 	static componentName = 'bio-button';
 
-	static attributes = ['title', 'modifier', 'url'];
+	static attributes = ['title', 'modifier'];
 
 	public methods: BioButtonMethods = {};
 
@@ -17,8 +17,7 @@ class BioButton extends Component<BioButtonProps, BioButtonState> {
 	get defaultProps() {
 		return {
 			title: '',
-			modifier: '',
-			url: null
+			modifier: ''
 		};
 	}
 
