@@ -17,14 +17,14 @@
  * State
  */
  interface BioEasySetUpState {
-
+	copyText: string;
  }
 
 /**
  * Methods
  */
  interface BioEasySetUpMethods {
-
+	copyCode: Function
  }
 
 

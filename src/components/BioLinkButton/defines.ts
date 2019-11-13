@@ -8,7 +8,7 @@
  interface BioLinkButtonProps {
 	title: string,
 	modifier?: string,
-	url?: string
+	href?: string
  }
 
 /**

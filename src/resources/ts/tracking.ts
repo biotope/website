@@ -158,21 +158,19 @@ initGoogleAnalytics();
 		});
 	}
 
-	document.querySelectorAll('a[href^="#"], bio-button[url^="#"]').forEach(button => {
+	document.querySelectorAll('a[href^="#"], bio-link-button[href^="#"]').forEach(button => {
 		button.addEventListener("click", () => {
 			trackAnchorLink(button.getAttribute("title"));
 		});
 	});
-
-	document.querySelectorAll('a[href^="http"], bio-button[url^="http"]').forEach((link: HTMLElement) => {
+	
+	document.querySelectorAll('a[href^="http"], bio-link-button[href^="http"], a[href^="https"], bio-link-button[href^="https"]').forEach((link: HTMLElement) => {		
 		link.addEventListener("click", () => {
 			trackLink(link);
 		});
 	});
-
-	document
-		.querySelectorAll('a[href^="mailto:"], bio-button[url^="mailto:"]')
-		.forEach((link: HTMLElement) => {
+	
+	document.querySelectorAll('a[href^="mailto:"], bio-link-button[href^="mailto:"]').forEach((link: HTMLElement) => {
 			link.addEventListener("click", () => {
 				trackMailtoLink(link);
 			});
