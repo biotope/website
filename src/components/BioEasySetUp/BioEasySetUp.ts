@@ -16,7 +16,7 @@ class BioEasySetUp extends Component< BioEasySetUpProps, BioEasySetUpState > {
 
 	public methods: BioEasySetUpMethods = {
 		copyCode: () => {
-			var textArea = document.createElement("textarea");
+			const textArea = document.createElement("textarea");
 			textArea.value = this.props.code;
 			textArea.style.position = "fixed"; //avoid scrolling to bottom
 			document.body.appendChild(textArea);
