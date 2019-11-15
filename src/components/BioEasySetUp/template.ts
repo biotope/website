@@ -15,7 +15,7 @@ export default (render: Function, data: BioEasySetUpProps & BioEasySetUpState & 
 				<h4>${data.headline}</h4>
 				<p>${data.text}</p>
             </div>
-            <p class="code">${data.code}</p>
+            <p class="code">${data.code}<span onclick=${data.copyCode} class="copy-code">${data.copyText}</span></p>
         </div>
     `;
 }

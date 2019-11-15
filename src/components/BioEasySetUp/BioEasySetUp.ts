@@ -14,15 +14,47 @@ class BioEasySetUp extends Component< BioEasySetUpProps, BioEasySetUpState > {
         'code'
     ];
 
-    public methods: BioEasySetUpMethods = {
+	public methods: BioEasySetUpMethods = {
+		copyCode: () => {
+			const textArea = document.createElement("textarea");
+			textArea.value = this.props.code;
+			textArea.style.position = "fixed"; //avoid scrolling to bottom
+			document.body.appendChild(textArea);
+			textArea.focus();
+			textArea.select();
 
+			try {
+                const successful = document.execCommand("copy");
+                if (successful) {
+                    this.setState({
+                        copyText: '*Copied*'
+                    })
+                }
+			} catch (err) {
+				console.error("Couldn't copy code snippet: ", err);
+			}
+
+			document.body.removeChild(textArea);
+		}
     };
-   
-    get defaultState() {
-        return {
+    
+    created() {
+        super.created();
 
-        }
+        this.shadowRoot.querySelector('.copy-code').addEventListener('mouseleave', (e: Event) => {
+            setTimeout(() => {
+                this.setState({
+                    copyText: 'Copy'
+                })
+            }, 500);
+        })
     }
+
+	get defaultState() {
+		return {
+            copyText: 'Copy'
+        };
+	}
   
     get defaultProps() {
         return {
