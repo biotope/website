@@ -20,3 +20,8 @@
 <!--DEV-NOTE: next two exntries are optional. define a custom share image and URL or remove this two lines -->
 <meta property="og:url" content="">
 <meta property="og:image" content="https://biotope.sh/_assets/biotope.png">
+
+{{#if canonical}}
+<!--DEV-NOTE: the canonical tag should be set wisely and for every page individually to not screw up SEO -->
+<link rel="canonical" href="{{canonical}}"/>
+{{/if}}
