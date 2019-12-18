@@ -8,14 +8,14 @@
         grid-template-columns: 70px 1fr;
         column-gap: 10px;
         padding: 40px 0;
+        
         @include breakpoint($large) {
             -ms-grid-columns: 1fr 70px 1fr;
             grid-template-columns: 1fr 70px 1fr;
             min-height: 165px;
             padding: 0 0 190px 0;
             &.left {
-                .text-wrapper,
-                .code {
+				.text-wrapper, .code{
                     -ms-grid-column: 1;
                     grid-column: 1;
                 }
@@ -52,6 +52,7 @@
             border-radius: 10px;
             box-shadow: 2px 2px 8px $bio-shadow-gray;
             font-weight: $font-weight-bold;
+			
             @include breakpoint($large) {
                 -ms-grid-column: 3;
                 grid-column: 3;
@@ -60,6 +61,7 @@
             }
             .copy-code {
                 display: none;
+				
                 @include breakpoint($medium) {
                     display: block;
                     opacity: 0;
@@ -91,6 +93,7 @@
             grid-column: 2;
         }
     }
+	
     &:host([bloated]) {
         @include breakpoint($large) {
             .code {
