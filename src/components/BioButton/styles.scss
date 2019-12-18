@@ -26,8 +26,26 @@
 			color: $bio-white;
 		}
 
-        &.long {
+		&.long {
 			padding: 10px 15px;
+		}
+
+		&.white {
+			border: $border solid $bio-white;
+			color: $bio-white;
+			
+			&:hover{
+				background: $bio-white;
+				color: $bio-orange;
+			}
+		}
+		
+		&.compact {
+			min-width: 130px;
+			
+			@include breakpoint($medium){
+				min-width: 160px;
+			}
 		}
 	}
 }
