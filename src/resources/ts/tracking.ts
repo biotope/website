@@ -96,7 +96,7 @@ initGoogleAnalytics();
 
 (window as any).biotope.initTrackingMethods = () => {
 	dataLayer = dataLayer || [];
-	const internalHostnames = ["localhost", "biotope.sh", "build.biotope.sh", "www.biotope.sh"];
+	const regexInternalHostnames = new RegExp('biotope.sh$|^localhost$', 'i');
 
 	const visitedSectionIds = [];
 	const visitSectionTime = 2000;
@@ -124,13 +124,13 @@ initGoogleAnalytics();
 	}
 
 	function trackLink(link: HTMLElement) {
-		const linkHref = link.getAttribute("href");
+		const linkHref = link.getAttribute('href');
 		const linkURL = new URL(linkHref);
-		const linkHostname = linkURL ? linkURL.hostname : "";
-		if (internalHostnames.indexOf(linkHostname) != -1) {
-			trackCallToAction("cta-intern", linkHref);
+		const linkHostname = linkURL ? linkURL.hostname : '';
+		if (regexInternalHostnames.test(linkHostname)) {
+			trackCallToAction('cta-intern', linkHref);
 		} else {
-			trackCallToAction("cta-extern", linkHref);
+			trackCallToAction('cta-extern', linkHref);
 		}
 	}
 
